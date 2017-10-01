@@ -107,9 +107,9 @@ echo '<br>
 
        	                if($result_check<1)
        	                   {
-       	                   	echo "<script>alert('Invalid   password')</script>";
+       	                  // 	echo "<script>alert('Invalid   password')</script>";
 
-       	   	              //  header("Location: change.inc.php?old_password=invalid");
+       	   	              header("Location: change_security.inc.php?old_password=invalid=error_on_changing_security_code");
        	   	                 exit();
        	                  }
        	                  else
@@ -118,8 +118,8 @@ echo '<br>
 
                            mysqli_query($conn,$query);
                             
-                            echo "<script>alert('Security code has been successfully changed.')</script>";
-                          //  header("Location: change.inc.php?change=success");
+                            //echo "<script>alert('Security code has been successfully changed.')</script>";
+                              header("Location: change_security.inc.php?change=success");
 
        	   	                
        	   	                 exit();
@@ -129,7 +129,7 @@ echo '<br>
              else
              {  
              	//echo "<script>alert('Please fill all input.')</script>";
-             	header("Location: change_security.inc.php?input_filed=empty");
+             	header("Location: change_security.inc.php?input_filed=empty=error_on_changing_security_code");
        	   	         exit();  
              }
        
@@ -137,6 +137,17 @@ echo '<br>
 
 
            }
+
+echo' <div id="security">
+  <ul>
+      <li>* Note *</li>
+    <li>Security question.   </li>
+    <li>Enter code which you remember all time.</li>
+    <li>Like Fathers name , Mothers name etc..</li> 
+    <li>It may be help full in future.</li>
+  </ul>
+</div>';
+
 
 }
 else
@@ -147,18 +158,11 @@ echo '
   ';
 }
 
+
+
+
+
 ?>
-
-
- <div id="security">
-  <ul>
-      <li>* Note *</li>
-    <li>Security question.   </li>
-    <li>Enter code which you remember all time.</li>
-    <li>Like Father's name , Mother's name etc..</li> 
-    <li>It may be help full in future.</li>
-  </ul>
-</div>
 
 </body>
 </html>

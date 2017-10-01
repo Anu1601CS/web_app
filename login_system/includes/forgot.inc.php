@@ -99,9 +99,9 @@ echo '<br>
 
        	                if($result_check<1)
        	                   {
-       	                   	echo "<script>alert('Invalid Security Code')</script>";
+       	                   	//echo "<script>alert('Invalid Security Code')</script>";
 
-       	   	              //  header("Location: change.inc.php?old_password=invalid");
+       	   	             header("Location: forgot.inc.php?old_password=invalid=error_on_changing_password");
        	   	                 exit();
        	                  }
        	                  else
@@ -110,8 +110,8 @@ echo '<br>
 
                            mysqli_query($conn,$query);
                             
-                            echo "<script>alert('Password has   been successfully changed.')</script>";
-                          //  header("Location: change.inc.php?change=success");
+                            //echo "<script>alert('Password has   been successfully changed.')</script>";
+                             header("Location: forgot.inc.php?change=success=password_has_been_successfull_changed");
 
        	   	                
        	   	                 exit();
@@ -121,14 +121,12 @@ echo '<br>
 
        	                  }
 
-                         
-
-             	   }
+                        }
              	   else
              	   {   
-             	   	echo "<script>alert('Password not Confirm.')</script>";
+             	   	//echo "<script>alert('Password not Confirm.')</script>";
 
-             	   	 // header("Location: change.inc.php?new_password!=com_password");
+             	   	header("Location: forgot.inc.php?new_password+!+=+com_password=error_on_changing_password");
        	   	            exit(); 
 
              	   }
@@ -138,7 +136,7 @@ echo '<br>
              else
              {  
              	//echo "<script>alert('Please fill all input.')</script>";
-             	header("Location: forgot.inc.php?input_filed=empty");
+             	header("Location: forgot.inc.php?input_filed=empty=error_on_changing_password");
        	   	         exit();  
              }
        

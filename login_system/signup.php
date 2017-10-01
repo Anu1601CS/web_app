@@ -60,7 +60,7 @@ form{
 
 <body>
 
-<h1>CS205: Submission Portal</h1>
+<h1>Student Signup  Portal</h1>
 
 <button ><a href="index.php" >Student Login</a></button>
 

@@ -37,7 +37,7 @@ if(isset($_POST['submit']))
           	  //check email
           	if(!filter_var($email,FILTER_VALIDATE_EMAIL))
           	{
-         	  header("Location: ../signup.php?signup=invalid_email");
+         	  header("Location: ../signup.php?signup=invalid_email=error_on_creating_account");
          	  exit();
 
           	}
@@ -49,8 +49,9 @@ if(isset($_POST['submit']))
           		 $result_check=mysqli_num_rows($result);
 
           		 if($result_check >0)
-          		 {
-          		 	header("Location: ../signup.php?signup=username_taken");
+          		 {  
+          		 //	echo "<script>alert('Username all ready exist.')</script>";
+          		 	header("Location: ../signup.php?signup=username_taken=error_on_creating_account");
                      	exit();
           		 }
           		 else
@@ -62,7 +63,8 @@ if(isset($_POST['submit']))
                        $sql="INSERT INTO login(username,name,email,password,security) VALUES ('$username','$name','$email','$password_hash' ,'$security_hash');"; 
 
                        mysqli_query($conn,$sql);
-                       header("Location: ../signup.php?signup=sucess");
+                     //  echo "<script>alert('You signup sucessfully.')</script>";
+                      header("Location: ../signup.php?signup=success=account_has_been_successfull_created");
                        exit();
 
 
