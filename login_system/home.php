@@ -1,3 +1,9 @@
+
+<!--
+ * Created by Anurag (Anu1601CS) .
+ *-->
+
+
 <?php
 
 
@@ -26,7 +32,12 @@ session_start();
 body
 {
 	
-	line-height: 2;
+	line-height: 2;  
+  text-align: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-size:  100%;
+  height: 100%;
 }
 
 a{
@@ -36,8 +47,22 @@ a{
      color: black;
 }
 
-form{
-	float: center;
+#link{
+  color: blue!important;
+  font-size: 15px;
+}
+
+#copy
+{
+  color:red; 
+}
+
+#logo
+{
+
+	width: 150px;
+	height: 150px;
+	
 }
 
 </style>
@@ -46,8 +71,9 @@ form{
 </head>
 
 <body>
-
-<h1>CS205: Submission Portal</h1>
+<img id ="logo" src="css/image/iitp.png">	
+<h1>IIT-P</h1>
+<h1>Student Database Portal</h1>
 
 
 <?php
@@ -57,8 +83,8 @@ form{
     
 
   echo '<form action="includes/logout.inc.php" method="POST">
-	<button type="submit" name="submit">Logout</button>
-	
+	    <button type="submit" name="submit">Logout</button>
+	  
 </form>';
    	
    }
@@ -67,27 +93,30 @@ form{
 
 
 echo '
-<button ><a href="index.php" >My Home</a></button>
-<button ><a href="signup.php">Sign up</a></button>
+<a style="display:inline-block; color:purple;" href="index.php">Student Login</a>
+
 
 
 <form action="includes/login.inc.php" method="POST" >
 
-<input type="text" name="username" placeholder="Username">
+<input type="text" name="username" placeholder="Username or Email"><br>
 
-<input type="password" name="password" placeholder="Password">
+<input type="password" name="password" placeholder="Password"><br>
 <input type="submit"  name="submit" value="Login">	
 
 
 </form>';
 
-
+echo '<br>';
+echo '<a style="color:green!important;" id="link" href="signup.php">Sign up</a> &nbsp;| &nbsp; <a id="link" href="includes/forgot.inc.php">Forgot your password?</a>';
    }
 
 ?>
 
-
-
+<br>
+<br>
+<br>
+<h5 id="copy" >&copy; Copyright 2017  |  Created by Anurag</h5>
 
 
 

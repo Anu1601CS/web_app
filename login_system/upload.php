@@ -1,3 +1,9 @@
+
+<!--
+ * Created by Anurag (Anu1601CS) 
+ *-->
+
+
 <!DOCTYPE html>
 <html>
 
@@ -5,6 +11,11 @@
 <title>Upload</title>
 <style >
   
+
+  button{
+
+  cursor: pointer;
+}
   #form1{
          position: absolute;
          top: 30px;
@@ -13,6 +24,7 @@
   
   body{
     line-height: 1;
+    text-align: center;
   }
 
   a{
@@ -20,11 +32,20 @@
     color:black;
   }
 
+
+#copy
+{
+  color:red; 
+  
+
+
+}
+
 </style>
 
 
 </head>
-
+<body>
 
 
 <?php
@@ -50,6 +71,7 @@ echo '<br>';
      echo '<br>';echo '<br>';
 
   echo '<button><a href="includes/change.inc.php"</a>Change Password</button>
+        <button><a href="includes/change_security.inc.php"</a>Change Security Code</button>
        
         <form id="form1" action="includes/logout.inc.php" method="POST">
            <button type="submit" name="submit">Logout</button>
@@ -64,11 +86,21 @@ echo '<br>';
     }
     else
 {
-  echo '<span style="color:black;font-size:50px;">Oops..#Error 404 Page not found</span> ';
+  echo '
+       <img src="css/image/4041.gif"><br><br>
+       <span style="color:black;font-size:50px;">Oops..#Error 404 Page not found</span> 
+  ';
 }
 
 
    ?>
+
+
+
+
+</body>
+
+</html>
 
 
 

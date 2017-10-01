@@ -9,16 +9,20 @@ if(isset($_POST['submit']))
     $username=mysqli_real_escape_string($conn ,$_POST['username']);
     $email=mysqli_real_escape_string($conn ,$_POST['email']);
     $password=mysqli_real_escape_string($conn ,$_POST['password']);
+    $confirm_password=mysqli_real_escape_string($conn ,$_POST['confirm_password']);
+    $security=mysqli_real_escape_string($conn ,$_POST['security']);
    
     
     //Error handlers 
 
-    if(empty($name)|| empty($username) || empty($email)|| empty($password))
+    if(empty($name)|| empty($username) || empty($email)|| empty($password) || empty($confirm_password) || empty($security))
     {
         header("Location: ../signup.php?signup=empty");
         exit();
     }
     else
+    if($password==$confirm_password)
+      
     {    //check if input chracter are valid
       
          if(!preg_match("/^[a-zA-Z]*$/",$name))
@@ -52,8 +56,10 @@ if(isset($_POST['submit']))
           		 else
           		 {
                         $password_hash=md5($password);
+                        $security_hash=md5($security);
+
                         //Insert data to database
-                       $sql="INSERT INTO login(username,name,email,password) VALUES ('$username','$name','$email','$password_hash');"; 
+                       $sql="INSERT INTO login(username,name,email,password,security) VALUES ('$username','$name','$email','$password_hash' ,'$security_hash');"; 
 
                        mysqli_query($conn,$sql);
                        header("Location: ../signup.php?signup=sucess");
@@ -68,6 +74,12 @@ if(isset($_POST['submit']))
 
          }
         
+    }
+    else
+    {
+        header("Location: ../signup.php?password not confirm error on signup ");
+          exit();
+
     }
 
 
