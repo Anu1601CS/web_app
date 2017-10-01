@@ -56,10 +56,10 @@ if(isset($_POST['submit']))
                       {
                       	//Log in user
                         
-                         $_SESSION['u_id']=$_row['id']; 
-                         $_SESSION['u_username']=$username;
-                         $_SESSION['u_name']=$name;
-                         $_SESSION['u_email']=$email;
+                         $_SESSION['u_id']=$row['id']; 
+                         $_SESSION['u_username']=$row['username'];
+                         $_SESSION['u_name']=$row['name'];
+                         $_SESSION['u_email']=$row['email'];
                          
                          header("Location: ../upload.php?login=success");
        	   	             exit();
