@@ -70,12 +70,12 @@ form{
  
  <h1>Sign Up</h1>	
 
-<input type="text" name="username" placeholder="Username"><br>
-<input type="text" name="name" placeholder="Name"><br>
-<input type="email" name="email" placeholder="Email"><br>
-<input type="password" name="password"  placeholder="Password"><br>
-<input type="password" name="confirm_password"  placeholder="Confirm Password"><br>
-<input type="password" name="security"  placeholder="Security Code"><br>
+<input type="text" name="username" placeholder="Username" required=""><br>
+<input type="text" name="name" placeholder="Name" required=""><br>
+<input type="email" name="email" placeholder="Email" required=""><br>
+<input type="password" name="password"  placeholder="Password" required=""><br>
+<input type="password" name="confirm_password"  placeholder="Confirm Password" required=""><br>
+<input type="password" name="security"  placeholder="Security Code" required=""><br>
 <input type="submit"  name="submit" value="Sign up">	
 
 

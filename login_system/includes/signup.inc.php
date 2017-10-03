@@ -58,7 +58,10 @@ if(isset($_POST['submit']))
           		 {
                         $password_hash=md5($password);
                         $security_hash=md5($security);
-
+                         
+                      
+                    
+ 
                         //Insert data to database
                        $sql="INSERT INTO login(username,name,email,password,security) VALUES ('$username','$name','$email','$password_hash' ,'$security_hash');"; 
 

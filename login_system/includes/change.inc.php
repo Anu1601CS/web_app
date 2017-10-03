@@ -72,9 +72,9 @@ echo '<br>
  
       echo '<form action="change.inc.php" method="POST">
 	        
-	        <input type="password" name="old_password" placeholder="Old Password"><br>
-        	<input type="password" name="new_password" placeholder="New Password"><br>
-	       <input type="password" name="com_password" placeholder="Confirm Password"><br><br>
+	        <input type="password" name="old_password" placeholder="Old Password" required=""><br> 
+        	<input type="password" name="new_password" placeholder="New Password" required=""><br>
+	       <input type="password" name="com_password" placeholder="Confirm Password" required=""><br><br>
         	<input type="submit" name="submit" value=" Change">
 
            </form>';

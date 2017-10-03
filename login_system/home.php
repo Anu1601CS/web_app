@@ -99,9 +99,9 @@ echo '
 
 <form action="includes/login.inc.php" method="POST" >
 
-<input type="text" name="username" placeholder="Username or Email"><br>
+<input type="text" name="username" placeholder="Username or Email" required=""><br>
 
-<input type="password" name="password" placeholder="Password"><br>
+<input type="password" name="password" placeholder="Password" required=""><br>
 <input type="submit"  name="submit" value="Login">	
 
 

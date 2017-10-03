@@ -18,11 +18,13 @@ if(isset($name))
 {
    if(!empty($name))
    {       
-   if($extension=='c'||$extension=='txt' || $extension=='cpp'|| $type=='c/txt' || $type=='cpp')
+   if($extension=='c'||$extension=='txt' || $extension=='cpp'|| $type=='c/txt' || $type=='cpp' )
       {  
            
-           
-           $location='uploads/';
+           $user=$_SESSION['u_username'];
+           $location='uploads/'.$user.'/';
+
+           //$location='new2/';
 
            if(move_uploaded_file($tmp_name, $location.$name))
            {     
@@ -35,9 +37,7 @@ if(isset($name))
             //echo 'Error on uploading';
           }
            
-         
- 
-     }
+        }
 
      else
      {

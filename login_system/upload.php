@@ -21,6 +21,11 @@
          top: 30px;
          right: 40px;
         }
+
+        #form2{
+
+          
+        }
   
   body{
     line-height: 1;
@@ -36,9 +41,14 @@
 #copy
 {
   color:red; 
+}
+
+#logo
+{
+
+  width: 300px;
+  height: 200px;
   
-
-
 }
 
 </style>
@@ -51,14 +61,18 @@
 <?php
 
 
+
+
 include 'includes/upload.inc.php';
 
-echo '<br>';
+echo '<br><br><br>';
 
 if(isset($_SESSION['u_username']))
-     {
+     { 
+
+      echo '<img id ="logo" src="css/image/user77.png"> <br>';
       
-       echo '<span style="color:black;font-size:50px;">Home</span> ';
+       echo '<span style="color:black;font-size:50px;">HOME</span> ';
 
       $user = $_SESSION['u_username'];
       $name=$_SESSION['u_name'];
@@ -71,16 +85,24 @@ echo '<br>';
      echo '<br>';echo '<br>';
 
   echo '<button><a href="includes/change.inc.php"</a>Change Password</button>
-        <button><a href="includes/change_security.inc.php"</a>Change Security Code</button>
+        <button><a href="includes/change_security.inc.php"</a>Change Security Code</button>';
        
-        <form id="form1" action="includes/logout.inc.php" method="POST">
+       echo '
+         
+         <div id="form1">
+        <form action="includes/logout.inc.php" method="POST">
            <button type="submit" name="submit">Logout</button>
         </form> 
+        </div>';
         
-        <form action="upload.php" method="POST" enctype="multipart/form-data">
-            <br> <input type="file" name="file">
-                 <input type="submit" name="submit" value="Upload"> 
-        </form>';
+      echo '  
+      <div id="form2">
+              <form action="upload.php" method="POST" enctype="multipart/form-data">
+                  <br> <input type="file" name="file">
+                  <input type="submit" name="submit" value="Upload"> 
+        </form> 
+
+         </div>';
 
      
     }

@@ -79,8 +79,8 @@ echo '<br>
  
       echo '<form action="change_security.inc.php" method="POST">
 	        
-	                  <input type="password" name="password" placeholder="Password"><br>
-                    <input type="password" name="security" placeholder="New Security Code"><br><br>
+	                  <input type="password" name="password" placeholder="Password" required=""><br>
+                    <input type="password" name="security" placeholder="New Security Code" required=""><br><br>
         	        	<input type="submit" name="submit" value=" Change"><br>
 
            </form>';

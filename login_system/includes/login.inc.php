@@ -68,6 +68,8 @@ if(isset($_POST['submit']))
                          $_SESSION['u_username']=$row['username'];
                          $_SESSION['u_name']=$row['name'];
                          $_SESSION['u_email']=$row['email'];
+
+                           require 'create_dir.inc.php';
                          
                          header("Location: ../upload.php?login=success");
        	   	             exit();
