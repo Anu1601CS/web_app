@@ -38,7 +38,7 @@ if(isset($_SESSION['u_username']))
          $user_logo='logo'; 
 
       echo '<a id="small" class="button-left button" href="upload.php">HOME</a>';
-      echo '<a id="small" class="button-right button" href="includes/update.inc.php">UPDATE PROFILE</a>';
+      echo '<a id="small" class="button-right button" href="includes/social.inc.php">ADD SOCIAL LINKS</a>';
       
       echo '  
          <div id="form2">
