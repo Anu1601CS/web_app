@@ -8,31 +8,24 @@
 <html>
 
 <head>
-<title>Upload</title>
+<title>HOME </title>
 <style >
   
+ button{
+ cursor: pointer;}
 
-  button{
-
-  cursor: pointer;
-}
   #form1{
          position: absolute;
          top: 30px;
          right: 40px;
         }
 
-        #form2{
-
-          
-        }
-  
   body{
     line-height: 1;
     text-align: center;
   }
 
-  a{
+ a{
     text-decoration: none;
     color:black;
   }
@@ -45,10 +38,16 @@
 
 #logo
 {
-
-  width: 300px;
+  width: 200px;
   height: 200px;
-  
+  border-radius:100%; 
+  box-shadow: 0 0 10px black;
+  }
+
+#profile{
+	     position: absolute;
+         top: 30px;
+         left: 40px;
 }
 
 </style>
@@ -70,22 +69,27 @@ echo '<br><br><br>';
 if(isset($_SESSION['u_username']))
      { 
 
-      echo '<img id ="logo" src="css/image/user77.png"> <br>';
       
-       echo '<span style="color:black;font-size:50px;">HOME</span> ';
+       $name=$_SESSION['u_name'];
+       $user=$_SESSION['u_username'];
+       $user_logo='logo';
 
-      $user = $_SESSION['u_username'];
-      $name=$_SESSION['u_name'];
+     echo '<button id ="profile"><a href="profile.php">Profile</a></button>';
+     echo '<span style="color:black;font-size:50px;">HOME</span><br><br> ';
 
-echo '<br>';
-echo '<br>';
-    echo '<span style="color:black;font-size:30px;">Welcome   '.$user.'</span> ';
+       echo '<img id ="logo" src="uploads/'.$user.'/'.$user_logo.'"> <br>';
+      
+       
+
+         
+       echo '<br><br>';
+       echo '<span style="color:black;font-size:30px;">Welcome   '.$user.'</span> ';
 
 
-     echo '<br>';echo '<br>';
+       echo '<br><br>';
 
-  echo '<button><a href="includes/change.inc.php"</a>Change Password</button>
-        <button><a href="includes/change_security.inc.php"</a>Change Security Code</button>';
+       echo '<button><a href="includes/change.inc.php"</a>Change Password</button>
+               <button><a href="includes/change_security.inc.php"</a>Change Security Code</button>';
        
        echo '
          
@@ -95,12 +99,12 @@ echo '<br>';
         </form> 
         </div>';
         
-      echo '  
-      <div id="form2">
-              <form action="upload.php" method="POST" enctype="multipart/form-data">
+       echo '  
+         <div id="form2">
+               <form action="upload.php" method="POST" enctype="multipart/form-data">
                   <br> <input type="file" name="file">
                   <input type="submit" name="submit" value="Upload"> 
-        </form> 
+         </form> 
 
          </div>';
 

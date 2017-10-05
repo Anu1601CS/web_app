@@ -68,6 +68,10 @@ if(isset($_POST['submit']))
                          $_SESSION['u_username']=$row['username'];
                          $_SESSION['u_name']=$row['name'];
                          $_SESSION['u_email']=$row['email'];
+                         $_SESSION['u_facebook']=$row['facebook'];
+                         $_SESSION['u_twitter']=$row['twitter'];
+                         $_SESSION['u_linkdin']=$row['linkdin'];
+                         $_SESSION['u_website']=$row['website'];
 
                            require 'create_dir.inc.php';
                          
