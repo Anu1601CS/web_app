@@ -3,62 +3,24 @@
  * Created by Anurag (Anu1601CS).
  *-->
 
-
-
 <!DOCTYPE html>
 <html>
 
 <head>
 <title>Login Page</title>
-
-<style>
-
-
-button{
-
-  cursor: pointer;
-}
-
-body
-{
-	
-	line-height: 2;
-	text-align: center;
-
-}
-
-a{
-	text-decoration:none;
-	font-size: 20px;
-	text-align: left; 
-	color: black;
-      
-}
-
-
-
-form{
-	background-color:skyblue; 
-	
-	 
-  }
-  
-#security
-  {   
-
-  	position: absolute;
-  	color: red;
-
-  }
-
-
-
-</style>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/signup.css" type="text/css">
 
 </head>
 
 <body>
+
+<?php
+
+include 'includes/alert.inc.php';
+
+?>
+
 
 <h1>Student Signup  Portal</h1>
 
@@ -93,8 +55,6 @@ form{
 		<li>It may be help full in future.</li>
 	</ul>
 </div>
-
-
 
 </body>
 

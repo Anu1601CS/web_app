@@ -30,7 +30,10 @@ if(isset($_POST['submit']))
 
        if(empty($username) || empty($password))
        {
-             
+              $error="Input field is empty.";
+            
+              $_SESSION['error']=$error;
+    
              header("Location: ../index.php?login=empty");
        	   	   exit();
        }
@@ -44,7 +47,10 @@ if(isset($_POST['submit']))
        	   $result_check=mysqli_num_rows($result);
 
        	   if($result_check<1)
-       	   {
+       	   {    
+              $error="invalid login";
+            
+              $_SESSION['error']=$error;
 
        	   	   header("Location: ../index.php?login=invalid");
        	   	   exit();
@@ -55,7 +61,11 @@ if(isset($_POST['submit']))
                  {   //DE-hashing the password
                        
                     if($password!=$row['password'])
-                      {
+                      {      
+                            $error="invalid username and password.";
+            
+                            $_SESSION['error']=$error;
+
                              header("Location: ../index.php?login=invalid_username_and_password");
        	   	                             exit();
                       } 

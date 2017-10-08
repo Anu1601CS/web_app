@@ -69,13 +69,7 @@ if(isset($_SESSION['u_username']))
 </div>
 ';
 
-   
-  
-        
-
-
-     
-    }
+}
     else
 {
   echo '

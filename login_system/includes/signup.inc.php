@@ -1,5 +1,8 @@
 <?php
 
+
+session_start();
+
 if(isset($_POST['submit']))
 {
 
@@ -16,7 +19,12 @@ if(isset($_POST['submit']))
     //Error handlers 
 
     if(empty($name)|| empty($username) || empty($email)|| empty($password) || empty($confirm_password) || empty($security))
-    {
+    {   
+            $error="Input field is empty.";
+            
+            $_SESSION['error']=$error;
+   
+      
         header("Location: ../signup.php?signup=empty");
         exit();
     }
@@ -26,7 +34,11 @@ if(isset($_POST['submit']))
     {    //check if input chracter are valid
       
          if(!preg_match("/^[a-zA-Z]*$/",$name))
-         {
+         {  
+            $error="Invalid name.";
+            
+            $_SESSION['error']=$error;
+
 
          	header("Location: ../signup.php?signup=invalid");
          	exit();
@@ -36,7 +48,11 @@ if(isset($_POST['submit']))
           {  
           	  //check email
           	if(!filter_var($email,FILTER_VALIDATE_EMAIL))
-          	{
+          	{  
+          		  $error="Email invalid.";
+            
+                $_SESSION['error']=$error;
+
          	  header("Location: ../signup.php?signup=invalid_email=error_on_creating_account");
          	  exit();
 
@@ -49,7 +65,12 @@ if(isset($_POST['submit']))
           		 $result_check=mysqli_num_rows($result);
 
           		 if($result_check >0)
-          		 {  
+          		 {   
+
+          		 	    $error="Username all ready taken.";
+            
+                        $_SESSION['error']=$error;
+
           		 //	echo "<script>alert('Username all ready exist.')</script>";
           		 	header("Location: ../signup.php?signup=username_taken=error_on_creating_account");
                      	exit();
@@ -67,6 +88,10 @@ if(isset($_POST['submit']))
 
                        mysqli_query($conn,$sql);
                      //  echo "<script>alert('You signup sucessfully.')</script>";
+                       
+                       $success='Account  account has been successfull created.';
+                       $_SESSION['success']=$success;
+
                       header("Location: ../signup.php?signup=success=account_has_been_successfull_created");
                        exit();
 

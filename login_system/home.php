@@ -13,7 +13,9 @@ ini_set('session.gc_maxlifetime', 3600);
 // each client should remember their session id for EXACTLY 1 hour
 session_set_cookie_params(3600);
 
-session_start();
+include 'includes/alert.inc.php';
+
+
 
 ?>
 
@@ -74,6 +76,10 @@ a{
 <img id ="logo" src="css/image/iitp.png">	
 <h1>IIT-P</h1>
 <h1>Student Database Portal</h1>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/signup.css" type="text/css">
+
+
 
 
 <?php
