@@ -18,6 +18,7 @@
 
 <?php
 
+session_start();
 
 include 'includes/image.inc.php';
 
@@ -35,7 +36,7 @@ if(isset($_SESSION['u_username']))
          $twitter=$_SESSION['u_twitter'];
          $linkdin=$_SESSION['u_linkdin'];
          $website=$_SESSION['u_website'];
-         $user_logo='logo'; 
+         $user_logo='image'; 
 
       echo '<a id="small" class="button-left button" href="upload.php">HOME</a>';
       echo '<a id="small" class="button-right button" href="includes/social.inc.php">ADD SOCIAL LINKS</a>';
@@ -54,7 +55,7 @@ if(isset($_SESSION['u_username']))
 
          <div class="card">
            
-            <img style="width:100%; id ="logo" src="uploads/'.$username.'/'.$user_logo.'"> 
+           <img style="width:100%; id ="logo" src="uploads/'.$username.'/'.$user_logo.'"> 
            <h1>'.$name.'</h1>
            <p class="title">'.$email.'</p>
            <p>IIT-P</p>

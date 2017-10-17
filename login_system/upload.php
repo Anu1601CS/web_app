@@ -72,7 +72,7 @@ if(isset($_SESSION['u_username']))
       
        $name=$_SESSION['u_name'];
        $user=$_SESSION['u_username'];
-       $user_logo='logo';
+       $user_logo='image';
 
      echo '<button id ="profile"><a href="profile.php">Profile</a></button>';
      echo '<span style="color:black;font-size:50px;">HOME</span><br><br> ';

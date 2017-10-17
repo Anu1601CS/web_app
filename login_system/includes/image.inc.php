@@ -6,7 +6,7 @@ ini_set('session.gc_maxlifetime', 3600);
 // each client should remember their session id for EXACTLY 1 hour
 session_set_cookie_params(3600);
 
-session_start();
+
 
 if(isset($_SESSION['u_username']))
 {
@@ -16,7 +16,7 @@ $size=@$_FILES['file']['size'];
 $type=@$_FILES['file']['type'];
 $tmp_name=@$_FILES['file']['tmp_name'];
 $user=$_SESSION['u_username'];
-$user_logo='logo';
+$user_logo='image';
 
 $extension=strtolower(substr($name, strpos($name,'.')+1));
 
