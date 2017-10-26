@@ -3,9 +3,6 @@
  * Created by Anurag (Anu1601CS) 
  *-->
 
-
-
-
 <?php
 
 // server should keep session data for AT LEAST 1 hour
@@ -16,6 +13,7 @@ session_set_cookie_params(3600);
 
 
 session_start();
+
 
 
 if(isset($_POST['submit']))
