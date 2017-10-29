@@ -99,14 +99,17 @@ if(isset($_SESSION['u_username']))
         </form> 
         </div>';
         
-       echo '  
+       /*echo '  
          <div id="form2">
                <form action="upload.php" method="POST" enctype="multipart/form-data">
                   <br> <input type="file" name="file">
                   <input type="submit" name="submit" value="Upload"> 
          </form> 
 
-         </div>';
+         </div>';*/
+
+  echo '<br><br><button><a href="mypost.php">My Post</a></button>';
+  echo '<button><a href="post.php">Post Article</a></button>';
 
      
     }
@@ -121,12 +124,11 @@ if(isset($_SESSION['u_username']))
 
    ?>
 
-
-
-
 </body>
 
 </html>
+
+
 
 
 

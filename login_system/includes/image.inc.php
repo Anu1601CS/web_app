@@ -15,6 +15,7 @@ $name=@$_FILES['file']['name'];
 $size=@$_FILES['file']['size'];
 $type=@$_FILES['file']['type'];
 $tmp_name=@$_FILES['file']['tmp_name'];
+
 $user=$_SESSION['u_username'];
 $user_logo='image';
 
