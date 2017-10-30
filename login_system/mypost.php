@@ -1,6 +1,11 @@
 <?php
-
 session_start();
+//include 'includes/alert.inc.php';
+?>
+<?php
+
+
+//include 'includes/alert.inc.php';
 ?>
 
 
@@ -14,6 +19,7 @@ session_start();
       width: 50%;
       margin: 20px auto;
       border: 1px solid #cbcbcb;
+      height: 100%;	
     }
     form{
       width: 50%;
@@ -46,6 +52,23 @@ session_start();
     body{
       text-align: center;
     }
+    
+    #content{
+       background-color: skyblue;
+    }
+
+    code{
+
+    color: crimson;
+    background-color: rgb(241, 241, 241);
+    padding-left: 4px;
+    padding-right: 4px;
+    font-family: Consolas,"courier new";
+    display: inline-block;
+    border-radius: 3px;
+    
+    }
+    
   </style>
 </head>
 <body>
@@ -57,11 +80,12 @@ $username=$_SESSION['u_username'];
 echo '<h1>'.$username.'</h1>';
 echo '<button><a href="upload.php">HOME</a></button>';
 echo '<button><a href="post.php">Post Article</a></button>';
-
+echo '<button><a href="delete.php">Delete Post</a></button>';
 
 
 ?>
 <div id="content">
+
 <?php
 
  include_once 'includes/dbh.inc.php';

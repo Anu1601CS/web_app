@@ -2,13 +2,11 @@
 <!--
  * Created by Anurag (Anu1601CS).
  *-->
-
- <?php
+<?php
 
 
 include 'includes/alert.inc.php';
 ?>
-
  
 <!DOCTYPE html>
 <html>
@@ -24,24 +22,23 @@ include 'includes/alert.inc.php';
 
 
 
-<h1>POST</h1>
 
-<button ><a href="upload.php" >Student Login</a></button>
+<h1>Delete Post</h1>
+
+<button ><a href="mypost.php" >My Post</a></button>
 
 <div id="form">
 
-<form action="includes/post.inc.php" method="POST" enctype="multipart/form-data">
+<form action="includes/delete.inc.php" method="POST" enctype="multipart/form-data">
 
  
  <!-- <h1>POST</h1> -->	
 <br>
-<input type="file" name="file"><br>
-<input type="text" name="title" placeholder="Title" ><br><br>
-
-<textarea type="message" cols="30" rows="9" placeholder="Message.." name="message" required="" ></textarea>
+<input type="text" name="num" placeholder="Number" ><br>
+<input type="text" name="num2" placeholder="Confirm Number" ><br>
 
 <br>
-<input type="submit"  name="submit" value="POST">	
+<input type="submit"  name="submit" value="DELETE">	
 
 
 
