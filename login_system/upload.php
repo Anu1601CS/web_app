@@ -99,16 +99,9 @@ if(isset($_SESSION['u_username']))
         </form> 
         </div>';
         
-       /*echo '  
-         <div id="form2">
-               <form action="upload.php" method="POST" enctype="multipart/form-data">
-                  <br> <input type="file" name="file">
-                  <input type="submit" name="submit" value="Upload"> 
-         </form> 
+      
 
-         </div>';*/
-
-  echo '<br><br><button><a href="mypost.php">My Post</a></button>';
+  echo '<br><br><button><a href="blog.php">My Post</a></button>';
   echo '<button><a href="post.php">Post Article</a></button>';
 
      

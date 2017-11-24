@@ -3,6 +3,12 @@
  * Created by Anurag (Anu1601CS).
  *-->
 
+ <?php
+
+
+include 'includes/alert.inc.php';
+?>
+
  
 <!DOCTYPE html>
 <html>
@@ -16,11 +22,6 @@
 
 <body>
 
-<?php
-
-include 'includes/alert.inc.php';
-
-?>
 
 
 <h1>POST</h1>
@@ -34,10 +35,12 @@ include 'includes/alert.inc.php';
  
  <!-- <h1>POST</h1> -->	
 <br>
-<input type="file" name="file"><br>
+Add Logo :<input type="file" name="logo"><br>
+Add Images :<input type="file" name="image" multiple /><br>
+
 <input type="text" name="title" placeholder="Title" ><br><br>
 
-<textarea type="message" cols="30" rows="9" placeholder="Message.." name="message" required="" ></textarea>
+<textarea type="message" cols="100" rows="20" placeholder="Message.." name="message" required="" ></textarea>
 
 <br>
 <input type="submit"  name="submit" value="POST">	

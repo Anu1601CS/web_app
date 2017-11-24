@@ -9,21 +9,29 @@ if(isset($_SESSION['u_username']))
 
 
 if(isset($_POST['submit']))
-{
-
+{  
+    $name=0;
+    $name2=0;
+    $title=0;
+    $message=0;
+ 
    include_once 'dbh.inc.php';
 
     $title=mysqli_real_escape_string($conn ,$_POST['title']);
     $message=mysqli_real_escape_string($conn ,$_POST['message']);
-    $tmp_name=@$_FILES['file']['tmp_name'];
-    $name=@$_FILES['file']['name'];
-    $user=$_SESSION['u_username'];  
+     $location='../uploads/images/';
+    $section=rand(100,1000000);
+    $user=$_SESSION['u_username']; 
+    $time= date("Y-m-d");
      
-    $location='../uploads/images/';
 
+    
+    $tmp_name=@$_FILES['image']['tmp_name'];
+    $name=rand();
     move_uploaded_file($tmp_name, $location.$name);
-          	  
-    $sql="INSERT INTO uploaded_image(image,texts,username,title) VALUES ('$name','$title','$user','$title');"; 
+    
+   
+    $sql="INSERT INTO uploaded_image(image,texts,username,title,tim,section) VALUES ('$name','$message','$user','$title','$time','$section')"; 
 
              mysqli_query($conn,$sql);
                      
