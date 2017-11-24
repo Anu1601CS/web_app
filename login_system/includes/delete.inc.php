@@ -17,7 +17,11 @@ if(isset($_POST['submit']))
      $num2=mysqli_real_escape_string($conn ,$_POST['num2']);
 
 
+<<<<<<< HEAD
      if(!empty($num) && !empty($num2) && $num2==$num )
+=======
+     if(!empty(num) && !empty(num2) &&  num!=num2)
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
  {
     $user=$_SESSION['u_username']; 
          	  

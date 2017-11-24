@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+<?php
+session_start();
+//include 'includes/alert.inc.php';
+?>
+<?php
+
+
+//include 'includes/alert.inc.php';
+?>
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
 
 
 <!DOCTYPE html>
@@ -25,7 +37,10 @@
       margin: 15px auto;
       border: 1px solid #cbcbcb;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
     #img_div:after{
       content: "";
       display: block;
@@ -68,8 +83,11 @@
 
 <?php
 
+<<<<<<< HEAD
 session_start();
 
+=======
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
 $username=$_SESSION['u_username'];
 echo '<h1>'.$username.'</h1>';
 echo '<button><a href="upload.php">HOME</a></button>';
@@ -78,7 +96,10 @@ echo '<button><a href="delete.php">Delete Post</a></button>';
 
 
 ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
 <div id="content">
 
 <?php

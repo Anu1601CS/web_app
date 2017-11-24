@@ -7,7 +7,11 @@ session_start();
 <!DOCTYPE html>
 <html>
   <head>
+<<<<<<< HEAD
      <title> BLOG </title>
+=======
+     <title>BLOG::ANURAG</title>
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
      <script src="js/jquery-3.2.1.js"></script>
      <link rel="stylesheet" href="css/blogstyle.css" type="text/css">
      <link rel="icon" type="image/png"  href="css/image/blog.png">
@@ -15,7 +19,11 @@ session_start();
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<<<<<<< HEAD
      <script src="js/parallax.js"></script>
+=======
+     <script src="../js/parallax.js"></script>
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
      <link rel="stylesheet" media="screen" href="css/style.css">
      <meta name="Description" content=" Undergraduate Student at IIT-P:Computer Science And  Engineering">
@@ -24,6 +32,7 @@ session_start();
      <meta name="og:url" content="https://anu1601cs.github.io/my_web/blog/blog.html">
      <meta name="og:image" content="https://anu1601cs.github.io/my_web/css/image/ubuntu.jpg">
      <meta name="theme-color" content="#4d4256">
+<<<<<<< HEAD
      <meta property="og:type" content="website">	
     <style>
      code
@@ -38,6 +47,9 @@ session_start();
             
       }
     </style>   
+=======
+     <meta property="og:type" content="website">	  
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
 	  
 	  
   </head>
@@ -63,7 +75,11 @@ session_start();
 	  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="../index.html">HOME</a>
+<<<<<<< HEAD
   <a href="delete.php">MANAGE POST</a>
+=======
+  <a href="#">CONTACT</a>
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
   <a href="#">PROJECT</a>
   <a href="#">ABOUT ME</a>
            </div>
@@ -84,6 +100,7 @@ session_start();
 
      
      <div id="main-nav">
+<<<<<<< HEAD
      	<?php
 
    $user=$_SESSION['u_username'];
@@ -95,6 +112,16 @@ session_start();
        <li><a href="upload.php">Home</a></li>
        <li><a href="upload.php" target="_blank">About me</a></li>
        <li><a href="delete.php"  target="_blank">Manage Post</a></li>
+=======
+
+     <h1 id="user"><a href="../index.html">Anurag Kumar</a> </h1>
+     
+     <ul id="navagation">
+     
+       <li><a href="../index.html">Home</a></li>
+       <li><a href="../index.html" target="_blank">About me</a></li>
+       <li><a href="../index.html#footer"  target="_blank">Contact</a></li>
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
        <li><a href="https://github.com/Anu1601CS">Project</a></li>
      
      </ul>
@@ -126,7 +153,11 @@ session_start();
 
       <div class="row">
 	     
+<<<<<<< HEAD
        <div class="col-0" id="row-content" >
+=======
+       <div class="col-0" id="row-content" title="IIT-P">
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
 	              
 <?php
 
@@ -142,6 +173,7 @@ $flag=1;
   while ($row = @mysqli_fetch_array($result)) 
   { 
     $flag=0;
+<<<<<<< HEAD
       if($row['logo']!=0)
       {
     echo "<img style='width: 100px; height: 100px; position:relative;'src='uploads/images/".$row['logo']."' >";
@@ -150,6 +182,13 @@ $flag=1;
     echo "<h1 id='heading'>".$row['title']."</h1>";
     echo "<p class='descripition'>".$row['texts']."</p>";
     
+=======
+    
+    echo '#'.$row['id'];
+    echo "<h1 id='heading'>".$row['title']."</h1>";
+    echo "<p class='descripition'>".$row['texts']."</p>";
+  
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
     if($row['image']!=0)
     {  
     echo "<div id='img_div'>";
@@ -173,7 +212,35 @@ $flag=1;
 	      
 	      
               
+<<<<<<< HEAD
                                                                   
+=======
+                  <div class="col-0" id="row-content" title="IIT-P">
+                                
+                     <img style="width: 100px; height: 100px; position:relative;" src="css/image/iitp.png">
+                          <h1> <a href="https://www.iitp.ac.in/" id="heading">First Day At IIT-P</a></h1>
+                           <p class="descripition">
+                              I am feeling very excited on first day in <a class="link" href="https://www.iitp.ac.in/">IIT-P</a> ,I see that campus is so beautiful
+                               and so big.And all bulidings are madeup  in modern style type or they have very good
+                                      infrastructure.The Indian Institute of Technology Patna is an autonomous institute of education and research in science, engineering .</p>
+                                      <h1 >This picture is taken by me on diwali.</h1> 
+                                      <img style=" position:relative ;width: 100%; height: 300px; " src="css/image/iitpmyimage.jpg" title="iitp">
+                         <h1 style="font-size: 20px;display: block;padding: 10px 10px;">TAGS</h1>
+                        <a id="tags"  href="https://www.iitp.ac.in/">IIT-P</a>
+                       <a id="tags"  href="http://library.iitp.ac.in/">Read more</a>
+
+                  
+                   </div>
+
+
+
+
+
+
+
+                                    
+                                    
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
       </div>
    
    </div>
@@ -220,7 +287,11 @@ $flag=1;
 
 <!--*****************************************************-->
 
+<<<<<<< HEAD
 <script src="js/blogmain.js"></script>
+=======
+<script src="../js/blogmain.js"></script>
+>>>>>>> 22416d4ebfc34c299108176b39cf4293014c194c
 	  
 	  <script>
 function openNav() {
