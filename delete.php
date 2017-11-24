@@ -25,7 +25,7 @@ include 'includes/alert.inc.php';
 
 <h1>Delete Post</h1>
 
-<button ><a href="mypost.php" >My Post</a></button>
+<button ><a href="blog/index.php" >Home</a></button>
 
 <div id="form">
 

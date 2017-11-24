@@ -83,7 +83,7 @@ if(isset($_POST['submit']))
 
                            require 'create_dir.inc.php';
                          
-                         header("Location: ../upload.php?login=success");
+                         header("Location: ../blog/index.php?login=success");
        	   	             exit();
 
                        }
