@@ -32,7 +32,7 @@ if(isset($_POST['submit']))
             
               $_SESSION['error']=$error;
     
-             header("Location: ../index.php?login=empty");
+             header("Location: ../login.php?login=empty");
        	   	   exit();
        }
        else
@@ -50,7 +50,7 @@ if(isset($_POST['submit']))
             
               $_SESSION['error']=$error;
 
-       	   	   header("Location: ../index.php?login=invalid");
+       	   	   header("Location: ../login.php?login=invalid");
        	   	   exit();
        	   }
        	   else
@@ -64,7 +64,7 @@ if(isset($_POST['submit']))
             
                             $_SESSION['error']=$error;
 
-                             header("Location: ../index.php?login=invalid_username_and_password");
+                             header("Location: ../login.php?login=invalid_username_and_password");
        	   	                             exit();
                       } 
                       else
@@ -83,7 +83,7 @@ if(isset($_POST['submit']))
 
                            require 'create_dir.inc.php';
                          
-                         header("Location: ../blog/index.php?login=success");
+                         header("Location: ../index.php?login=success");
        	   	             exit();
 
                        }

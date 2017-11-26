@@ -8,7 +8,7 @@ form {
 
 .container {
     padding: 20px;
-    background-color: #f1f1f1;
+     background-color:transparent;    
 }
 
 input[type=text]{
@@ -18,6 +18,16 @@ input[type=text]{
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    outline: 0;
+    background: #f2f2f2;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: black;
+
     
 }
 
@@ -29,6 +39,15 @@ input[type=submit] {
     border: 1px solid #ccc;
     box-sizing: border-box;
     cursor: pointer;
+    outline: 0;
+    background: #f2f2f2;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: black;
 }
 
 input[type=checkbox] {
@@ -50,6 +69,10 @@ body{
 
 }
 
+h2{
+    color: white;
+}
+
 a{
     background-color:green;
     color: white;
@@ -57,23 +80,30 @@ a{
     padding: 15px 60px;
     cursor: pointer;
     text-decoration: none;
+    border-radius: 3px;
 }
-
-a:hover{
+a:hover
+{
     opacity: 0.8;
 }
+body
+    {
+        background-image: url("../images/header.jpg");
+    }
+
+
 
 </style>
 <body>
 
 <h2>Oops..  #Error 404 Page not found</h2>
 
-<form action="../blog/index.php">
-  <div class="container">
+<form action="../index.php">
+  <div class="container">   
     <h2>The Page You Looking For Not Found.</h2>
   </div>
 
-  <div class="container" style="background-color:white">
+  <div class="container">
     <input type="text" placeholder="Enter username..." name="id" required>
     <input type="submit" value="Search">
     
@@ -82,7 +112,7 @@ a:hover{
   
 </form>
 <br><br>
- <a href="../" id="login" >Go Back</a>&nbsp;&nbsp;&nbsp;<a href="../" id="login" >Login</a>
+ <a href="../" id="login" >Go Back</a>&nbsp;&nbsp;&nbsp;<a href="../login.php" id="login" >Login</a>
 
 </body>
 </html>

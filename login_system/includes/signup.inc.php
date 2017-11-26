@@ -25,7 +25,7 @@ if(isset($_POST['submit']))
             $_SESSION['error']=$error;
    
       
-        header("Location: ../signup.php?signup=empty");
+        header("Location: ../login.php?signup=empty");
         exit();
     }
     else
@@ -40,7 +40,7 @@ if(isset($_POST['submit']))
             $_SESSION['error']=$error;
 
 
-         	header("Location: ../signup.php?signup=invalid");
+         	header("Location: ../login.php?signup=invalid");
          	exit();
 
          }
@@ -53,7 +53,7 @@ if(isset($_POST['submit']))
             
                 $_SESSION['error']=$error;
 
-         	  header("Location: ../signup.php?signup=invalid_email=error_on_creating_account");
+         	  header("Location: ../login.php?signup=invalid_email=error_on_creating_account");
          	  exit();
 
           	}
@@ -72,7 +72,7 @@ if(isset($_POST['submit']))
                         $_SESSION['error']=$error;
 
           		 //	echo "<script>alert('Username all ready exist.')</script>";
-          		 	header("Location: ../signup.php?signup=username_taken=error_on_creating_account");
+          		 	header("Location: ../login.php?signup=username_taken=error_on_creating_account");
                      	exit();
           		 }
           		 else
@@ -92,7 +92,7 @@ if(isset($_POST['submit']))
                        $success='Account  account has been successfull created.';
                        $_SESSION['success']=$success;
 
-                      header("Location: ../signup.php?signup=success=account_has_been_successfull_created");
+                      header("Location: ../login.php?signup=success=account_has_been_successfull_created");
                        exit();
 
 
@@ -107,7 +107,7 @@ if(isset($_POST['submit']))
     }
     else
     {
-        header("Location: ../signup.php?password not confirm error on signup ");
+        header("Location: ../login.php?password not confirm error on signup ");
           exit();
 
     }

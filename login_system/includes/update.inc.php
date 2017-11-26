@@ -3,133 +3,75 @@
  * Created by Anurag (Anu1601CS) 
  *-->
 
-
-
-<!DOCTYPE html>
-<html>
-
-<head>
-<title>Password Update</title>
-
-<style>
-
-button{
-
-  cursor: pointer;
-}
-
-body
-{
-  
-  line-height: 1.5;  
-  text-align: center;
-}
-
-a{
-  text-decoration:none;
-  font-size: 20px;
-  text-align: left; 
-     color: black;
-}
-
-#forgot{
-  color: blue!important;
-  font-size: 15px;
-}
-
-
-</style>
-
-
-</head>
-
-<body>
-
-
 <?php
-
-echo '<br>';
 
 session_start();
 
 
 if(isset($_SESSION['u_username']))
-{   
+{  
 
-echo '<br>
+include 'dbh.inc.php';
 
-<button ><a style=" text-decoration: none; font-size: 20px; color: black;" href="../upload.php">HOME</a></button>
-<br>
-<br>';
-
-      
-
-	       $username=$_SESSION['u_username'];
-         $email=$_SESSION['u_email'];
-         $name=$_SESSION['u_name'];
-         
-         $facebook=$_SESSION['u_facebook'];
-         $twitter=$_SESSION['u_twitter'];
-         $linkdin=$_SESSION['u_linkdin'];
-         $website=$_SESSION['u_website'];
-     
-      echo '<span style="color:black;font-size:30px;">UPDATE</span> ';
-       echo "<br>";
-       echo "<br>";       
- 
-      echo '<form action="update.inc.php" method="POST">
-	        
-	        <input type="text" name="username" placeholder="Username" value="'.$username.'" required=""><br> 
-          <input type="text" name="name" placeholder="Name" value="'.$name.'" required=""><br>
-          <input type="text" name="email" placeholder="Email" value="'.$email.'" required=""><br>
-        
-
-          <input type="text" name="facebook" placeholder="Facebook"value="'.$facebook.'"><br> 
-          <input type="text" name="twitter" placeholder="Twitter" value="'.$twitter.'"><br>
-          <input type="text" name="linkdin" placeholder="Linkdin" value="'.$linkdin.'"><br>
-          <input type="text" name="website" placeholder="Website" value="'.$website.'"><br><br>
-        	
-          <input type="submit" name="submit" value="UPDATE">
-
-           </form>';
+if(isset($_POST['submit']))
+ {
 
 
-        if(isset($_POST['submit']))
-           {  
-           	    include 'dbh.inc.php';
 
-                $n_username=$_POST['username'];
-                $n_name=$_POST['name'];
-                $n_email=$_POST['email'];
-                $n_facebook=$_POST['facebook'];
-                $n_linkdin=$_POST['linkdin'];
-                $n_website=$_POST['website'];
-                $n_twitter=$_POST['twitter'];
+$name=@$_FILES['file']['name'];
+$size=@$_FILES['file']['size'];
+$type=@$_FILES['file']['type'];
+$tmp_name=@$_FILES['file']['tmp_name'];
 
+$ext = pathinfo($name, PATHINFO_EXTENSION);
 
- 
-             	
+$user=$_SESSION['u_username'];
 
-             	   $query="UPDATE login SET username='$n_username', name='$n_name', email='$n_email', website='$u_website',linkdin ='$u_linkdin',twitter='$u_twitter',facebook='$u_facebook' WHERE username='$username'"; 
+$user_logo='image';
 
-                           mysqli_query($conn,$query);
-                            
-                            echo "<script>alert('Updated')</script>";
-                          //  header("Location: change.inc.php?change=success");
+$extension=strtolower(substr($name, strpos($name,'.')+1));
 
-       	   	                
-       	   	                 exit();
+if($extension=='jpg' || $extension=='png' ||  $type=='jpg/png' || empty($name))
+      {  
+           
+           $user=$_SESSION['u_username'];
+           $location='../uploads/'.$user.'/';
+           
+            move_uploaded_file($tmp_name, $location.$user_logo);
+             
+                   $n_username=$_POST['username'];
+                   $n_name=$_POST['name'];
+                   $n_email=$_POST['email'];
+                   $n_facebook=$_POST['facebook'];
+                   $n_linkdin=$_POST['linkdin'];
+                   $n_website=$_POST['website'];
+                   $n_twitter=$_POST['twitter'];
+                   $n_instagram=$_POST['instagram'];
+                   $n_bio=$_POST['bio'];
 
-                            
-            }
+                $query="UPDATE login SET username='$n_username', name='$n_name', email='$n_email', website='$n_website',linkdin ='$n_linkdin',twitter='$n_twitter',facebook='$n_facebook',instagram='$n_instagram',bio='$n_bio' WHERE username='$user'"; 
 
+                   mysqli_query($conn,$query);
+                   $success='Your profile has been successfully updated.';
+                   $_SESSION['success']=$success;
+                   header("Location: ../update.php?".$success);
+          
+           
+        }
+
+     else
+     {
+            $error="Please choose a correct file type";
+            $_SESSION['error']=$error;
+            header("Location: ../update.php?".$error);
+            exit();
+      }     
+  
+ } 
 }
 else
 {
-	echo '
-       <img src="../css/image/4041.gif"><br><br>
-       <span style="color:black;font-size:50px;">Oops..#Error 404 Page not found</span> 
-  ';
+	 header("Location: error.inc.php");
 }
 
 
