@@ -63,16 +63,16 @@ include 'includes/alert.inc.php';
   <form class="forgot-form" action="includes/delete.inc.php" method="POST" >
    
     <p class="message"></p>
-    <input type="text" name="num" placeholder="Post Number.." ><br>
-    <input type="text" name="num2" placeholder="Confirm Post Number.." ><br>
-    <input type="password" name="password" placeholder="Password.." ><br>
+    <input type="text" name="num" placeholder="Post Number.." required=""><br>
+    <input type="text" name="num2" placeholder="Confirm Post Number.." required=""><br>
+    <input type="password" name="password" placeholder="Password.." required=""><br>
     <p><a id="a">* Type : I Want To Delete</a></p>
-    <input type="text" name="_text" placeholder="Type here.."><br>
+    <input type="text" name="_text" placeholder="Type here.." required=""><br>
     
     <input style="background-color:#EF3B3A;color: white" type="submit" name="submit" value="Delete">  
 <br> 
  
- <p class="message"><a id="a" href="index.php">Cancel</a></p>
+ <p class="message"><a id="a" href="index">Cancel</a></p>
  
   </form>
 

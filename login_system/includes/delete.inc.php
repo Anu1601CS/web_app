@@ -39,14 +39,14 @@ if(!empty($num) && !empty($num2) && $num2==$num )
 
                        $success='Your Article has been delete successfully.';
                        $_SESSION['success']=$success;
-                       header("Location: ../delete.php?Your Article has been delete.");
+                       header("Location: ../delete?Your Article has been delete.");
                        exit();
         }
           else
         {
             $error="Wrong Password";
             $_SESSION['error']=$error;
-            header("Location: ../delete.php?".$error);
+            header("Location: ../delete?".$error);
             exit();
         }
         }
@@ -54,7 +54,7 @@ if(!empty($num) && !empty($num2) && $num2==$num )
         {  
            $error="Wrong. Confirmation Text.";
            $_SESSION['error']=$error;
-           header("Location: ../delete.php?".$error);
+           header("Location: ../delete?".$error);
            exit();
         }
         
@@ -63,7 +63,7 @@ if(!empty($num) && !empty($num2) && $num2==$num )
       {
             $error='Please confirm. Post Number.';
             $_SESSION['error']=$error;
-            header("Location: ../delete.php?".$error);
+            header("Location: ../delete?".$error);
             exit();
 
       

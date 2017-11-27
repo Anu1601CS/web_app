@@ -9,7 +9,7 @@ session_set_cookie_params(3600);
 
 if(isset($_SESSION['u_username']))
 {
-header("Location: index.php");
+header("Location: index");
 }
 
 ?>
@@ -72,7 +72,7 @@ include 'includes/alert.inc.php';
     <input style="background-color:#EF3B3A;color: white" type="submit" name="submit" value="Send">  
 <br> 
  
- <p class="message"><a id="a" href="login.php">Back</a></p>
+ <p class="message"><a id="a" href="login">Back</a></p>
  
   </form>
 

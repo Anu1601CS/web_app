@@ -98,7 +98,7 @@ body
 
 <h2>Oops..  #Error 404 Page not found</h2>
 
-<form action="../index.php">
+<form action="../index">
   <div class="container">   
     <h2>The Page You Looking For Not Found.</h2>
   </div>
@@ -112,7 +112,7 @@ body
   
 </form>
 <br><br>
- <a href="../" id="login" >Go Back</a>&nbsp;&nbsp;&nbsp;<a href="../login.php" id="login" >Login</a>
+ <a href="../" id="login" >Go Back</a>&nbsp;&nbsp;&nbsp;<a href="../login" id="login" >Login</a>
 
 </body>
 </html>

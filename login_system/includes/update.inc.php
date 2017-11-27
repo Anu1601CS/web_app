@@ -54,7 +54,7 @@ if($extension=='jpg' || $extension=='png' ||  $type=='jpg/png' || empty($name))
                    mysqli_query($conn,$query);
                    $success='Your profile has been successfully updated.';
                    $_SESSION['success']=$success;
-                   header("Location: ../update.php?".$success);
+                   header("Location: ../update?".$success);
           
            
         }
@@ -63,7 +63,7 @@ if($extension=='jpg' || $extension=='png' ||  $type=='jpg/png' || empty($name))
      {
             $error="Please choose a correct file type";
             $_SESSION['error']=$error;
-            header("Location: ../update.php?".$error);
+            header("Location: ../update?".$error);
             exit();
       }     
   

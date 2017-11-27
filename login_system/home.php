@@ -38,7 +38,7 @@ while ($row = @mysqli_fetch_array($result))
 
 <html>
 	<head>
-		<title>Editorial by HTML5 UP</title>
+		<title>Blog | Home</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -63,18 +63,18 @@ while ($row = @mysqli_fetch_array($result))
                              if(@isset($_SESSION['u_username']))
                              {
 
-                             	 echo '<form action="includes/logout.inc.php" method="POST">
+                             	 echo '<form action="includes/logout.inc.php" method="POST" id="dex">
                                   <button style=float:right; type="submit" name="submit">Logout</button>
                                   </form>'; 
                              }
                              else
                              { 
 
-                             	echo '<form action="login.php" method="POST">
+                             	echo '<form action="login" method="POST" id="dex">
                                   <button style=float:right;margin:10px; type="submit" name="submit">Sign Up</button>
                                   </form>'; 
 
-                             	echo '<form action="login.php" method="POST">
+                             	echo '<form action="login" method="POST" id="dex">
                                   <button style=float:right;margin:10px; type="submit" name="submit">Login</button>
                                   </form>'; 
                              }
@@ -90,12 +90,12 @@ while ($row = @mysqli_fetch_array($result))
 										
 										<?php
 										echo '
-										<li><a href="'.@$tw.'" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="'.@$fb.'" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a target=_blank href="'.@$tw.'" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a target=_blank href="'.@$fb.'" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 									
-   										<li><a href="'.@$in.'" class="icon fa-instagram"><span class="label">Website</span></a></li>
-										<li><a href="'.$li.'" class="icon fa-linkedin-square"><span class="label">Linkdin</span></a></li>
-										<li><a href="'.$we.'" class="icon fa-snapchat-ghost"><span class="label">Website</span></a></li>
+   										<li><a target=_blank href="'.@$in.'" class="icon fa-instagram"><span class="label">Website</span></a></li>
+										<li><a target=_blank href="'.$li.'" class="icon fa-linkedin-square"><span class="label">Linkdin</span></a></li>
+										<li><a target=_blank href="'.$we.'" class="icon fa-snapchat-ghost"><span class="label">Website</span></a></li>
                                          ';
 										?>
 
@@ -124,7 +124,7 @@ while ($row = @mysqli_fetch_array($result))
 									<span class="image object">
 										<?php
 										$user_logo='image';
-										 echo '<img style="height:300px;width:500px;" src="uploads/'.$username.'/'.$user_logo.'"> <br>';
+										 echo '<img style="height:65%;width:80%;" src="uploads/'.$username.'/'.$user_logo.'"> <br>';
 									   ?>
 									</span>
 								</section>
@@ -179,14 +179,19 @@ while ($row = @mysqli_fetch_array($result))
 									</header>
 									<div class="posts">
 
-										  
+										 
 										<?php
-                                     
+                                          
+
+
                                         @$sql="SELECT * FROM uploaded_image WHERE username='$username'";
                                         @$result=mysqli_query($conn,$sql);
                                         $flag=0;
                                         while ($row = @mysqli_fetch_array($result)) 
                                            { 
+                                               
+                                              
+
                                               $flag=1;
                                             echo '<article>';
 
@@ -194,13 +199,22 @@ while ($row = @mysqli_fetch_array($result))
                                                {
                                             echo "<a class='image'> <img style=width:500px;height:300px; src='uploads/images/".$row['image']."' > </a>";
                                                }
-
                                             echo "<h3>".$row['title']."</h3>";
                                             echo "<p>".substr($row['texts'],0,100)."....</p>";
                                             echo '<ul class="actions"><li><a href="#" class="button">Read More</a></li></ul>';
-                                             echo "<p style=float:right>".$row['tim']."</p>";
+                                            
+                                            /*if($row['youtube']!=0)
+                                            {
+                                               echo '<ul class="actions"><li><a target=_blank href="'.$row['youtube'].'" class="button">Watch On Youtube</a></li></ul>';
+
+                                            }*/
+
+
+                                            echo "<p style=float:right>".$row['tim']."</p>";
                                             echo "<p style=float:left>No.".$row['id']."</p>";
-                                           
+                                            echo '<a href="index.php?type=edit&&post='.$row['id'].'" style=>Edit</a>';
+
+
                                             echo '</article>';
                                            }
 
@@ -236,17 +250,19 @@ while ($row = @mysqli_fetch_array($result))
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="../">Home</a></li>
+										<li><a href="index">Home</a></li>
 
                                       <?php
 
                                          if(isset($_SESSION['u_username']))
                                          {
 										   echo '
-										   <li><a href="post.php">Post</a></li>
-										   <li><a href="delete.php">Manage Post</a></li>
-										   <li><a href="update.php">Update Profile</a></li>';
+										   <li><a href="index.php?type=post">Post</a></li>
+										   <li><a href="index.php?type=delete">Manage Post</a></li>
+										   <li><a href="index.php?type=update">Update Profile</a></li>
+										   ';
 									     }
+									  
 					                	?> 
 					                	</ul>
 								</nav>

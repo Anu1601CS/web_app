@@ -10,7 +10,7 @@ session_set_cookie_params(3600);
 
 if(isset($_SESSION['u_username']))
 {
-header("Location: index.php");
+header("Location: index");
 }
 
 ?>
@@ -77,7 +77,7 @@ include 'includes/alert.inc.php';
  <br>
   
     <p class="message">Already registered? <a href="#">Sign In</a></p>
-     <p class="message">Forgot Password ? <a id="a" href="forgot.php">Forgot password</a></p>
+     <p class="message">Forgot Password ? <a id="a" href="forgot">Forgot password</a></p>
   
   </form>
 
@@ -93,13 +93,13 @@ include 'includes/alert.inc.php';
 <br>
 
     <p class="message">Not registered? <a href="#">Create an account</a></p>
-    <p class="message">Forgot Password ? <a  id="a" href="forgot.php">Forgot Password</a></p>
+    <p class="message">Forgot Password ? <a  id="a" href="forgot">Forgot Password</a></p>
   
   </form>
 
 <br>
 <br>
-<p class="message"><a id="a" href="index.php">Cancel</a></p>
+<p class="message"><a id="a" href="index">Cancel</a></p>
 
 <!--forgot-->
 </div>

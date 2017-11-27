@@ -50,11 +50,11 @@
                              else
                              { 
 
-                             	echo '<form action="login.php" method="POST">
+                             	echo '<form action="login" method="POST">
                                   <button style=float:right;margin:10px; type="submit" name="submit">Sign Up</button>
                                   </form>'; 
 
-                             	echo '<form action="login.php" method="POST">
+                             	echo '<form action="login" method="POST">
                                   <button style=float:right;margin:10px; type="submit" name="submit">Login</button>
                                   </form>'; 
                              }
@@ -239,8 +239,8 @@
                                          if(isset($_SESSION['u_username']))
                                          {
 										   echo '
-										   <li><a href="../post.php">Post</a></li>
-										   <li><a href="../delete.php">Manage Post</a></li>
+										   <li><a href="../post">Post</a></li>
+										   <li><a href="../delete">Manage Post</a></li>
 										   <li><a href="../includes/update.inc.php">Update Profile</a></li>';
 									     }
 					                	?> 

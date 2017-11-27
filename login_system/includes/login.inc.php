@@ -10,11 +10,7 @@ ini_set('session.gc_maxlifetime', 3600);
 
 // each client should remember their session id for EXACTLY 1 hour
 session_set_cookie_params(3600);
-
-
 session_start();
-
-
 
 if(isset($_POST['submit']))
 {
@@ -32,7 +28,7 @@ if(isset($_POST['submit']))
             
               $_SESSION['error']=$error;
     
-             header("Location: ../login.php?login=empty");
+             header("Location: ../login?login=empty");
        	   	   exit();
        }
        else
@@ -50,7 +46,7 @@ if(isset($_POST['submit']))
             
               $_SESSION['error']=$error;
 
-       	   	   header("Location: ../login.php?login=invalid");
+       	   	   header("Location: ../login?login=invalid");
        	   	   exit();
        	   }
        	   else
@@ -64,7 +60,7 @@ if(isset($_POST['submit']))
             
                             $_SESSION['error']=$error;
 
-                             header("Location: ../login.php?login=invalid_username_and_password");
+                             header("Location: ../login?login=invalid_username_and_password");
        	   	                             exit();
                       } 
                       else
@@ -83,7 +79,7 @@ if(isset($_POST['submit']))
 
                            require 'create_dir.inc.php';
                          
-                         header("Location: ../index.php?login=success");
+                         header("Location: ../index?login=success");
        	   	             exit();
 
                        }
@@ -97,8 +93,8 @@ if(isset($_POST['submit']))
 }
 else
 {
-	header("Location: ../index.php?login=error");
-       	   	                             exit();
+	header("Location: ../login?login=error");
+     exit();
 }
 
 

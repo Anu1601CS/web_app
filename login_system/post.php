@@ -71,13 +71,14 @@ include 'includes/alert.inc.php';
     <input type="file" name="image" multiple /><br><br>
     
     <input type="text" name="title" placeholder="Title" ><br>
+    <input type="text" name="youtube" placeholder="Youtube Link.." ><br>
     
     <textarea type="message" cols="100" rows="20" placeholder="Message.." name="message" required="" ></textarea><br><br>
 
     <input style="background-color:#EF3B3A;color: white" type="submit" name="submit" value="Post">  
 <br> 
  <br>
- <p class="message"><a id="a" href="index.php">Cancel</a></p>
+ <p class="message"><a id="a" href="index">Cancel</a></p>
  
   </form>
 
