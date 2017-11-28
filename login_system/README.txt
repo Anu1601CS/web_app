@@ -1,4 +1,4 @@
-Blog by An1601CS
+Blog by Anu1601CS
 
 Free for personal and commercial .
 
