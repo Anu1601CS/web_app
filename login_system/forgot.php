@@ -1,6 +1,11 @@
 
 
 <?php
+
+/*--
+ * Created by Anurag (Anu1601CS) 
+ */
+ 
 session_start();
 // server should keep session data for AT LEAST 1 hour
 ini_set('session.gc_maxlifetime', 3600);

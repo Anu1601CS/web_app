@@ -1,6 +1,10 @@
 <?php
 
 
+/*
+ * Created by Anurag (Anu1601CS) 
+ */
+
 session_start();
 
 
@@ -39,10 +43,7 @@ if(isset($_POST['submit']))
       $name=0;
     }
      
-    if(empty($youtube))
-    {
-      $youtube=0;
-    } 
+  
    
 
     move_uploaded_file($tmp_name, $location.$name);
@@ -62,13 +63,20 @@ if(isset($_POST['submit']))
 
 }
 
+else
+        {
+           $error='Error sorry';
+           $_SESSION['error']=$error;
+           header("Location: error.inc.php?error user ".$error);
+           exit();
+        }
+
 }
 else
 {
-  $error='You must logged in.';
-                       $_SESSION['error']=$error;
-
-                      header("Location: ../post.php?You must be logged in.");
+  
+  header("Location: ../error.inc.php?You must be logged in.");
+  exit();
 }
 
     

@@ -1,14 +1,28 @@
+
 <?php
+
+
+/*--
+ * Created by Anurag (Anu1601CS) 
+ */
+
+
 session_start();
 
 // server should keep session data for AT LEAST 1 hour
 ini_set('session.gc_maxlifetime', 3600);
+
+include_once 'includes/dbh.inc.php';
 // each client should remember their session id for EXACTLY 1 hour
 session_set_cookie_params(3600);
 if(!isset($_SESSION['u_username']))
 {
 header("Location: includes/error.inc.php?error user ");
 }
+
+@$post=mysqli_real_escape_string($conn ,$_GET['post']);
+@$no=mysqli_real_escape_string($conn ,$_GET['no']);
+
 
 
 ?>
@@ -60,15 +74,17 @@ include 'includes/alert.inc.php';
 <div class="form">
 
   <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
-  <form class="forgot-form" action="includes/delete.inc.php" method="POST" >
+ <?php
+echo'  <form class="forgot-form" action="includes/delete.inc.php?post='.$post.'" method="POST" >
    
     <p class="message"></p>
-    <input type="text" name="num" placeholder="Post Number.." required=""><br>
+  
+    <input type="text" name="num" placeholder="Post Number.." required="" value="'.$no.'"><br>
     <input type="text" name="num2" placeholder="Confirm Post Number.." required=""><br>
     <input type="password" name="password" placeholder="Password.." required=""><br>
     <p><a id="a">* Type : I Want To Delete</a></p>
-    <input type="text" name="_text" placeholder="Type here.." required=""><br>
-    
+    <input type="text" name="_text" placeholder="Type here.." required=""><br>';
+    ?>
     <input style="background-color:#EF3B3A;color: white" type="submit" name="submit" value="Delete">  
 <br> 
  

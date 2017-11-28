@@ -1,4 +1,9 @@
 <?php
+
+/*--
+ * Created by Anurag (Anu1601CS) 
+ */
+
 session_start();
 
 // server should keep session data for AT LEAST 1 hour
@@ -85,7 +90,8 @@ include 'includes/alert.inc.php';
  
  echo'<input type="file" name="image" multiple /><br><br>
     
-    <input type="text" name="title" placeholder="Title" value='.$row['title'].'><br>
+    <input type="text" name="title" placeholder="Title" value="'.htmlspecialchars($row['title']).'"><br>
+     <input type="text" name="youtube" placeholder="Youtube Link.." value="'.htmlspecialchars($row['youtube']).'"><br>
     
     <textarea type="message" cols="100" rows="20" placeholder="Message.." name="message" required="" >'.$row['texts'].'</textarea><br><br>
 

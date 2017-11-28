@@ -68,6 +68,12 @@ if($extension=='jpg' || $extension=='png' ||  $type=='jpg/png' || empty($name))
       }     
   
  } 
+ else
+ {
+     header("Location: error.inc.php");
+ }
+
+ 
 }
 else
 {

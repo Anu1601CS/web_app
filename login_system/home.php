@@ -1,6 +1,14 @@
 
 <?php
 
+/*--
+ * Created by Anurag (Anu1601CS) 
+ */
+
+if(empty($username))
+{
+	header("Location: includes/error.inc.php");
+}
 
 
 while ($row = @mysqli_fetch_array($result)) 
@@ -15,38 +23,23 @@ while ($row = @mysqli_fetch_array($result))
 @$na=$row['name'];
 @$em=$row['email'];
 @$bi=$row['bio'];
-
+	
 }
-
 
 ?>
 
-
-
 <!DOCTYPE HTML>
-<!--
-	Front End - HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<!--
-
-   Back End - Anu1601CS
-   PHP-javascript 
-
--->
-
+<!--Github : Anu1601CS-->
 <html>
 	<head>
+		
 		<title>Blog | Home</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
- 
-		
+        <link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="css/overlay.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
 	</head>
 	<body>
 
@@ -64,7 +57,7 @@ while ($row = @mysqli_fetch_array($result))
                              {
 
                              	 echo '<form action="includes/logout.inc.php" method="POST" id="dex">
-                                  <button style=float:right; type="submit" name="submit">Logout</button>
+                                  <button id="dex" style=float:right; type="submit" name="submit">Logout</button>
                                   </form>'; 
                              }
                              else
@@ -90,12 +83,13 @@ while ($row = @mysqli_fetch_array($result))
 										
 										<?php
 										echo '
-										<li><a target=_blank href="'.@$tw.'" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a target=_blank href="'.@$fb.'" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a target=_blank href="'.@$tw.'" class="icon fa-twitter"></a></li>
+										<li><a target=_blank href="'.@$fb.'" class="icon fa-facebook"></a></li>
 									
-   										<li><a target=_blank href="'.@$in.'" class="icon fa-instagram"><span class="label">Website</span></a></li>
-										<li><a target=_blank href="'.$li.'" class="icon fa-linkedin-square"><span class="label">Linkdin</span></a></li>
-										<li><a target=_blank href="'.$we.'" class="icon fa-snapchat-ghost"><span class="label">Website</span></a></li>
+   										<li><a target=_blank href="'.@$in.'" class="icon fa-instagram"></a></li>
+   										<li><a target=_blank href="'.@$we.'" class="icon fa-dribbble"></a></li>
+										<li><a target=_blank href="'.@$li.'" class="icon fa-linkedin-square"></a></li>
+									
                                          ';
 										?>
 
@@ -114,64 +108,45 @@ while ($row = @mysqli_fetch_array($result))
 
                                         </header>
 									<?php	
-										echo '<p>'.$bi.'</p>';
-										?>
+										echo '<p>'.@$bi.'</p>
+										
 										<ul class="actions">
-											<li><a href="#" class="button big">Learn More</a></li>
+											<li><a href="'.@$we.'" class="button big">Learn More</a></li>
 										</ul>
 
 									</div>
-									<span class="image object">
-										<?php
+									<span class="image object">';
+										
+									   
 										$user_logo='image';
-										 echo '<img style="height:65%;width:80%;" src="uploads/'.$username.'/'.$user_logo.'"> <br>';
+										 echo '<img style="height:65%;width:80%;" src="uploads/'.@$username.'/'.$user_logo.'"> <br>';
 									   ?>
+
 									</span>
 								</section>
 
-							<!-- Section -->
+				   		<!-- Section -->
 								<section>
-									<header class="major">
+								<!-- 	<header class="major">
 										<h2>About me!</h2>
 									</header>
 
 									<div class="features">
 									
 										<article>
-											<span class="icon fa-diamond"></span>
+											
 											<div class="content">
 												<h3>Portitor ullamcorper</h3>
 												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 											</div>
+										
 										</article>
 									
-										<article>
-											<span class="icon fa-paper-plane"></span>
-											<div class="content">
-												<h3>Sapien veroeros</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-									
-										<article>
-											<span class="icon fa-rocket"></span>
-											<div class="content">
-												<h3>Quam lorem ipsum</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-									
-										<article>
-											<span class="icon fa-signal"></span>
-											<div class="content">
-												<h3>Sed magna finibus</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-								 	</article>
+										
 
 									</div>
-								</section>
-
+								</section> -->
+ 
 							<!-- Section -->
 								<section>
 									<header class="major">
@@ -184,38 +159,78 @@ while ($row = @mysqli_fetch_array($result))
                                           
 
 
-                                        @$sql="SELECT * FROM uploaded_image WHERE username='$username'";
+                                        @$sql="SELECT * FROM uploaded_image WHERE username='$username' ORDER BY id DESC LIMIT 4";
                                         @$result=mysqli_query($conn,$sql);
                                         $flag=0;
+                                        $count=0;
                                         while ($row = @mysqli_fetch_array($result)) 
                                            { 
-                                               
-                                              
-
                                               $flag=1;
-                                            echo '<article>';
 
-                                              if($row['image']!=0)
+                                            echo '<article>';
+                                               
+                                              if($row['image']!=0 && !empty($row['youtube']))
                                                {
                                             echo "<a class='image'> <img style=width:500px;height:300px; src='uploads/images/".$row['image']."' > </a>";
                                                }
-                                            echo "<h3>".$row['title']."</h3>";
-                                            echo "<p>".substr($row['texts'],0,100)."....</p>";
-                                            echo '<ul class="actions"><li><a href="#" class="button">Read More</a></li></ul>';
+                                               else
+                                               if($row['image']!=0 && empty($row['youtube']))
+                                               {
+                                                   echo "<a class='image'> <img style=width:500px;height:300px; src='uploads/images/".$row['image']."' > </a>";
+                                               }
+                                               else
+
+                                              if($row['image']==0 && !empty($row['youtube']))
+                                                {
+                                                echo "<a target =_blank href=".$row['youtube']." class='image'> <img style=width:500px;height:300px; src='css/image/you.jpg'> </a>";
+
+                                                }
+
                                             
-                                            /*if($row['youtube']!=0)
-                                            {
-                                               echo '<ul class="actions"><li><a target=_blank href="'.$row['youtube'].'" class="button">Watch On Youtube</a></li></ul>';
+                                            echo "<h3>".$row['title']."</h3>";
+                                              
+                                               if($row['image']!=0)
+                                               {
+                                            echo "<p>".substr($row['texts'],0,100)."....</p>";
+                                               }
+                                               else
+                                               if(!empty($row['youtube']))	
+                                               {
+                                             echo "<p>".substr($row['texts'],0,100)."....</p>";
+                                               }
+                                               else
+                                               {
+                                               	   echo "<p>".substr($row['texts'],0,1000)."....</p>";
+                                               }
 
-                                            }*/
+                                               if($row['image']!=0 && !empty($row['youtube']))
+                                               {
+                                                  echo '<ul style=float:left class="actions"><li><a target =_blank href="'.$row['youtube'].'" style=margin-right:10px; class="button">Youtube</a></li></ul>';
+                                                  
+                                               }
 
+                                               if($row['image']==0 && !empty($row['youtube']))
+                                                {
+                                               echo '<ul style=float:left class="actions"><li><a target =_blank href="'.$row['youtube'].'" style=margin-right:10px; class="button">Youtube</a></li></ul>';
+                                                
+                                                }
 
-                                            echo "<p style=float:right>".$row['tim']."</p>";
-                                            echo "<p style=float:left>No.".$row['id']."</p>";
-                                            echo '<a href="index.php?type=edit&&post='.$row['id'].'" style=>Edit</a>';
+                                            echo '<ul class="actions"><li><a href="index?id='.$username.'&&post='.$row['id'].'&&type=read_more" class="button" >Read More</a></li></ul>';
+                                            
+                                             echo "<p style=float:left;color:purple>Post No.".++$count."</p>";
+                                             echo "<p style=float:right;color:purple>".$row['tim']."</p>";
 
-
+                                             if(isset($_SESSION['u_username']) && (@$_GET['id']==@$_SESSION['u_username']) || !isset($_GET['id']))
+                                             {
+                                            
+                                                 
+                                            echo '<a style=margin-left:10px;color:purple href="index?type=edit&&post='.$row['id'].'">Edit</a>
+                                                  <a style=margin-left:10px;color:purple href="index?type=delete&&post='.$row['id'].'&&no='.$count.'">Delete</a>';
+                                              }
                                             echo '</article>';
+                                                                                      
+                                              
+
                                            }
 
                                            if($flag==0)
@@ -226,8 +241,12 @@ while ($row = @mysqli_fetch_array($result))
                                             }
                                         ?>
 
+
                                </div>
+
+                              
 								</section>
+								<button id="lm">Load More Post's</button>
 
 						</div>
 					</div>
@@ -238,14 +257,30 @@ while ($row = @mysqli_fetch_array($result))
 
 							<!-- Search -->
 								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
+									<form method="get" action="index.php">
+										<input type="text" name="id"  placeholder="Search Another User.." />
 									</form>
 								</section>
 
 							<!-- Menu -->
 
 								<nav id="menu">
+
+									<p style=color:red >Beta Version 1.1</p>
+									
+									<?php
+									 
+									 if(isset($_SESSION['u_username']))
+									 { 
+								 	 echo '<p style=color:green >Logged In As : '.@$_SESSION['u_username'].'</p>';  
+									 }
+									 else
+									 {
+									 echo '<p style=color:green >Logged In As :  Viewer.</p>';  
+									 }
+
+									 ?>
+									
 									<header class="major">
 										<h2>Menu</h2>
 									</header>
@@ -258,10 +293,26 @@ while ($row = @mysqli_fetch_array($result))
                                          {
 										   echo '
 										   <li><a href="index.php?type=post">Post</a></li>
-										   <li><a href="index.php?type=delete">Manage Post</a></li>
+										  
 										   <li><a href="index.php?type=update">Update Profile</a></li>
-										   ';
+
+										   <li><form action="includes/logout.inc.php" method="POST">
+                                                <button id="mob"  type="submit" name="submit">Logout</button>
+                                                 </form>'; 
+
+										   
 									     }
+									      else
+                                        { 
+
+                             	       echo '<li><form action="login" method="POST" >
+                                          <button id="mob" type="submit" name="submit">Sign Up</button>
+                                           </form></li>';
+
+                             	       echo '<form action="login" method="POST">
+                                           <button id="mob" type="submit" name="submit">Login</button>
+                                             </form>'; 
+                                        }
 									  
 					                	?> 
 					                	</ul>
@@ -274,20 +325,24 @@ while ($row = @mysqli_fetch_array($result))
 									<header class="major">
 										<h2>Get in touch</h2>
 									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									
 									<ul class="contact">
 									<?php
-										echo '<li class="fa-envelope-o"><a mailto:'.$em.'>'.$em.'</a></li>
-										<li class="fa-phone">(000) 000-0000</li>
-										<li class="fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>';
-                                               ?>								
-									</ul>
+										echo '<li class="fa-envelope-o"><a href="mailto:'.@$em.'">'.@$em.'</a></li>';
+								         echo '
+										<li><a target=_blank href="'.@$tw.'" class="icon fa-twitter"><span style=margin-left:10px; >Twitter</span></a></li>
+										<li><a target=_blank href="'.@$fb.'" class="icon fa-facebook"><span style=margin-left:10px; >Facebook</span></a></li>
+   										<li><a target=_blank href="'.@$in.'" class="icon fa-instagram"><span style=margin-left:10px; >Instagram</span></a></li>
+   										<li><a target=_blank href="'.@$we.'" class="icon fa-dribbble"><span style=margin-left:10px; >Website</span></a></li>
+										<li><a target=_blank href="'.@$li.'" class="icon fa-linkedin-square"><span style=margin-left:10px; >Linkdin</span></a></li>
+                                              ';	
+                                     ?>
+									 </ul>
 								</section>
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+									<p class="copyright">&copy;  All rights reserved. 2017</p>
 								</footer>
 
 						</div>
@@ -295,12 +350,44 @@ while ($row = @mysqli_fetch_array($result))
 
 			</div>
 
-		<!-- Scripts -->
+     
+      	<!-- Scripts -->
+			
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+         
+   <!--Load more -->
+
+
+
+  
+
+
+      <script >
+
+
+       	$(document).ready(function(){
+          var commentcount=4;
+          
+
+          $("#lm").click(function(){
+
+          	 commentcount=commentcount+2;
+
+          	   $(".posts").load("load.php",{
+                    'commentnewcount':commentcount,
+                    'user':'<?php echo $username?>'
+                    
+                    	
+                });
+           });
+       });
+            
+       </script>
+     
 
 	</body>
 </html>

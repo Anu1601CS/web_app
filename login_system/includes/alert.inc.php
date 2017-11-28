@@ -35,6 +35,7 @@
     font-weight: bold;
     float: right;
     font-size: 30px;
+    font-weight:300; 
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;

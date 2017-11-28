@@ -1,10 +1,6 @@
 
 <!DOCTYPE HTML>
-<!--
-	Front End - HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <!--
 
    Back End - Anu1601CS
@@ -14,7 +10,7 @@
 
 <html>
 	<head>
-		<title>Editorial by HTML5 UP</title>
+		<title>Blog</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -38,45 +34,38 @@
 
 							<!-- <img id="logo" src="css/image/blog.png" alt="" /> -->
 							
-							<?php
+							
+                         
                              
-                             if(@isset($_SESSION['u_username']))
-                             {
+                             
 
-                             	 echo '<form action="includes/logout.inc.php" method="POST">
-                                  <button style=float:right; type="submit" name="submit">Logout</button>
-                                  </form>'; 
-                             }
-                             else
-                             { 
-
-                             	echo '<form action="login" method="POST">
+                                  <form action="login" method="POST">
                                   <button style=float:right;margin:10px; type="submit" name="submit">Sign Up</button>
-                                  </form>'; 
+                                  </form> 
 
-                             	echo '<form action="login" method="POST">
+                             	  <form action="login" method="POST">
                                   <button style=float:right;margin:10px; type="submit" name="submit">Login</button>
-                                  </form>'; 
-                             }
+                                  </form>
+                             
                             
 
-                             ?>
+                            
 
 							<!-- Header -->
-								<header id="header" style="width: 100%">
+								<header id="header" >
 
 									
 									<ul class="icons" >
 										
-										<?php
-										echo '
-										<li><a href="'.@$tw.'" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="'.@$fb.'" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-										<li><a href="'.@$li.'" class="icon fa-snapchat-ghost"><span class="label">Linkdin</span></a></li>
-   										<li><a href="'.@$we.'" class="icon fa-instagram"><span class="label">Website</span></a></li>
+								
+									
+										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Linkdin</span></a></li>
+   										<li><a href="#" class="icon fa-instagram"><span class="label">Website</span></a></li>
 										<li><a href="#" class="icon fa-linkedin-square"><span class="label">Instagram</span></a></li>
-                                         ';
-										?>
+                                         
+									
 
 									</ul>
 								</header>
@@ -86,13 +75,13 @@
 									<div class="content">
 										<header>
 										 
-                                                 <h1>Hello , Welcome To Blog</h1>;
+                                                 <h1>Hello , Welcome To Blog</h1>
 											   
 
                                                
 
 
-											<p>A free and fully responsive site template</p>
+										
 										</header>
 										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
 										
@@ -102,7 +91,7 @@
 
 									</div>
 									<span class="image object">
-										<img src="images/pic10.jpg" alt="" />
+										<img src="images/10.jpg" alt="" />
 									</span>
 								</section>
 
@@ -157,7 +146,7 @@
 									<div class="posts">
                                     
                                     	<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="images/1.jpg" alt="" /></a>
 											<h3>Interdum aenean</h3>
 											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 											<ul class="actions">
@@ -234,16 +223,7 @@
 									<ul>
 										<li><a href="../">Home</a></li>
 
-                                      <?php
-
-                                         if(isset($_SESSION['u_username']))
-                                         {
-										   echo '
-										   <li><a href="../post">Post</a></li>
-										   <li><a href="../delete">Manage Post</a></li>
-										   <li><a href="../includes/update.inc.php">Update Profile</a></li>';
-									     }
-					                	?> 
+                                    
 					                	</ul>
 								</nav>
                                  
@@ -254,17 +234,22 @@
 									<header class="major">
 										<h2>Get in touch</h2>
 									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									
+									
 									<ul class="contact">
-										<li class="fa-envelope-o"><a href="#">anurag.cs16@iitp.ac.in</a></li>
-										<li class="fa-phone">7376349132</li>
-										<li class="fa-home">IIT-Patna<br>Room No :204 Block: C</li>
+										<li class="fa-envelope-o"><a href="#">anuragvns1111@gmail.com</a></li>
+										<li><a target=_blank href="#" class="icon fa-twitter"><span style=margin-left:10px; >Twitter</span></a></li>
+										<li><a target=_blank href="#" class="icon fa-facebook"><span style=margin-left:10px; >Facebook</span></a></li>
+   										<li><a target=_blank href="#" class="icon fa-instagram"><span style=margin-left:10px; >Instagram</span></a></li>
+   										<li><a target=_blank href="#" class="icon fa-dribbble"><span style=margin-left:10px; >Website</span></a></li>
+										<li><a target=_blank href="#" class="icon fa-linkedin-square"><span style=margin-left:10px; >Linkdin</span></a></li>
 									</ul>
+							
 								</section>
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+									<p class="copyright">&copy; All rights reserved. 2017  </p>
 								</footer>
 
 						</div>

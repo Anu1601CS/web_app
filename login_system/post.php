@@ -13,12 +13,14 @@ header("Location: includes/error.inc.php?error user ");
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   
   <meta charset="UTF-8">
-  <title>Login Form</title>
+  <title>Post</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>

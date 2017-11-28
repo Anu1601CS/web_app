@@ -20,7 +20,7 @@ header("Location: index");
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Login Form</title>
+  <title>Post</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
