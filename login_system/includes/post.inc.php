@@ -75,7 +75,7 @@ else
 else
 {
   
-  header("Location: ../error.inc.php?You must be logged in.");
+  header("Location: error.inc.php?You must be logged in.");
   exit();
 }
 

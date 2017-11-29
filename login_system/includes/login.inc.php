@@ -12,7 +12,7 @@ ini_set('session.gc_maxlifetime', 3600);
 session_set_cookie_params(3600);
 session_start();
 
-if(isset($_POST['submit']))
+if(isset($_POST['username']) && isset($_POST['password']))
 {
         include 'dbh.inc.php';
 
@@ -28,7 +28,7 @@ if(isset($_POST['submit']))
             
               $_SESSION['error']=$error;
     
-             header("Location: ../login?login=empty");
+            // header("Location: ../login?login=empty");
        	   	   exit();
        }
        else
@@ -40,13 +40,13 @@ if(isset($_POST['submit']))
 
        	   $result_check=mysqli_num_rows($result);
 
-       	   if($result_check<1)
+       	   if($result_check!=1)
        	   {    
               $error="invalid login";
             
               $_SESSION['error']=$error;
 
-       	   	   header("Location: ../login?login=invalid");
+       	   	//   header("Location: ../login?login=invalid");
        	   	   exit();
        	   }
        	   else
@@ -60,7 +60,7 @@ if(isset($_POST['submit']))
             
                             $_SESSION['error']=$error;
 
-                             header("Location: ../login?login=invalid_username_and_password");
+                          //   header("Location: ../login?login=invalid_username_and_password");
        	   	                             exit();
                       } 
                       else

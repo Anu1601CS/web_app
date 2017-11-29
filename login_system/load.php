@@ -12,6 +12,14 @@ include_once 'includes/dbh.inc.php';
 @$username=$_POST['user'];
 
 
+if(empty($username))
+{
+	header("Location: includes/error.inc.php?error sorry d sj b f kjsbkjsb");
+}
+
+
+
+
 @$sql="SELECT * FROM uploaded_image WHERE username='$username' ORDER BY id DESC LIMIT $commentnewcount";
 @$result=mysqli_query($conn,$sql);
 $flag=0;

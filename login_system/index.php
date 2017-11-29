@@ -19,18 +19,16 @@ if(isset($_GET['id']))
 
 if(!isset($_SESSION['u_username']) && !isset($_GET['id']))
 {  
-   
-     include_once 'main.php';
+   include_once 'main.php';
 }
-
-
-
 
 @$action=mysqli_real_escape_string($conn ,$_GET['type']);
 @$post=mysqli_real_escape_string($conn ,$_GET['post']);
 @$no=mysqli_real_escape_string($conn ,$_GET['no']);
 
 $use=md5($username);
+
+/*Action*/
 
 if($action=="edit")
 {
@@ -54,13 +52,17 @@ if($action=="update")
 	 header("Location:  update?user=$use");
 }
 else
-  if($action=="read_more")
-	{
-		header("Location: read?post=$post&&id=$username&&$use");
-	}
+if($action=="read_more")
+{
+	header("Location: read?post=$post&&id=$username&&$use");
+}
+else
+if($action=="log")
+{
+   header("Location: includes/logout.inc.php?&&$use");
+}
 
-
-
+/*valiadity*/
 
 @$sql="SELECT * FROM login WHERE username='$username'";
 @$result=mysqli_query($conn,$sql);
@@ -71,10 +73,9 @@ if($result_check==1)
 {
   include_once 'home.php';
 }
-
 else
 {
-    header("Location: includes/error.inc.php?".$username);
+   @header("Location: includes/error.inc.php?&&$use");
 }
 
 

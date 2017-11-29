@@ -85,8 +85,13 @@ include 'includes/alert.inc.php';
 <?php
   
    echo'
-   
-    <input type="file" name="file"/><br><br>
+    
+    <div id="inner-input">
+      <p class="message">Profile Picture:</p>
+     <div class="div"> 
+    <input type="file" name="file" class="hide_file"/><br><br>
+    </div>
+    </div>
     <div id="inner-input">
      <p class="message">Name:</p>
     <input type="text" name="name" placeholder="Name" value="'.@$row['name'].'" ><br>

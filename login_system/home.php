@@ -12,7 +12,7 @@ if(empty($username))
 
 
 while ($row = @mysqli_fetch_array($result)) 
-{ 
+{ 	
 
 @$li=$row['linkdin'];
 @$we=$row['website'];
@@ -56,20 +56,20 @@ while ($row = @mysqli_fetch_array($result))
                              if(@isset($_SESSION['u_username']))
                              {
 
-                             	 echo '<form action="includes/logout.inc.php" method="POST" id="dex">
-                                  <button id="dex" style=float:right; type="submit" name="submit">Logout</button>
-                                  </form>'; 
+                             	 echo '
+                                  <button style=float:right;margin-top:10px; id="dex" class="log_btn right" name="submit" >Logout</button>
+                                     '; 
                              }
                              else
                              { 
 
-                             	echo '<form action="login" method="POST" id="dex">
-                                  <button style=float:right;margin:10px; type="submit" name="submit">Sign Up</button>
-                                  </form>'; 
+                             	echo '
+                                  <button style=float:right;margin-top:10px; id="dex" class="log_in_btn"  name="submit">Sign Up</button>
+                                     '; 
 
-                             	echo '<form action="login" method="POST" id="dex">
-                                  <button style=float:right;margin:10px; type="submit" name="submit">Login</button>
-                                  </form>'; 
+                             	echo '
+                                  <button style=float:right;margin:10px 0 0 10px; id="dex" class="log_in_btn"  name="submit">Login</button>
+                                     '; 
                              }
                             
 
@@ -115,11 +115,13 @@ while ($row = @mysqli_fetch_array($result))
 										</ul>
 
 									</div>
-									<span class="image object">';
+									<span >';
+										$user_logo='image';
 										
 									   
-										$user_logo='image';
-										 echo '<img style="height:65%;width:80%;" src="uploads/'.@$username.'/'.$user_logo.'"> <br>';
+										 echo '<div id="logo" > <img  src="uploads/'.@$username.'/'.$user_logo.'"><br>
+										      <p>Profile Picture</p> </div>';
+									
 									   ?>
 
 									</span>
@@ -229,9 +231,9 @@ while ($row = @mysqli_fetch_array($result))
                                               }
                                             echo '</article>';
                                                                                       
+                                             }
                                               
 
-                                           }
 
                                            if($flag==0)
                                            {  
@@ -266,7 +268,7 @@ while ($row = @mysqli_fetch_array($result))
 
 								<nav id="menu">
 
-									<p style=color:red >Beta Version 1.1</p>
+									<p style=color:red ><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;Beta Version 1.1</p>
 									
 									<?php
 									 
@@ -296,25 +298,20 @@ while ($row = @mysqli_fetch_array($result))
 										  
 										   <li><a href="index.php?type=update">Update Profile</a></li>
 
-										   <li><form action="includes/logout.inc.php" method="POST">
-                                                <button id="mob"  type="submit" name="submit">Logout</button>
-                                                 </form>'; 
+										    <li id="mob" ><a class="log_btn" >Logout</a></li>';
 
 										   
 									     }
 									      else
                                         { 
-
-                             	       echo '<li><form action="login" method="POST" >
-                                          <button id="mob" type="submit" name="submit">Sign Up</button>
-                                           </form></li>';
-
-                             	       echo '<form action="login" method="POST">
-                                           <button id="mob" type="submit" name="submit">Login</button>
-                                             </form>'; 
+                                              echo '<li id="mob" ><a class="log_in_btn" >Login</a></li>
+                                                    <li id="mob" ><a  class="log_in_btn" >Sign up</a></li>';
                                         }
+                             	       
+
 									  
 					                	?> 
+					                	<li><a style="color:red" href="mailto:anuragvns1111@gmail.com">Send Feedback</a></li>
 					                	</ul>
 								</nav>
                                  
@@ -343,6 +340,7 @@ while ($row = @mysqli_fetch_array($result))
 							<!-- Footer -->
 								<footer id="footer">
 									<p class="copyright">&copy;  All rights reserved. 2017</p>
+									<p>Designed And Made By <a href="https://anu1601cs.github.io/my_web/index">Anurag</a></p>
 								</footer>
 
 						</div>
@@ -350,26 +348,8 @@ while ($row = @mysqli_fetch_array($result))
 
 			</div>
 
-     
-      	<!-- Scripts -->
-			
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-         
-   <!--Load more -->
-
-
-
-  
-
-
-      <script >
-
-
-       	$(document).ready(function(){
+<script >
+	   $(document).ready(function(){
           var commentcount=4;
           
 
@@ -385,9 +365,17 @@ while ($row = @mysqli_fetch_array($result))
                 });
            });
        });
-            
-       </script>
+</script>
+
      
 
-	</body>
+      	<!-- Scripts -->
+			
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="js/main.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+   </body>
 </html>

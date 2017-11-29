@@ -49,13 +49,7 @@
 		-webkit-text-size-adjust: none;
 	}
 
-	#logo{
-		float: left;
-		border-radius: 50%;
-		width: 150px;
-		height: 150px;
-		position: absolute;
-	}
+	
 
 	#lm{
         
@@ -80,32 +74,50 @@
     white-space: nowrap;
 	
 	}
+    
+   #logo{
+
+      padding: 10px 20px;
+      text-align: center;
+   	
+   	
+   }
+
+   #logo img{
+   	border-radius: 100%;
+   	width: 250px;
+   	height: 250px;
+   }
 
 	#lm:hover{
 
 	    background-color: lightgrey!important;
 	}
 	
+    .right{
+ 
+    }
 
-#mob{
-	display: none;
-}
+    #mob{
+	  display: none;
+    }
 
-#dex{
-	display: block;
-}
+    #dex{
+	display: block; 
+    }
+
 	
-	@media screen and (max-width: 1000px) 
-	{
+	@media screen and (max-width: 1000px){
+     
      #dex{
      	display: none;
-     }
+    }
+    
       #mob{
      	display: block;
-     }
-    
-}
+    }
 
+    }
 
 
 	
