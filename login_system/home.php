@@ -10,7 +10,6 @@ if(empty($username))
 	header("Location: includes/error.inc.php");
 }
 
-
 while ($row = @mysqli_fetch_array($result)) 
 { 	
 
@@ -25,7 +24,7 @@ while ($row = @mysqli_fetch_array($result))
 @$bi=$row['bio'];
 	
 }
-
+     
 ?>
 
 <!DOCTYPE HTML>
@@ -39,8 +38,8 @@ while ($row = @mysqli_fetch_array($result))
         <link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="css/overlay.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
 	</head>
+	
 	<body>
 
 		<!-- Wrapper -->
@@ -51,6 +50,16 @@ while ($row = @mysqli_fetch_array($result))
                          
 
 						<div class="inner">
+                             
+                              
+                             	  <div class="al" id="popup">
+                             	  	<p>Welcome , Please Update Your Profile.<br>Click Here To Update.</p>
+                                  <!--  <span class="closebtn">&times;</span>   -->
+                                  </div>
+                              
+             
+                          
+
 							<?php
                              
                              if(@isset($_SESSION['u_username']))
@@ -111,7 +120,7 @@ while ($row = @mysqli_fetch_array($result))
 										echo '<p>'.@$bi.'</p>
 										
 										<ul class="actions">
-											<li><a href="'.@$we.'" class="button big">Learn More</a></li>
+											<li><a href="'.@$we.'" class="button">Learn More</a></li>
 										</ul>
 
 									</div>
@@ -367,6 +376,41 @@ while ($row = @mysqli_fetch_array($result))
        });
 </script>
 
+<script >
+	$(document).ready(function() {
+    var isshow = localStorage.getItem('<?php echo $username?>');
+    if (isshow== null) {
+        localStorage.setItem('<?php echo $username?>', 1);
+
+        $('#popup').show();
+    }
+});
+</script>
+
+<script >
+	      $(document).ready(function(){
+
+       
+        $(".log_btn").click(function(){
+                    
+          $.post("includes/logout.inc.php",
+           {
+             submit: "lo"
+           },
+          function(data,status){
+
+        	      if(status=="success")
+        	      {
+                     window.location.href="index"; 
+                  }
+                     
+              });
+                   
+            });
+        });
+          
+</script>
+
      
 
       	<!-- Scripts -->
@@ -375,7 +419,11 @@ while ($row = @mysqli_fetch_array($result))
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
 			<script src="js/main.js"></script>
+			
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+  
+
    </body>
 </html>

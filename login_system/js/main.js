@@ -1,4 +1,6 @@
-
+$('.message a').click(function(){
+   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
 
        
       
@@ -67,42 +69,64 @@
         });
  
  /*sign up*/
-/*
-    $(document).ready(function(){
 
-        $(".sign_btn").click(function(){
+
+
+var close = document.getElementsByClassName("al");
+var i;
+
+for (i = 0; i < close.length; i++) {
+    close[i].onclick = function(){
+        var div = this;
+        div.style.opacity = "0";
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+    }
+}
+
+
+ $(document).ready(function(){
+       
+        $(".al").click(function(){
+
+           
+            window.open('update', '_blank');
+              
+              });
             
-            var username=$("#s_username").val();
-            var name=$("#s_name").val();        
-            var email=$("#s_email").val();
-            var password=$("#s_password").val();
-            var confirm_password=$("#s_c_password").val();
-            var security=$("#s_security").val();
-            var submit="submit";
+  });
 
-          $.post("includes/signup.inc.php",
-           {
-             username:username,
-             password:password,
-             email:email,
-             password:password,
-             confirm_password:confirm_password,
-             security:security,
-             submit:submit
+   /*commit*/
 
+    
+  
+       $(document).ready(function(){
+
+        $(".com_btn").click(function(){
+             
+             
+           
+            var text=$("#text").val();        
+            var id=<?php echo $post ?>;
+            
+            
+          $.post("includes/commit.inc.php",
+           { 
+
+             text:text,
+             id:id 
+             
            },
 
           function(data,status){
 
                 if(status=="success")
                 {
-                    /* window.location.href="index"; 
-                  }
+                     window.location.href="read?post=<?php echo$post ?>&&id=<?php echo $username?>&&<?php echo md5($username);?>"; 
+                }
                      
-              });
+               });
                    
             });
-        });
-*/
+        });  
 
-
+         

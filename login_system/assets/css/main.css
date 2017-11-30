@@ -120,6 +120,28 @@
     }
 
 
+
+.al {
+    text-align: center;
+    background:rgba(255, 0, 0, 0.6);
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+    
+.al p{
+
+	padding:10px; 
+	font-size: 20px;
+
+}
+
+
 	
 
 /* Box Model */

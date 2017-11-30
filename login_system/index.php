@@ -25,7 +25,8 @@ if(!isset($_SESSION['u_username']) && !isset($_GET['id']))
 @$action=mysqli_real_escape_string($conn ,$_GET['type']);
 @$post=mysqli_real_escape_string($conn ,$_GET['post']);
 @$no=mysqli_real_escape_string($conn ,$_GET['no']);
-
+@$p=mysqli_real_escape_string($conn ,$_GET['p']);
+@$us=mysqli_real_escape_string($conn ,$_GET['us']);
 $use=md5($username);
 
 /*Action*/
@@ -60,6 +61,11 @@ else
 if($action=="log")
 {
    header("Location: includes/logout.inc.php?&&$use");
+}
+else
+if($action=="cd")
+{
+   header("Location: includes/delete_c.inc.php?&&post=$p&&no=$no&&us=$us&&$use");
 }
 
 /*valiadity*/

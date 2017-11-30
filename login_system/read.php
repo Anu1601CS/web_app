@@ -55,10 +55,92 @@ else
 		<?php echo '<title>'.$name.'</title>'?>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/readmain.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+ <script >
+    
+    $(document).ready(function(){
+              
+           var count=6;
+
+	  	  $("#lm").click(function(){
+
+	  	  	     count=count+3;
+
+                 $("#pp").load("readload.php",{
+                    'commentnewcount':count,
+                    'user':'<?php echo $username?>'
+                    
+                });
+    	   });
+               
+	  });
+</script>
+
+
+ <script >
+    
+    $(document).ready(function(){
+              
+           var count=3;
+           
+
+	  	  $("#co_lm").click(function(){
+
+	  	  	     count=count+3;
+
+                 $("#co").load("cload.php",{
+                    'count':count,
+                    'user':'<?php echo $username?>',
+                    'post':'<?php echo $post?>'
+                    
+                    
+                });
+    	   });
+               
+	  });
+</script>
+
+<script >
+	       $(document).ready(function(){
+
+        $(".com_btn").click(function(){
+             
+             
+           
+            var text=$("#text").val();        
+            var id=<?php echo $post ?>;
+           
+            
+          $.post("includes/commit.inc.php",
+           { 
+
+             text:text,
+             id:id,
+             
+             
+           },
+
+          function(data,status){
+
+                if(status=="success")
+                {
+                     window.location.href="read?post=<?php echo$post ?>&&id=<?php echo $username?>&&<?php echo md5($username);?>"; 
+                }
+                     
+               });
+                   
+            });
+        });  
+</script>
+
+
+         
+
 	</head>
 	<body>
              
@@ -88,7 +170,7 @@ else
 							     	</header>';
 								
 								    if($row['image']!=0)  
-							        echo 	'<a href="#" class="image featured"><img src=uploads/images/'.$row['image'].' /></a>';
+							        echo 	'<a href="uploads/images/'.$row['image'].'" class="image featured"><img src=uploads/images/'.$row['image'].' /></a>';
 								
 							    	echo '
 								    <p>'.$row['texts'].'</p>';
@@ -105,19 +187,61 @@ else
                                      ?>
                                      	
                           </article>
+                            
+                                
+                            	<input type="text" name="commit" placeholder="Commit Your Comment" id="text" required>
+                            	  <br>
+                            	<button class="com_btn" >Commit</button> 
+                            	 
+                                   <br>
+                                   
+                                   <hr>
+                                  <h1 style="text-align: center;color:red">Post Comments	</h1>	
+                             <article id="co">
+
+                            		<?php
+
+								@$sql="SELECT * FROM commits WHERE post='$post' ORDER BY id DESC LIMIT 3";
+                                      @$result=mysqli_query($conn,$sql);
+                                     
+
+                                  while ($row = @mysqli_fetch_array($result)) 
+                                     {
+								echo '
+									
+										         <a href="index?p='.$row['id'].'&type=cd&&no='.$post.'&&us='.$username.'" style=float:right;font-size:30px;>x</a>	
+											 
+                                                <h3 style="	color:red" >User : '.$row['username'].'</h3>
+												<p style =margin:0!important;><b>Comment</b> : '	.$row['texts'].'</p>
+												<p>'.$row['tim'].'</p>
+											     
+
+										
+										  <hr>
+									    ';	
+								     }
+							
+                                  ?>
+                            		
+                             </article>
+
+                                  <button id="co_lm">Load More Comments</button>
+                           
+                                
+
 					</div>
 
 				<!-- Sidebar -->
 					<section id="sidebar">
 
 						<!-- Posts List -->
-							<section>
+							<section id="pp">
 
 								<h4 style="color: red">Other Post</h4>
 
 								<?php
 
-								@$sql="SELECT * FROM uploaded_image WHERE username='$username' ORDER BY id DESC ";
+								@$sql="SELECT * FROM uploaded_image WHERE username='$username' ORDER BY id DESC LIMIT 6";
                                       @$result=mysqli_query($conn,$sql);
                                      
 
@@ -136,7 +260,15 @@ else
 								     }
 							
                                   ?>
+                                   
+                                   <br>
+                                 
+                          <button id="lm">Load More Post's</button>
+
+							
 							</section>
+
+						
 
 						<!-- About -->
 							<section class="blurb">
@@ -178,7 +310,7 @@ else
 							</section>
 
 					</section>
-					 
+			
 
 			</div>
     
@@ -188,6 +320,17 @@ else
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="js/main.js"></script>
+  
+ 
+
+       
+
+
+
+
+
+
 
 	</body>	
 </html>

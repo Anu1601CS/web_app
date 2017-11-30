@@ -39,7 +39,7 @@ if($extension=='jpg' || $extension=='png' ||  $type=='jpg/png' || empty($name))
            
             move_uploaded_file($tmp_name, $location.$user_logo);
              
-                   $n_username=$_POST['username'];
+                  
                    $n_name=$_POST['name'];
                    $n_email=$_POST['email'];
                    $n_facebook=$_POST['facebook'];
@@ -49,7 +49,7 @@ if($extension=='jpg' || $extension=='png' ||  $type=='jpg/png' || empty($name))
                    $n_instagram=$_POST['instagram'];
                    $n_bio=$_POST['bio'];
 
-                $query="UPDATE login SET username='$n_username', name='$n_name', email='$n_email', website='$n_website',linkdin ='$n_linkdin',twitter='$n_twitter',facebook='$n_facebook',instagram='$n_instagram',bio='$n_bio' WHERE username='$user'"; 
+                   $query="UPDATE login SET  name='$n_name', email='$n_email', website='$n_website',linkdin ='$n_linkdin',twitter='$n_twitter',facebook='$n_facebook',instagram='$n_instagram',bio='$n_bio' WHERE username='$user'"; 
 
                    mysqli_query($conn,$query);
                    $success='Your profile has been successfully updated.';

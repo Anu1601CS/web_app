@@ -117,8 +117,35 @@ include 'includes/alert.inc.php';
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    <script  src="js/index.js"></script>
+    <!-- <script  src="js/index.js"></script> -->
     <script  src="js/main.js"></script>
+
+    <script >
+          $(document).ready(function(){
+
+        $(".log_in_sub_btn").click(function(){
+            
+            var username=$("#username").val();
+            var password=$("#password").val();        
+
+          $.post("includes/login.inc.php",
+           {
+             username:username,
+             password:password 
+           },
+
+          function(data,status){
+
+                if(status=="success")
+                {
+                    
+                  }
+                     
+              });
+                   
+            });
+        });
+    </script>
 
 </body>
 

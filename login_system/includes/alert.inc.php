@@ -16,8 +16,9 @@
     opacity: 1;
     transition: opacity 0.6s;
     margin-bottom: 15px;
-     width: 100%;
-
+    width: 100%;
+    border-radius: 5px;
+    
 
 }
 
@@ -25,9 +26,9 @@
   font-size: 20px;
 }
 
-.alert.success {background: rgba(111, 220, 96, 0.7);}
+.alert.success {background: rgba(111, 220, 96, 0.8);}
 .alert.info {background-color: #2196F3;}
-.alert.warning {background-color: #ff9800;}
+.alert.warning {background-color: red;}
 
 .closebtn {
     margin-left: 50px;
@@ -36,14 +37,15 @@
     float: right;
     font-size: 30px;
     font-weight:300; 
-    line-height: 20px;
+    line-height: 15px;
     cursor: pointer;
     transition: 0.3s;
     z-index: 100;
+
 }
 
 .closebtn:hover {
-    color: black;
+    color: red;
 }
 
 </style>

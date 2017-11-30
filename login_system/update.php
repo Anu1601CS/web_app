@@ -33,6 +33,7 @@ $row = @mysqli_fetch_array($result);
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/update_style.css">
 
 <style >
@@ -71,6 +72,13 @@ include 'includes/alert.inc.php';
 
 <div class="form">
 
+  <div id="hom" class="clearfix">
+
+<a class="left"  title="Home" href="index"><i class="fa fa-home"></i></a>
+<a class="right" title="Help" href="index?id=Help"><i class="material-icons">help_outline</i></a> 
+
+</div>
+
   <div class="thumbnail">
   
     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/>
@@ -98,7 +106,7 @@ include 'includes/alert.inc.php';
     </div>
     <div id="inner-input">
      <p class="message">Username:</p>
-    <input type="text" name="username" placeholder="Username" value="'.@$row['username'].'"><br>
+    <input style=color:grey type="text" name="username" disabled placeholder="Username" value="'.@$row['username'].'"><br>
     </div>
     <div id="inner-input">
      <p class="message">Email:</p>    

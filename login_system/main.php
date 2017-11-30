@@ -36,16 +36,11 @@
 							
 							
                          
-                             
+                               <button style=float:right;margin-top:10px; id="dex" class="log_in_btn"  name="submit">Sign Up</button>
+                                <button style=float:right;margin:10px 0 0 10px; id="dex" class="log_in_btn"  name="submit">Login</button>
                              
 
-                                  <form action="login" method="POST">
-                                  <button style=float:right;margin:10px; type="submit" name="submit">Sign Up</button>
-                                  </form> 
-
-                             	  <form action="login" method="POST">
-                                  <button style=float:right;margin:10px; type="submit" name="submit">Login</button>
-                                  </form>
+                                                                   
                              
                             
 
@@ -209,8 +204,8 @@
 
 							<!-- Search -->
 								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
+									<form method="get" action="index?">
+										<input type="text" name="id" id="id" placeholder="Search" />
 									</form>
 								</section>
 
@@ -221,7 +216,10 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="../">Home</a></li>
+										<li><a href="index">Home</a></li>
+
+										            <li id="mob" ><a  href="login" class="log_in_btn" >Login</a></li>
+                                                    <li id="mob" ><a  href="login" class="log_in_btn" >Sign up</a></li>
 
                                     
 					                	</ul>
@@ -263,6 +261,19 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="js/main.js"></script>
+			<script >
+				 $(document).ready(function(){
+       
+               $(".log_in_btn").click(function(){
+
+        	    window.location.href="login";
+                });
+
+                    
+              });
+          
+			</script>
 
 	</body>
 </html>

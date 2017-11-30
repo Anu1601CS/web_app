@@ -32,12 +32,13 @@ header("Location: includes/error.inc.php?error user ");
 <head>
   
   <meta charset="UTF-8">
-  <title>Login Form</title>
+  <title>Delete Post</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/sign_style.css">
 
 <style >
@@ -45,11 +46,40 @@ header("Location: includes/error.inc.php?error user ");
 body
   {background-image: url("images/header.jpg");}
 
-#a{
+
+  #a{
     color: #EF3B3A;
     text-decoration: none;
     font-size: 15px;
   }
+
+  a{
+    text-decoration: none;
+    color: red;
+
+  }
+
+ 
+ .clearfix::before {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+ #hom{
+  padding: 0 0 20px 0;
+  text-align: left;
+    font-size: 30px;
+  
+ }
+
+.right{
+   right: 20px;
+   position: absolute;
+   font-size: 30px!important;
+}
+
 
  </style>
 
@@ -72,6 +102,14 @@ include 'includes/alert.inc.php';
 </div>
 
 <div class="form">
+
+    <div id="hom" class="clearfix">
+
+<a class="left"  title="Home" href="index"><i class="fa fa-home"></i></a>
+<a class="right" title="Help" href="index?id=Help"><i class="material-icons">help_outline</i></a> 
+
+</div>
+
 
   <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
  <?php
