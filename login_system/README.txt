@@ -12,9 +12,6 @@ action.
 
 Credits:
 
-	Demo Images:
-		Unsplash (unsplash.com)
-
 	Icons:
 		Font Awesome (fortawesome.github.com/Font-Awesome)
 
@@ -23,4 +20,5 @@ Credits:
 		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
 		Misc. Sass functions (@HugoGiraudel)
 		Respond.js (j.mp/respondjs)
+		html5up.net | @ajlkn
 		Skel (skel.io)
