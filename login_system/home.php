@@ -38,6 +38,8 @@ while ($row = @mysqli_fetch_array($result))
         <link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="css/overlay.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="js/main.js"></script>
+		
 	</head>
 	
 	<body>
@@ -94,10 +96,10 @@ while ($row = @mysqli_fetch_array($result))
 										echo '
 										<li><a target=_blank href="'.@$tw.'" class="icon fa-twitter"></a></li>
 										<li><a target=_blank href="'.@$fb.'" class="icon fa-facebook"></a></li>
-									
    										<li><a target=_blank href="'.@$in.'" class="icon fa-instagram"></a></li>
    										<li><a target=_blank href="'.@$we.'" class="icon fa-dribbble"></a></li>
 										<li><a target=_blank href="'.@$li.'" class="icon fa-linkedin-square"></a></li>
+									
 									
                                          ';
 										?>
@@ -116,7 +118,10 @@ while ($row = @mysqli_fetch_array($result))
 											   ?>
 
                                         </header>
-									<?php	
+									<?php
+                                       
+                                       $uimg=strtoupper($username);
+
 										echo '<p>'.@$bi.'</p>
 										
 										<ul class="actions">
@@ -128,7 +133,7 @@ while ($row = @mysqli_fetch_array($result))
 										$user_logo='image';
 										
 									   
-										 echo '<div id="logo" > <img  src="uploads/'.@$username.'/'.$user_logo.'"><br>
+										 echo '<div id="logo" > <img  src="uploads/'.@$uimg.'/'.$user_logo.'"><br>
 										      <p>Profile Picture</p> </div>';
 									
 									   ?>
@@ -387,6 +392,18 @@ while ($row = @mysqli_fetch_array($result))
 });
 </script>
 
+<script>
+	      $(document).ready(function(){
+       
+        $(".log_in_btn").click(function(){
+
+        	window.location.href="login";
+            });
+
+                    
+        });
+</script>
+
 <script >
 	      $(document).ready(function(){
 
@@ -420,7 +437,7 @@ while ($row = @mysqli_fetch_array($result))
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-			<script src="js/main.js"></script>
+			
 			
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
   

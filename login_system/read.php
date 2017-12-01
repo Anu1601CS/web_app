@@ -106,36 +106,49 @@ else
 </script>
 
 <script >
-	       $(document).ready(function(){
+  
+  $(document).ready(function(){
+
+	 var count=1;
 
         $(".com_btn").click(function(){
              
-             
-           
             var text=$("#text").val();        
             var id=<?php echo $post ?>;
-           
-            
+
+            if(text=="")
+            {
+            	window.alert("Please Fill Input Field.");
+            }
+             
           $.post("includes/commit.inc.php",
            { 
 
              text:text,
              id:id,
-             
-             
            },
-
+             
           function(data,status){
 
                 if(status=="success")
                 {
-                     window.location.href="read?post=<?php echo$post ?>&&id=<?php echo $username?>&&<?php echo md5($username);?>"; 
+                     $("#text").val("");
+                    
+                     count=count+1; 
+
+                     $("#co").load("cload.php",{
+                    'count':count,
+                    'user':'<?php echo $username?>',
+                    'post':'<?php echo $post?>'
+             
+                     });
                 }
-                     
-               });
+           
+           });
                    
-            });
-        });  
+       });
+   });
+
 </script>
 
 
@@ -209,15 +222,15 @@ else
                                      {
 								echo '
 									
-										         <a href="index?p='.$row['id'].'&type=cd&&no='.$post.'&&us='.$username.'" style=float:right;font-size:30px;>x</a>	
-											 
+										        <a href="index?p='.$row['id'].'&type=cd&&no='.$post.'&&us='.$username.'" style=float:right;font-size:30px;>x</a>	
                                                 <h3 style="	color:red" >User : '.$row['username'].'</h3>
 												<p style =margin:0!important;><b>Comment</b> : '	.$row['texts'].'</p>
 												<p>'.$row['tim'].'</p>
+										        <hr>
+											 
 											     
 
 										
-										  <hr>
 									    ';	
 								     }
 							

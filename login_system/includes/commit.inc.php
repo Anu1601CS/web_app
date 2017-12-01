@@ -27,7 +27,7 @@ if( isset($_POST['id']) && isset($_POST['text']) && !empty($_POST['text']))
 
              mysqli_query($conn,$sql);
                      
-                      header("Location: ../read.php?post=$id&&id=$username");
+                     // header("Location: ../read.php?post=$id&&id=$username");
                        exit();
                        
                        
@@ -36,13 +36,6 @@ if( isset($_POST['id']) && isset($_POST['text']) && !empty($_POST['text']))
 
 }
 
-else
-        {
-           $error='Error sorry';
-           $_SESSION['error']=$error;
-           header("Location: error.inc.php?error user ".$error);
-           exit();
-        }
 
 }
 else

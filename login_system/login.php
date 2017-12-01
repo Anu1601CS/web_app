@@ -20,7 +20,7 @@ header("Location: index");
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Post</title>
+  <title>Login | Sign Up</title>
 
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
@@ -117,7 +117,7 @@ include 'includes/alert.inc.php';
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    <!-- <script  src="js/index.js"></script> -->
+    <script  src="js/index.js"></script> 
     <script  src="js/main.js"></script>
 
     <script >

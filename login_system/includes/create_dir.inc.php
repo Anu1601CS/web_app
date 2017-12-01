@@ -8,6 +8,7 @@ echo $current_dir;
 
 $user=$_SESSION['u_username'];
 
+$user=strtoupper($user);
 
 if(!is_dir($current_dir.'/uploads/'.$user))
 {
