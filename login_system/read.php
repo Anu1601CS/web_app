@@ -61,6 +61,9 @@ else
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+<!--Script -->
+		
  <script >
     
     $(document).ready(function(){
@@ -79,10 +82,7 @@ else
     	   });
                
 	  });
-</script>
 
-
- <script >
     
     $(document).ready(function(){
               
@@ -103,9 +103,7 @@ else
     	   });
                
 	  });
-</script>
 
-<script >
   
   $(document).ready(function(){
 
@@ -168,36 +166,40 @@ else
 						<!-- Post -->
 							<article class="post">
 
-                              <?php
-                                   echo '	<header>
+                              	<?php
+                                   
+                                   echo '<header>
 
-									<div class="title">
-										<h3 style=color:red>'.$row['title'].'</h3>
+											<div class="title">
+											<h3 style=color:red>'.$row['title'].'</h3>
+											</div>
 										
-									</div>
+											<div class="meta">
+											<time class="published" >Published : '.$row['tim'].'</time>
+											<a href="#" class="author"><span class="name">By User : '.$row1['name'].'</span></a>
+											</div>
+							     		</header>';
 
-									<div class="meta">
-										<time class="published" >Published : '.$row['tim'].'</time>
-										<a href="#" class="author"><span class="name">By User : '.$row1['name'].'</span></a>
-									</div>
-							     	</header>';
 								
-								    if($row['image']!=0)  
-							        echo 	'<a href="uploads/images/'.$row['image'].'" class="image featured"><img src=uploads/images/'.$row['image'].' /></a>';
+								    		if($row['image']!=0)  
+							        		echo '<a href="uploads/images/'.$row['image'].'" class="image featured"><img src=uploads/images/'.$row['image'].' /></a>';
+								   			echo '<p>'.$row['texts'].'</p>';
 								
-							    	echo '
-								    <p>'.$row['texts'].'</p>';
+		                                    if(!empty($row['youtube']))
+		                                     { 
+		                                	   echo '<ul class="actions">
+											       <li><a href="'.$row['youtube'].'" class="button">Youtube</a></li>
+										           </ul>';
+						                     }
                                 
-                                    if(!empty($row['youtube']))
-                                     { 
-                                	   echo '<ul class="actions">
-									       <li><a href="'.$row['youtube'].'" class="button">Youtube</a></li>
-								           </ul>';
-                                     }
+                              	?>
+                             		<!-- <ul class="stats">
+										
+										 <a href="#" title="Total Likes" class="icon fa-heart">28</a>&nbsp;&nbsp;&nbsp;&nbsp;
+										 <a href="#" title="Total Commit" class="icon fa-comment"></a>
+									</ul>
 
-
-							   
-                                     ?>
+							    -->
                                      	
                           </article>
                             
@@ -209,32 +211,36 @@ else
                                    <br>
                                    
                                    <hr>
-                                  <h1 style="text-align: center;color:red">Post Comments	</h1>	
+                                  <h1 style="text-align: center;color:red">Comments	</h1>	
                              <article id="co">
 
-                            		<?php
+                            <?php
 
-								@$sql="SELECT * FROM commits WHERE post='$post' ORDER BY id DESC LIMIT 3";
-                                      @$result=mysqli_query($conn,$sql);
+							      @$sql="SELECT * FROM commits WHERE post='$post' ORDER BY id DESC LIMIT 3";
+                                  @$result=mysqli_query($conn,$sql);
                                      
 
                                   while ($row = @mysqli_fetch_array($result)) 
                                      {
-								echo '
-									
-										        <a href="index?p='.$row['id'].'&type=cd&&no='.$post.'&&us='.$username.'" style=float:right;font-size:30px;>x</a>	
-                                                <h3 style="	color:red" >User : '.$row['username'].'</h3>
+								         
+								               	            
+                                        if($row['username']==$_SESSION['u_username'])
+                                         {      
+										  echo '<a href="index?p='.$row['id'].'&type=cd&&no='.$post.'&&us='.$username.'" style=float:right;font-size:30px;>x</a>';
+                                         }
+
+                                          echo '<h3 style="	color:red" >User : '.$row['username'].'</h3>
 												<p style =margin:0!important;><b>Comment</b> : '	.$row['texts'].'</p>
 												<p>'.$row['tim'].'</p>
-										        <hr>
+										        <hr>';
 											 
-											     
-
-										
-									    ';	
 								     }
 							
-                                  ?>
+                             ?>
+											     
+                           
+										
+									    
                             		
                              </article>
 
@@ -257,9 +263,11 @@ else
 								@$sql="SELECT * FROM uploaded_image WHERE username='$username' ORDER BY id DESC LIMIT 6";
                                       @$result=mysqli_query($conn,$sql);
                                      
-
+                                    
                                   while ($row = @mysqli_fetch_array($result)) 
                                      {
+                                     	
+
 								echo '<ul class="posts">
 									<li>
 										<article>

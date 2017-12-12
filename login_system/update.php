@@ -136,11 +136,16 @@ include 'includes/alert.inc.php';
      <p class="message">About You:</p>
     <textarea type="message" cols="50" rows="10" placeholder="Biodata.." name="bio"  >'.@$row['bio'].'</textarea><br><br>
     </div>
+    <div id="inner-input">
+     <p class="message" style=color:red> *Enter Your Password To Save Changes.</p>
+    <input type="password" name="password" placeholder="Password.." ><br>
+     </div> 
+
 
     <input style="background-color:#EF3B3A;color: white" type="submit" name="submit" value="Update">  
-<br> 
- <br>
- <p class="message"><a id="a" href="index">Cancel</a></p>';
+    <br> 
+    <br>
+    <p class="message"><a id="a" href="index">Cancel</a></p>';
 
 ?> 
   </form>

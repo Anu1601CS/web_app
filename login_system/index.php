@@ -1,7 +1,17 @@
-
-
-
 <?php
+
+
+/**
+ 
+All copywrite are reserved . 
+
+
+**/
+
+
+
+
+
 
 session_start();
 

@@ -35,6 +35,7 @@ if($extension=='jpg' || $extension=='png' ||  $type=='jpg/png' || empty($name))
       {  
            
            $user=$_SESSION['u_username'];
+           
            $location='../uploads/'.$user.'/';
            
             move_uploaded_file($tmp_name, $location.$user_logo);
@@ -48,14 +49,33 @@ if($extension=='jpg' || $extension=='png' ||  $type=='jpg/png' || empty($name))
                    $n_twitter=$_POST['twitter'];
                    $n_instagram=$_POST['instagram'];
                    $n_bio=$_POST['bio'];
+                   $pass=$_POST['password'];
+                   $pass=md5($pass);
 
-                   $query="UPDATE login SET  name='$n_name', email='$n_email', website='$n_website',linkdin ='$n_linkdin',twitter='$n_twitter',facebook='$n_facebook',instagram='$n_instagram',bio='$n_bio' WHERE username='$user'"; 
 
+                   @$sql="SELECT * FROM login WHERE username='$user'";
+                   @$result=mysqli_query($conn,$sql);
+                   $row = @mysqli_fetch_array($result);
+
+                   
+
+                    
+                   if($row['password']==$pass)
+                   {
+                   $query="UPDATE login SET  name='$n_name', email='$n_email', website='$n_website',linkdin ='$n_linkdin',twitter='$n_twitter',facebook='$n_facebook',instagram='$n_instagram',bio='$n_bio' WHERE username='$user'";
                    mysqli_query($conn,$query);
                    $success='Your profile has been successfully updated.';
                    $_SESSION['success']=$success;
                    header("Location: ../update?".$success);
-          
+                   }
+                   else
+                   {
+
+                   	 $error='Wrong Password';
+                   $_SESSION['error']=$error;
+                   header("Location: ../update?".$error);
+
+                   }
            
         }
 

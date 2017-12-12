@@ -65,26 +65,23 @@ while ($row = @mysqli_fetch_array($result))
 							<?php
                              
                              if(@isset($_SESSION['u_username']))
-                             {
-
-                             	 echo '
-                                  <button style=float:right;margin-top:10px; id="dex" class="log_btn right" name="submit" >Logout</button>
-                                     '; 
+                             { 
+                             	echo '<button style=float:right;margin-top:10px; id="dex" class="log_btn right" name="submit" >Logout</button>'; 
                              }
                              else
                              { 
-
-                             	echo '
-                                  <button style=float:right;margin-top:10px; id="dex" class="log_in_btn"  name="submit">Sign Up</button>
-                                     '; 
-
-                             	echo '
-                                  <button style=float:right;margin:10px 0 0 10px; id="dex" class="log_in_btn"  name="submit">Login</button>
-                                     '; 
+                                 echo ' <button style=float:right;margin-top:10px; id="dex" class="log_in_btn"  name="submit">Sign Up</button>';
+                                 echo '  <button style=float:right;margin:10px 0 0 10px; id="dex" class="log_in_btn"  name="submit">Login</button>';
+                                     
                              }
-                            
 
                              ?>
+
+                             	
+                             	
+                                     
+                            
+
 
 							<!-- Header -->
 								<header id="header">
@@ -93,16 +90,16 @@ while ($row = @mysqli_fetch_array($result))
 									<ul class="icons">
 										
 										<?php
-										echo '
-										<li><a target=_blank href="'.@$tw.'" class="icon fa-twitter"></a></li>
+										
+								  echo '<li><a target=_blank href="'.@$tw.'" class="icon fa-twitter"></a></li>
 										<li><a target=_blank href="'.@$fb.'" class="icon fa-facebook"></a></li>
    										<li><a target=_blank href="'.@$in.'" class="icon fa-instagram"></a></li>
    										<li><a target=_blank href="'.@$we.'" class="icon fa-dribbble"></a></li>
-										<li><a target=_blank href="'.@$li.'" class="icon fa-linkedin-square"></a></li>
+										<li><a target=_blank href="'.@$li.'" class="icon fa-linkedin-square"></a></li>';
 									
-									
-                                         ';
 										?>
+									
+                                         
 
 									</ul>
 								</header>
@@ -112,12 +109,12 @@ while ($row = @mysqli_fetch_array($result))
 									<div class="content">
 										<header>
 											   <?php
-                                                 
-                                                // $username=$_SESSION['u_name']; 
                                                  echo "<h1>Hi, I'm ".@$na."</h1>";
 											   ?>
-
                                         </header>
+                                                 
+                                               
+
 									<?php
                                        
                                        $uimg=strtoupper($username);
@@ -130,11 +127,11 @@ while ($row = @mysqli_fetch_array($result))
 
 									</div>
 									<span >';
-										$user_logo='image';
 										
+										        $user_logo='image';
 									   
 										 echo '<div id="logo" > <img  src="uploads/'.@$uimg.'/'.$user_logo.'"><br>
-										      <p>Profile Picture</p> </div>';
+										       <p>Profile Picture</p> </div>';
 									
 									   ?>
 
@@ -143,31 +140,26 @@ while ($row = @mysqli_fetch_array($result))
 
 				   		<!-- Section -->
 								<section>
-								<!-- 	<header class="major">
-										<h2>About me!</h2>
-									</header>
-
-									<div class="features">
-									
-										<article>
-											
-											<div class="content">
-												<h3>Portitor ullamcorper</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										
-										</article>
-									
-										
-
-									</div>
-								</section> -->
- 
+				
+							
 							<!-- Section -->
-								<section>
+								<section>  
+
+									     <section id="search" class="alt">
+									<form method="get" action="index.php">
+										<input type="text" name="id"  placeholder="Search Post You " onkeyup="showResult(this.value)" />
+
+										<div id="livesearch"></div>
+									</form>
+								        </section>
+
+
+                                           
+
 									<header class="major">
 										<h2>My Blog</h2>
 									</header>
+									
 									<div class="posts">
 
 										 
@@ -183,78 +175,78 @@ while ($row = @mysqli_fetch_array($result))
                                            { 
                                               $flag=1;
 
-                                            echo '<article>';
+                                              echo '<article>';
                                                
-                                              if($row['image']!=0 && !empty($row['youtube']))
+                                             if($row['image']!=0 && !empty($row['youtube']))
                                                {
-                                            echo "<a class='image'> <img style=width:500px;height:300px; src='uploads/images/".$row['image']."' > </a>";
+                                               echo "<a class='image'> <img style=width:500px;height:300px; src='uploads/images/".$row['image']."' > </a>";
                                                }
                                                else
-                                               if($row['image']!=0 && empty($row['youtube']))
+                                             if($row['image']!=0 && empty($row['youtube']))
                                                {
                                                    echo "<a class='image'> <img style=width:500px;height:300px; src='uploads/images/".$row['image']."' > </a>";
                                                }
                                                else
 
-                                              if($row['image']==0 && !empty($row['youtube']))
+                                             if($row['image']==0 && !empty($row['youtube']))
                                                 {
                                                 echo "<a target =_blank href=".$row['youtube']." class='image'> <img style=width:500px;height:300px; src='css/image/you.jpg'> </a>";
-
                                                 }
 
+
                                             
-                                            echo "<h3>".$row['title']."</h3>";
+                                                echo "<h3>".$row['title']."</h3>";
                                               
-                                               if($row['image']!=0)
+                                             if($row['image']!=0)
                                                {
-                                            echo "<p>".substr($row['texts'],0,100)."....</p>";
+                                               echo "<p>".substr($row['texts'],0,100)."....</p>";
                                                }
                                                else
-                                               if(!empty($row['youtube']))	
+                                             if(!empty($row['youtube']))	
                                                {
-                                             echo "<p>".substr($row['texts'],0,100)."....</p>";
+                                               echo "<p>".substr($row['texts'],0,100)."....</p>";
                                                }
                                                else
                                                {
-                                               	   echo "<p>".substr($row['texts'],0,1000)."....</p>";
+                                               echo "<p>".substr($row['texts'],0,1000)."....</p>";
                                                }
 
-                                               if($row['image']!=0 && !empty($row['youtube']))
+                                              if($row['image']!=0 && !empty($row['youtube']))
                                                {
-                                                  echo '<ul style=float:left class="actions"><li><a target =_blank href="'.$row['youtube'].'" style=margin-right:10px; class="button">Youtube</a></li></ul>';
+                                               echo '<ul style=float:left class="actions"><li><a target =_blank href="'.$row['youtube'].'" style=margin-right:10px; class="button">Youtube</a></li></ul>';
                                                   
                                                }
 
-                                               if($row['image']==0 && !empty($row['youtube']))
+                                              if($row['image']==0 && !empty($row['youtube']))
                                                 {
-                                               echo '<ul style=float:left class="actions"><li><a target =_blank href="'.$row['youtube'].'" style=margin-right:10px; class="button">Youtube</a></li></ul>';
+                                                echo '<ul style=float:left class="actions"><li><a target =_blank href="'.$row['youtube'].'" style=margin-right:10px; class="button">Youtube</a></li></ul>';
                                                 
                                                 }
 
-                                            echo '<ul class="actions"><li><a href="index?id='.$username.'&&post='.$row['id'].'&&type=read_more" class="button" >Read More</a></li></ul>';
+                                                echo '<ul class="actions"><li><a href="index?id='.$username.'&&post='.$row['id'].'&&type=read_more" class="button" >Read More</a></li></ul>';
                                             
-                                             echo "<p style=float:left;color:purple>Post No.".++$count."</p>";
-                                             echo "<p style=float:right;color:purple>".$row['tim']."</p>";
+                                                echo "<p style=float:left;color:purple>Post No.".++$count."</p>";
+                                                echo "<p style=float:right;color:purple>".$row['tim']."</p>";
 
-                                             if(isset($_SESSION['u_username']) && (@$_GET['id']==@$_SESSION['u_username']) || !isset($_GET['id']))
-                                             {
+                                              if(isset($_SESSION['u_username']) && (@$_GET['id']==@$_SESSION['u_username']) || !isset($_GET['id']))
+                                                {
                                             
                                                  
-                                            echo '<a style=margin-left:10px;color:purple href="index?type=edit&&post='.$row['id'].'">Edit</a>
+                                                echo '<a style=margin-left:10px;color:purple href="index?type=edit&&post='.$row['id'].'">Edit</a>
                                                   <a style=margin-left:10px;color:purple href="index?type=delete&&post='.$row['id'].'&&no='.$count.'">Delete</a>';
-                                              }
-                                            echo '</article>';
+                                                }
+                                                echo '</article>';
                                                                                       
-                                             }
+                                                }
                                               
-
-
-                                           if($flag==0)
-                                           {  
-                                           	echo '<article>
+                                              if($flag==0)
+                                                {  
+                                           	     echo '<article>
                                            	     <h1 style=text-align:center;>Make Your First Blog Post.</h1>
                                                  </article>';
-                                            }
+                                                }
+
+
                                         ?>
 
 
@@ -362,80 +354,62 @@ while ($row = @mysqli_fetch_array($result))
 
 			</div>
 
-<script >
-	   $(document).ready(function(){
-          var commentcount=4;
+     <!-- Scripts -->
+              
+            <script >
           
-
+          $(document).ready(function(){
+          var commentcount=4;
           $("#lm").click(function(){
-
+          
           	 commentcount=commentcount+2;
-
           	   $(".posts").load("load.php",{
                     'commentnewcount':commentcount,
                     'user':'<?php echo $username?>'
-                    
-                    	
-                });
+                  });
+               });
            });
-       });
-</script>
+       	
+       	 $(document).ready(function() {
+         var isshow = localStorage.getItem('<?php echo $username?>');
+         if (isshow== null) {
+           localStorage.setItem('<?php echo $username?>', 1);
+          $('#popup').show();
+                 }
+         });
+         var close = document.getElementsByClassName("al");
+         var i;
 
-<script >
-	$(document).ready(function() {
-    var isshow = localStorage.getItem('<?php echo $username?>');
-    if (isshow== null) {
-        localStorage.setItem('<?php echo $username?>', 1);
+        for (i = 0; i < close.length; i++) {
+        close[i].onclick = function(){
+        var div = this;
+        div.style.opacity = "0";
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+         }
+         }
 
-        $('#popup').show();
-    }
-});
-</script>
 
-<script>
-	      $(document).ready(function(){
+         $(document).ready(function(){
        
-        $(".log_in_btn").click(function(){
+          $(".al").click(function(){
 
-        	window.location.href="login";
-            });
-
-                    
-        });
-</script>
-
-<script >
-	      $(document).ready(function(){
-
-       
-        $(".log_btn").click(function(){
-                    
-          $.post("includes/logout.inc.php",
-           {
-             submit: "lo"
-           },
-          function(data,status){
-
-        	      if(status=="success")
-        	      {
-                     window.location.href="index"; 
-                  }
-                     
+             window.open('update', '_blank');
+           
+              
               });
-                   
-            });
-        });
-          
-</script>
+            
+  });
 
+
+            </script>
      
 
-      	<!-- Scripts -->
 			
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+            <script src="js/script.js"></script>
 
 			
 			
