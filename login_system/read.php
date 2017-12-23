@@ -1,51 +1,43 @@
-<?php
+<?php session_start();
 
-session_start();
+	include_once 'includes/dbh.inc.php';
 
-include_once 'includes/dbh.inc.php';
-
-
-if(isset($_SESSION['u_username']))
-{
-   @$username=$_SESSION['u_username'];	
-}
-else
-{  
-   
-   $error="You Must Be logged. To Read More.";
-   $_SESSION['error']=$error;
-   header("Location: login?You must Be Login.");
-   exit();
-}
+	if(isset($_SESSION['u_username']))
+	{
+	   @$username=$_SESSION['u_username'];	
+	}
+	else
+	{  
+	   
+	   $error="You Must Be logged. To Read More.";
+	   $_SESSION['error']=$error;
+	   header("Location: login?You must Be Login.");
+	   exit();
+	}
 
 
-if(isset($_GET['id']))
-{
-  @$username=mysqli_real_escape_string($conn ,$_GET['id']);
-}
+	if(isset($_GET['id']))
+	{
+	  @$username=mysqli_real_escape_string($conn ,$_GET['id']);
+	}
 
-@$name=$_SESSION['u_name'];
-@$post=mysqli_real_escape_string($conn ,$_GET['post']);
-@$sql="SELECT * FROM uploaded_image WHERE username='$username' AND id='$post' ";
-@$result=mysqli_query($conn,$sql);
-$result_check=mysqli_num_rows($result);
-$row = @mysqli_fetch_array($result);
+	@$name=$_SESSION['u_name'];
+	@$post=mysqli_real_escape_string($conn ,$_GET['post']);
+	@$sql="SELECT * FROM uploaded_image WHERE username='$username' AND id='$post' ";
+	@$result=mysqli_query($conn,$sql);
+	$result_check=mysqli_num_rows($result);
+	$row = @mysqli_fetch_array($result);
 
-if($result_check>=1)
-{
+	if($result_check>=1)
+	{
 	  @$sql="SELECT * FROM login WHERE username='$username' ";
       @$result=mysqli_query($conn,$sql);  
       @$row1= @mysqli_fetch_array($result);
-                                 
-
-}
-else
-{
-	header("Location: includes/error.inc.php?error user ".$username);
-}
-
-
-
+	}
+    else
+	{
+		header("Location: includes/error.inc.php?error user ".$username);
+	}
 ?>
 
 <!DOCTYPE HTML>
@@ -148,42 +140,33 @@ else
    });
 
 </script>
+</head>
+<body>
+	<h1 style="text-align: center;color: red" >WELCOME TO BLOG</h1>
+	<!-- Wrapper -->
+	<div id="wrapper">
+	<!-- Main -->
+		<div id="main">
+	<!-- Post -->
+			<article class="post">
+				<?php
+  					echo '	<header>
+								<div class="title">
+									<h3 style=color:red>'.$row['title'].'</h3>
+								</div>
+								<div class="meta">
+									<time class="published" >Published : '.$row['tim'].'</time>
+									<a href="#" class="author"><span class="name">By User : '.$row1['name'].'</span></a>
+								</div>
+							</header>';
 
+								if($row['image']!=0)
+								{
 
-         
-
-	</head>
-	<body>
-             
-             <h1 style="text-align: center;color: red" >WELCOME TO BLOG</h1>
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Post -->
-							<article class="post">
-
-                              	<?php
-                                   
-                                   echo '<header>
-
-											<div class="title">
-											<h3 style=color:red>'.$row['title'].'</h3>
-											</div>
-										
-											<div class="meta">
-											<time class="published" >Published : '.$row['tim'].'</time>
-											<a href="#" class="author"><span class="name">By User : '.$row1['name'].'</span></a>
-											</div>
-							     		</header>';
-
+							    echo '<a href="uploads/images/'.$row['image'].'" class="image featured"><img src=uploads/images/'.$row['image'].' /></a>';
+								echo '<p>'.$row['texts'].'</p>';
 								
-								    		if($row['image']!=0)  
-							        		echo '<a href="uploads/images/'.$row['image'].'" class="image featured"><img src=uploads/images/'.$row['image'].' /></a>';
-								   			echo '<p>'.$row['texts'].'</p>';
+								}
 								
 		                                    if(!empty($row['youtube']))
 		                                     { 
@@ -342,18 +325,7 @@ else
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="js/main.js"></script>
-  
- 
-
-       
-
-
-
-
-
-
-
-	</body>	
+  </body>	
 </html>
 						
 

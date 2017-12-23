@@ -1,29 +1,14 @@
+<?php session_start();
 
-<?php
+	include_once 'includes/dbh.inc.php';
 
+	if(!isset($_SESSION['u_username']))
+	{
+		header("Location: includes/error.inc.php?error user ");
+	}
 
-/*--
- * Created by Anurag (Anu1601CS) 
- */
-
-
-session_start();
-
-// server should keep session data for AT LEAST 1 hour
-ini_set('session.gc_maxlifetime', 3600);
-
-include_once 'includes/dbh.inc.php';
-// each client should remember their session id for EXACTLY 1 hour
-session_set_cookie_params(3600);
-if(!isset($_SESSION['u_username']))
-{
-header("Location: includes/error.inc.php?error user ");
-}
-
-@$post=mysqli_real_escape_string($conn ,$_GET['post']);
-@$no=mysqli_real_escape_string($conn ,$_GET['no']);
-
-
+	@$post=mysqli_real_escape_string($conn ,$_GET['post']);
+	@$no=mysqli_real_escape_string($conn ,$_GET['no']);
 
 ?>
 
@@ -43,42 +28,41 @@ header("Location: includes/error.inc.php?error user ");
 
 <style >
 
-body
-  {background-image: url("images/header.jpg");}
+body{
+	background-image: url("images/header.jpg");
+	}
 
 
   #a{
     color: #EF3B3A;
     text-decoration: none;
     font-size: 15px;
-  }
+  	}
 
   a{
     text-decoration: none;
     color: red;
+  	}
 
-  }
-
- 
  .clearfix::before {
     content: "";
     clear: both;
     display: table;
-}
+	}
 
 
  #hom{
-  padding: 0 0 20px 0;
-  text-align: left;
+  	padding: 0 0 20px 0;
+  	text-align: left;
     font-size: 30px;
+ 	}
   
- }
 
 .right{
-   right: 20px;
-   position: absolute;
-   font-size: 30px!important;
-}
+   	right: 20px;
+   	position: absolute;
+   	font-size: 30px!important;
+	}
 
 
  </style>
@@ -87,58 +71,45 @@ body
 
 <body>
 
-<div class="inner">
-
-<?php
-include 'includes/alert.inc.php';
-?>
-
-<div class="container">
-
-<div class="info">
-    <h1 style="color: white;">Delete Your Post</h1><span>
-  </div>
-
-</div>
-
-<div class="form">
-
-    <div id="hom" class="clearfix">
-
-<a class="left"  title="Home" href="index"><i class="fa fa-home"></i></a>
-<a class="right" title="Help" href="index?id=Help"><i class="material-icons">help_outline</i></a> 
-
-</div>
-
-
-  <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
- <?php
-echo'  <form class="forgot-form" action="includes/delete.inc.php?post='.$post.'" method="POST" >
-   
-    <p class="message"></p>
-  
-    <input type="text" name="num" placeholder="Post Number.." required="" value="'.$no.'"><br>
-    <input type="text" name="num2" placeholder="Confirm Post Number.." required=""><br>
-    <input type="password" name="password" placeholder="Password.." required=""><br>
-    <p><a id="a">* Type : I Want To Delete</a></p>
-    <input type="text" name="_text" placeholder="Type here.." required=""><br>';
+	<div class="inner">
+	<?php
+		include 'includes/alert.inc.php';
+	?>
+	
+	<div class="container">
+		<div class="info">
+    		<h1 style="color: white;">Delete Your Post</h1><span>
+  		</div>
+	</div>
+	
+	<div class="form">
+    	<div id="hom" class="clearfix">
+			<a class="left"  title="Home" href="index"><i class="fa fa-home"></i></a>
+			<a class="right" title="Help" href="index?id=Help"><i class="material-icons">help_outline</i></a> 
+		</div>
+  	<div class="thumbnail">
+  		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/>
+  	</div>
+ 	
+ 	<?php
+		echo'<form class="forgot-form" action="includes/delete.inc.php?post='.$post.'" method="POST" >
+				<p class="message"></p>
+  				<input type="text" name="num" placeholder="Post Number.." required="" value="'.$no.'"><br>
+    			<input type="text" name="num2" placeholder="Confirm Post Number.." required=""><br>
+    			<input type="password" name="password" placeholder="Password.." required=""><br>
+    			<p><a id="a">* Type : I Want To Delete</a></p>
+    			<input type="text" name="_text" placeholder="Type here.." required=""><br>';
     ?>
     <input style="background-color:#EF3B3A;color: white" type="submit" name="submit" value="Delete">  
-<br> 
- 
- <p class="message"><a id="a" href="index">Cancel</a></p>
- 
-  </form>
+	<br> 
+	 <p class="message"><a id="a" href="index">Cancel</a></p>
+  			</form>
+ 		</div>
 
-</div>
+	</div>
 
-</div>
-
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-    <script  src="js/index.js"></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script  src="js/index.js"></script>
 
 </body>
-
-
 </html>

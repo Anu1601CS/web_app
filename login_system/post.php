@@ -1,14 +1,10 @@
-<?php
-session_start();
+<?php session_start();
 
-// server should keep session data for AT LEAST 1 hour
-ini_set('session.gc_maxlifetime', 3600);
-// each client should remember their session id for EXACTLY 1 hour
-session_set_cookie_params(3600);
 if(!isset($_SESSION['u_username']))
 {
-header("Location: includes/error.inc.php?error user ");
+  header("Location: includes/error.inc.php?error user ");
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -65,66 +61,44 @@ body
 
 
  </style>
-
 </head>
 
 <body>
+  <div class="inner">
+  
+  <?php include 'includes/alert.inc.php'; ?>
+    <div class="container">
+      <div class="info">
+        <h1 style="color: white;">Post Your Article</h1><span>
+      </div>
+    </div>
 
-<div class="inner">
-
-<?php
-include 'includes/alert.inc.php';
-?>
-
-<div class="container">
-
-<div class="info">
-    <h1 style="color: white;">Post Your Article</h1><span>
+  <div class="form" style="max-width: 800px!important">
+    <div id="hom" class="clearfix">
+    <a class="left"  title="Home" href="index"><i class="fa fa-home"></i></a>
+    <a class="right" title="Help" href="index?id=Help"><i class="material-icons">help_outline</i></a>	
   </div>
-
-</div>
-
-<div class="form" style="max-width: 800px!important">
-
-<div id="hom" class="clearfix">
-
-<a class="left"  title="Home" href="index"><i class="fa fa-home"></i></a>
-<a class="right" title="Help" href="index?id=Help"><i class="material-icons">help_outline</i></a>	
-
-</div>
 
   <div class="thumbnail">
-  
     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/>
-
   </div>
+
   <form class="forgot-form" action="includes/post.inc.php" method="POST" enctype="multipart/form-data">
-   
     <p class="message"></p>
- 
     <input type="file" name="image" multiple /><br><br>
-    
     <input type="text" name="title" placeholder="Title" ><br>
     <input type="text" name="youtube" placeholder="Youtube Link.." ><br>
-    
     <textarea type="message" cols="100" rows="20" placeholder="Message.." name="message" required="" ></textarea><br><br>
-
     <input style="background-color:#EF3B3A;color: white" type="submit" name="submit" value="Post">  
-<br> 
- <br>
- <p class="message"><a id="a" href="index">Cancel</a></p>
- 
+    <br> 
+    <br>
+    <p class="message"><a id="a" href="index">Cancel</a></p>
   </form>
-
 </div>
-
 </div>
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-    <script  src="js/index.js"></script>
+<script  src="js/index.js"></script>
 
 </body>
-
-
 </html>

@@ -8,18 +8,18 @@ $('.message a').click(function(){
 
       $(document).ready(function(){
 
-       
         $(".log_btn").click(function(){
-                    
           $.post("includes/logout.inc.php",
            {
              submit: "lo"
            },
+       
+                    
           function(data,status){
 
         	      if(status=="success")
-        	      {
-                     window.location.href="index"; 
+        	       {
+                     window.location.href="index.php"; 
                   }
                      
               });
