@@ -18,14 +18,16 @@ if(isset($_POST['submit']))
     $title=0;
     $message=0;
  
-   include_once 'dbh.inc.php';
+   	include_once 'dbh.inc.php';
 
     $title=mysqli_real_escape_string($conn ,$_POST['title']);
     $message=mysqli_real_escape_string($conn ,$_POST['message']);
     $youtube=mysqli_real_escape_string($conn ,$_POST['youtube']);
     
     $location='../uploads/images/';
-    $section=rand(100,1000000);
+    
+    $status=rand(100,1000000);
+    
     $user=$_SESSION['u_username']; 
     $time= date("Y-m-d");
      
@@ -49,7 +51,7 @@ if(isset($_POST['submit']))
     move_uploaded_file($tmp_name, $location.$name);
     
    
-    $sql="INSERT INTO uploaded_image(image,texts,username,title,tim,section,youtube) VALUES ('$name','$message','$user','$title','$time','$section','$youtube')"; 
+    $sql="INSERT INTO uploaded_image(image,texts,username,title,tim,status,youtube) VALUES ('$name','$message','$user','$title','$time','$status','$youtube')"; 
 
              mysqli_query($conn,$sql);
                      

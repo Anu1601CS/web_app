@@ -135,7 +135,8 @@ while ($row = @mysqli_fetch_array($result))
                                         $count=0;
                                         while ($row = @mysqli_fetch_array($result)) 
                                            { 
-                                        		$flag=1;
+                                        		++$flag;
+
                                           		echo '<article>';
                                              	if($row['image']!=0 && !empty($row['youtube']))
                                              	{
@@ -194,8 +195,14 @@ while ($row = @mysqli_fetch_array($result))
 
                                     ?>
 								</div>
+							<?php
+
+							if($flag>=4)
+							{
+							echo '<button id="lm">Load More Post</button>';	
+							}
+							?>							
 							</section>
-							<button id="lm">Load More Post's</button>	
 						</div>
 					</div>
 

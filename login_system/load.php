@@ -21,7 +21,7 @@ $count=0;
 
 while ($row = @mysqli_fetch_array($result)) 
 { 
-  $flag=1;
+  ++$flag;
   echo '<article>';
   if($row['image']!=0 && !empty($row['youtube']))
   {

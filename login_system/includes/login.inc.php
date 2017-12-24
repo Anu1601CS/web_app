@@ -55,6 +55,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
                              $_SESSION['u_email']=$row['email'];
                             
                              require 'create_dir.inc.php';
+                             
                              header("Location: ../index?login=success");
            	   	             exit();
                           }

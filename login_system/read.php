@@ -162,18 +162,17 @@
 
 								if($row['image']!=0)
 								{
-
 							    echo '<a href="uploads/images/'.$row['image'].'" class="image featured"><img src=uploads/images/'.$row['image'].' /></a>';
+								}
+
 								echo '<p>'.$row['texts'].'</p>';
 								
-								}
-								
-		                                    if(!empty($row['youtube']))
-		                                     { 
-		                                	   echo '<ul class="actions">
-											       <li><a href="'.$row['youtube'].'" class="button">Youtube</a></li>
-										           </ul>';
-						                     }
+								if(!empty($row['youtube']))
+		                        { 
+		                         echo '<ul class="actions">
+											<li><a href="'.$row['youtube'].'" class="button">Youtube</a></li>
+										</ul>';
+						        }
                                 
                               	?>
                              		<!-- <ul class="stats">
@@ -184,7 +183,7 @@
 
 							    -->
                                      	
-                          </article>
+            </article>
                             
                                 
                             	<input type="text" name="commit" placeholder="Commit Your Comment" id="text" required>
@@ -195,40 +194,41 @@
                                    
                                    <hr>
                                   <h1 style="text-align: center;color:red">Comments	</h1>	
-                             <article id="co">
+            <article id="co">
 
-                            <?php
+                 <?php
 
-							      @$sql="SELECT * FROM commits WHERE post='$post' ORDER BY id DESC LIMIT 3";
-                                  @$result=mysqli_query($conn,$sql);
+                  $flag1=0;
+
+				 @$sql="SELECT * FROM commits WHERE post='$post' ORDER BY id DESC LIMIT 3";
+                 @$result=mysqli_query($conn,$sql);
                                      
-
-                                  while ($row = @mysqli_fetch_array($result)) 
-                                     {
-								         
+					while ($row = @mysqli_fetch_array($result)) 
+                    {
+						++$flag1;     
+                         if($row['username']==$_SESSION['u_username'])
+                           {      
+								echo '<a href="index?p='.$row['id'].'&type=cd&&no='.$post.'&&us='.$username.'" style=float:right;font-size:30px;>x</a>';
+                           }
+                          echo '<h3 style="color:red" >User : '.$row['username'].'</h3>
+								<p style =margin:0!important;><b>Comment</b> : '	.$row['texts'].'</p>
+								<p>'.$row['tim'].'</p>
+								<hr>';
 								               	            
-                                        if($row['username']==$_SESSION['u_username'])
-                                         {      
-										  echo '<a href="index?p='.$row['id'].'&type=cd&&no='.$post.'&&us='.$username.'" style=float:right;font-size:30px;>x</a>';
-                                         }
 
-                                          echo '<h3 style="	color:red" >User : '.$row['username'].'</h3>
-												<p style =margin:0!important;><b>Comment</b> : '	.$row['texts'].'</p>
-												<p>'.$row['tim'].'</p>
-										        <hr>';
 											 
-								     }
+					}
 							
                              ?>
 											     
-                           
-										
-									    
-                            		
-                             </article>
+            </article>
+                            <?php
 
-                                  <button id="co_lm">Load More Comments</button>
-                           
+                             	if($flag1>=3)
+                             	{
+                                  	echo '<button id="co_lm">Load More Comments</button>';
+                              	}
+							?>                           
                                 
 
 					</div>
@@ -246,10 +246,10 @@
 								@$sql="SELECT * FROM uploaded_image WHERE username='$username' ORDER BY id DESC LIMIT 6";
                                       @$result=mysqli_query($conn,$sql);
                                      
-                                    
+                                    $flag=0;
                                   while ($row = @mysqli_fetch_array($result)) 
                                      {
-                                     	
+                                     	++$flag;
 
 								echo '<ul class="posts">
 									<li>
@@ -266,9 +266,12 @@
                                   ?>
                                    
                                    <br>
-                                 
-                          <button id="lm">Load More Post's</button>
-
+                           <?php
+                           if($flag>=6)
+                           {      
+                          echo '<button id="lm">Load More Post</button>';
+                          	}
+                          	?>
 							
 							</section>
 

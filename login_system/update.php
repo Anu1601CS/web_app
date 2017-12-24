@@ -1,23 +1,15 @@
-<?php
-session_start();
+<?php session_start();
 
-// server should keep session data for AT LEAST 1 hour
-ini_set('session.gc_maxlifetime', 3600);
-// each client should remember their session id for EXACTLY 1 hour
-session_set_cookie_params(3600);
 if(!isset($_SESSION['u_username']))
 {
 header("Location: includes/error.inc.php?error user ");
 }
-
-
 include_once 'includes/dbh.inc.php';
-@$username=$_SESSION['u_username']; 
 
-@$sql="SELECT * FROM login WHERE username='$username'";
-@$result=mysqli_query($conn,$sql);
-$row = @mysqli_fetch_array($result);
-
+$username=$_SESSION['u_username']; 
+$sql="SELECT * FROM login WHERE username='$username'";
+$result=mysqli_query($conn,$sql);
+$row =mysqli_fetch_array($result);
 
 
 ?>
@@ -34,6 +26,9 @@ $row = @mysqli_fetch_array($result);
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/update_style.css">
 
 <style >
@@ -49,6 +44,110 @@ body
     text-decoration: none;
     font-size: 15px;
   }
+
+  .right{
+   right: 20px;
+   position: absolute;
+   font-size: 30px!important;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.pre{
+  position: relative;
+  text-align: center;
+  width:100%;
+  
+
+}
+
+.pre img{
+  width: 250px;
+  border-radius: 100%;
+  }    
+
+@media only screen and (max-width: 500px) {
+    
+  .pre img{
+    width: 200px;
+    }
+
+    input[type="submit"]{
+      width: 100%;
+    }    
+}
 
  </style>
 
@@ -79,27 +178,23 @@ include 'includes/alert.inc.php';
 
 </div>
 
-  <div class="thumbnail">
-  
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/>
-
-  </div>
 
 
   <form class="forgot-form" action="includes/update.inc.php" method="POST" enctype="multipart/form-data">
    
-   <p class="message"></p>
+
+    <div class="pre">
+       <img id="blah" src="#" />
+    </div>
+
+<div class="fileUpload btn btn-primary">
+    <span>Choose Image</span>
+    <input type="file" class="upload" name="file"  onchange="readURL(this);" />
+  </div>
 
 <?php
   
    echo'
-    
-    <div id="inner-input">
-      <p class="message">Profile Picture:</p>
-     <div class="div"> 
-    <input type="file" name="file" class="hide_file"/><br><br>
-    </div>
-    </div>
     <div id="inner-input">
      <p class="message">Name:</p>
     <input type="text" name="name" placeholder="Name" value="'.@$row['name'].'" ><br>
@@ -155,8 +250,34 @@ include 'includes/alert.inc.php';
 </div>
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="js/index.js"></script>
 
-    <script  src="js/index.js"></script>
+ <script>
+  document.getElementById("uploadBtn").onchange = function () {
+    document.getElementById("uploadFile").value = this.value;
+};
+</script>
+
+<script>
+  function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result);
+                    
+                    
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
 
 </body>
 

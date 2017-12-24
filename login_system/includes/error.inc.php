@@ -8,7 +8,7 @@ form {
 
 .container {
     padding: 20px;
-     background-color:transparent;    
+    background-color:transparent;    
 }
 
 input[type=text]{
@@ -32,7 +32,7 @@ input[type=text]{
 }
 
 input[type=submit] {
-    width: 10%;
+    width: 30%;
     padding: 13px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -86,10 +86,24 @@ a:hover
 {
     opacity: 0.8;
 }
+
 body
     {
         background-image: url("../images/header.jpg");
     }
+
+
+    @media only screen and (max-width: 500px) {
+    
+
+    input[type="text"]{
+      width: 100%;
+    }
+
+    input[type="submit"]{
+        width: 100%;
+    }    
+}
 
 
 
@@ -99,12 +113,13 @@ body
 <h2>Oops..  #Error 404 Page not found</h2>
 
 <form action="../index">
+
   <div class="container">   
     <h2>The Page You Looking For Not Found.</h2>
   </div>
 
   <div class="container">
-    <input type="text" placeholder="Enter username..." name="id" required>
+    <input type="text" placeholder="Enter username..." name="id" required><br>
     <input type="submit" value="Search">
     
   </div>
