@@ -1,0 +1,145 @@
+[27-Dec-2017 05:44:24 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 105
+[27-Dec-2017 06:01:08 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 105
+[27-Dec-2017 06:08:19 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 105
+[27-Dec-2017 06:33:08 UTC] PHP Notice:  Undefined variable: usersname in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 89
+[27-Dec-2017 06:33:11 UTC] PHP Notice:  Undefined variable: usersname in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 89
+[27-Dec-2017 06:33:18 UTC] PHP Notice:  Undefined variable: usersname in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 89
+[27-Dec-2017 07:26:08 UTC] PHP Parse error:  syntax error, unexpected 'INTO' (T_STRING) in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 88
+[27-Dec-2017 07:28:42 UTC] PHP Parse error:  syntax error, unexpected 'INTO' (T_STRING) in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 88
+[27-Dec-2017 07:28:45 UTC] PHP Parse error:  syntax error, unexpected 'INTO' (T_STRING) in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 88
+[27-Dec-2017 07:52:38 UTC] PHP Notice:  Use of undefined constant CURRENT_TIMESTAMP - assumed 'CURRENT_TIMESTAMP' in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 85
+[27-Dec-2017 07:59:26 UTC] PHP Notice:  Use of undefined constant CURRENT_TIMESTAMP - assumed 'CURRENT_TIMESTAMP' in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 83
+[27-Dec-2017 08:01:09 UTC] PHP Notice:  Use of undefined constant CURRENT_TIMESTAMP - assumed 'CURRENT_TIMESTAMP' in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 83
+[27-Dec-2017 08:02:35 UTC] PHP Notice:  Use of undefined constant CURRENT_TIMESTAMP - assumed 'CURRENT_TIMESTAMP' in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 83
+[27-Dec-2017 08:04:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function CURRENT_TIMESTAMP() in /home/mnboafbk0e68/public_html/includes/signup.inc.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 83
+[27-Dec-2017 08:06:42 UTC] PHP Notice:  Use of undefined constant CURRENT_TIMESTAMP - assumed 'CURRENT_TIMESTAMP' in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 83
+[27-Dec-2017 08:13:14 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 08:16:37 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 08:16:59 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 08:30:22 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 08:31:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 08:36:50 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 08:48:56 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 08:51:53 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 08:59:24 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 09:02:53 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 09:09:54 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 09:20:24 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 09:22:31 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 09:36:37 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 09:46:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 09:47:15 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 09:54:50 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 10:03:10 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 10:14:51 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 10:15:08 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 10:15:31 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 10:17:34 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 10:29:15 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 10:29:40 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 10:59:48 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 11:00:46 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 11:02:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 11:16:13 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 12:00:14 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 12:23:45 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 13:23:23 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 13:23:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 14:21:15 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 14:23:49 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 14:24:10 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 14:32:32 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 14:39:21 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[27-Dec-2017 14:44:14 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/mnboafbk0e68/public_html/includes/create_dir.inc.php on line 3
+[28-Dec-2017 05:08:37 UTC] PHP Parse error:  syntax error, unexpected '>' in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 88
+[28-Dec-2017 05:41:55 UTC] PHP Notice:  Undefined variable: opt in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 97
+[28-Dec-2017 05:41:55 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 100
+[28-Dec-2017 06:11:37 UTC] PHP Notice:  Undefined variable: addURLS in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 105
+[28-Dec-2017 06:11:37 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 113
+[28-Dec-2017 06:22:14 UTC] PHP Notice:  Undefined variable: addURLS in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 106
+[28-Dec-2017 06:22:14 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 114
+[28-Dec-2017 06:45:54 UTC] PHP Notice:  Undefined variable: message in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 101
+[28-Dec-2017 06:45:54 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 107
+[28-Dec-2017 09:10:13 UTC] PHP Notice:  Undefined variable: message in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 101
+[28-Dec-2017 09:10:13 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 108
+[28-Dec-2017 09:12:30 UTC] PHP Notice:  Undefined variable: message in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 101
+[28-Dec-2017 09:12:30 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 108
+[28-Dec-2017 09:20:08 UTC] PHP Notice:  Undefined variable: message in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 101
+[28-Dec-2017 09:20:08 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 107
+[28-Dec-2017 09:29:29 UTC] PHP Notice:  Undefined variable: message in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 99
+[28-Dec-2017 09:29:29 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 105
+[28-Dec-2017 10:09:30 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 24
+[28-Dec-2017 10:09:32 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 24
+[28-Dec-2017 10:09:33 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 24
+[28-Dec-2017 10:09:34 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 24
+[28-Dec-2017 10:10:06 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 24
+[28-Dec-2017 10:14:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function NOW() in /home/mnboafbk0e68/public_html/includes/new.inc.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 27
+[28-Dec-2017 10:14:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function NOW() in /home/mnboafbk0e68/public_html/includes/new.inc.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 27
+[28-Dec-2017 10:14:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function NOW() in /home/mnboafbk0e68/public_html/includes/new.inc.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 27
+[28-Dec-2017 10:32:18 UTC] PHP Notice:  A non well formed numeric value encountered in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:33:33 UTC] PHP Notice:  A non well formed numeric value encountered in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:34:27 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:34:32 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:34:34 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:34:35 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:35:24 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:36:16 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:36:19 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:36:20 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:36:24 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:36:46 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:39:34 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:39:37 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:39:39 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:39:41 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:41:00 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:42:17 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:42:40 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:42:42 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 10:43:23 UTC] PHP Fatal error:  Uncaught Exception: DateTimeZone::__construct(): Unknown or bad timezone (Asia/Delhi) in /home/mnboafbk0e68/public_html/includes/new.inc.php:30
+Stack trace:
+#0 /home/mnboafbk0e68/public_html/includes/new.inc.php(30): DateTimeZone->__construct('Asia/Delhi')
+#1 {main}
+  thrown in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 30
+[28-Dec-2017 10:43:37 UTC] PHP Notice:  Undefined variable: today in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 34
+[28-Dec-2017 11:37:17 UTC] PHP Notice:  Undefined variable: user in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 35
+[28-Dec-2017 14:12:29 UTC] PHP Notice:  Undefined variable: message in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 99
+[28-Dec-2017 14:12:29 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 105
+[28-Dec-2017 15:14:21 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 45
+[28-Dec-2017 17:57:24 UTC] PHP Notice:  Undefined variable: message in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 106
+[28-Dec-2017 17:57:24 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 112
+[28-Dec-2017 18:08:44 UTC] PHP Notice:  Undefined variable: message in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 106
+[28-Dec-2017 18:08:44 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 112
+[28-Dec-2017 19:26:36 UTC] PHP Notice:  Undefined variable: message in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 106
+[28-Dec-2017 19:26:36 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 113
+[29-Dec-2017 08:26:12 UTC] PHP Notice:  Undefined variable: message in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 106
+[29-Dec-2017 08:26:12 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 113
+[29-Dec-2017 10:16:57 UTC] PHP Notice:  Undefined variable: message in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 106
+[29-Dec-2017 10:16:57 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 113
+[29-Dec-2017 11:22:34 UTC] PHP Notice:  Undefined variable: message in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 106
+[29-Dec-2017 11:22:34 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 113
+[29-Dec-2017 11:25:10 UTC] PHP Notice:  Undefined index: ee in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 7
+[29-Dec-2017 11:25:10 UTC] PHP Notice:  Undefined index: tok in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 8
+[29-Dec-2017 11:25:10 UTC] PHP Notice:  Undefined index: em in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 9
+[29-Dec-2017 12:14:59 UTC] PHP Notice:  Undefined index: ee in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 7
+[29-Dec-2017 12:14:59 UTC] PHP Notice:  Undefined index: tok in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 8
+[29-Dec-2017 12:14:59 UTC] PHP Notice:  Undefined index: em in /home/mnboafbk0e68/public_html/includes/new.inc.php on line 9
+[29-Dec-2017 12:15:37 UTC] PHP Notice:  Undefined index: email in /home/mnboafbk0e68/public_html/includes/checkuser.inc.php on line 29
+[29-Dec-2017 16:37:28 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 117
+[29-Dec-2017 18:11:20 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 117
+[29-Dec-2017 19:32:42 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 117
+[30-Dec-2017 04:20:18 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 117
+[30-Dec-2017 11:32:38 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 117
+[30-Dec-2017 12:33:54 UTC] PHP Notice:  Undefined variable: headers in /home/mnboafbk0e68/public_html/includes/signup.inc.php on line 117

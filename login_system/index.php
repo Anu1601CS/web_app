@@ -12,6 +12,23 @@
   {
     @$username=mysqli_real_escape_string($conn ,$_GET['id']);
   }
+  
+   @$action1=mysqli_real_escape_string($conn ,$_GET['action']);
+   @$email1=mysqli_real_escape_string($conn ,$_GET['ee']);
+   @$token1=mysqli_real_escape_string($conn ,$_GET['tok']);
+   @$em1=mysqli_real_escape_string($conn ,$_GET['em']);
+   @$enc=mysqli_real_escape_string($conn ,$_GET['sec']);
+    
+  if($action1=="new")
+  {
+    header("Location: /includes/new.inc.php?ee=$email1&tok=$token1&em=$em1");	
+  }
+  
+  if($action1=="pwd")
+  {
+    header("Location: /includes/change.inc.php?ee=$email1&tok=$token1&em=$em1&sec=$enc");	
+  }
+    
 
   if(!isset($_SESSION['u_username']) && !isset($_GET['id']))
   {  
@@ -23,44 +40,45 @@
   @$no=mysqli_real_escape_string($conn ,$_GET['no']);
   @$p=mysqli_real_escape_string($conn ,$_GET['p']);
   @$us=mysqli_real_escape_string($conn ,$_GET['us']);
-  $use=md5($username);
+  @$use=md5($username);
 
 /*Action*/
 
   if($action=="edit")
   {
-    header("Location:  edit?post=$post&username=$username&&$use");
+    header("Location:  /edit?post=$post&username=$username&&$use");
   }
   else
   if($action=="delete")	
   {
-    header("Location:  delete?user=$use&post=$post&no=$no&&$use");
+    header("Location:  /delete?user=$use&post=$post&no=$no&&$use");
   }
   else
   if($action=="post")
   {
-    header("Location:  post?user=$use");
+    header("Location:  /post?user=$use");
   }	
   else
   if($action=="update")
   {
-    header("Location:  update?user=$use");
+    header("Location:  /update?user=$use");
   }
   else
   if($action=="read_more")
   {
-	 header("Location: read?post=$post&&id=$username&&$use");
+	 header("Location: /read?post=$post&&id=$username&&$use");
   }
   else
   if($action=="log")
   {
-    header("Location: includes/logout.inc.php?&&$use");
+    header("Location: /includes/logout.inc.php?&&$use");
   }
   else
   if($action=="cd")
   {
-    header("Location: includes/delete_c.inc.php?&&post=$p&&no=$no&&us=$us&&$use");
+    header("Location: /includes/delete_c.inc.php?&&post=$p&&no=$no&&us=$us&&$use");
   }
+ 
 
 /*valiadity*/
 
@@ -75,7 +93,7 @@
   }
   else
   {
-    @header("Location: includes/error.inc.php?&&$use");
+    @header("Location: /includes/error.inc.php?&&$use");
   }
 
 ?>

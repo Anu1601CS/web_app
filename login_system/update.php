@@ -2,11 +2,14 @@
 
 if(!isset($_SESSION['u_username']))
 {
-header("Location: includes/error.inc.php?error user ");
+header("Location: /");
+exit();
 }
+
 include_once 'includes/dbh.inc.php';
 
-$username=$_SESSION['u_username']; 
+$username=$_SESSION['u_username'];
+ 
 $sql="SELECT * FROM login WHERE username='$username'";
 $result=mysqli_query($conn,$sql);
 $row =mysqli_fetch_array($result);
@@ -30,20 +33,21 @@ $row =mysqli_fetch_array($result);
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/update_style.css">
-
+  <link rel="icon" type="image/png" href="css/image/blogger.png">
+	
 <style >
 
-body
-  {background-image: url("images/header.jpg");
-   height: 100%;
-   
-  }
+body{
+  background-color:#613175;
+  height: 100%;
+  width:100%;
+}
 
 #a{
-    color: #EF3B3A;
-    text-decoration: none;
-    font-size: 15px;
-  }
+ color: #EF3B3A;
+ text-decoration: none;
+ font-size: 15px;
+}
 
   .right{
    right: 20px;
@@ -146,7 +150,16 @@ input:checked + .slider:before {
 
     input[type="submit"]{
       width: 100%;
-    }    
+    }  
+    
+    	h1{
+	font-size:30px!important;
+	}
+	
+	.form{
+		padding:10px;
+	}
+		  
 }
 
  </style>
@@ -173,8 +186,8 @@ include 'includes/alert.inc.php';
 
   <div id="hom" class="clearfix">
 
-<a class="left"  title="Home" href="index"><i class="fa fa-home"></i></a>
-<a class="right" title="Help" href="index?id=Help"><i class="material-icons">help_outline</i></a> 
+<a class="left"  title="Home" href="/"><i class="fa fa-home"></i></a>
+<a class="right" title="Help" href="/?id=Help"><i class="material-icons">help_outline</i></a> 
 
 </div>
 
@@ -182,15 +195,20 @@ include 'includes/alert.inc.php';
 
   <form class="forgot-form" action="includes/update.inc.php" method="POST" enctype="multipart/form-data">
    
-
-    <div class="pre">
-       <img id="blah" src="#" />
-    </div>
+	<?php
+	$user_logo='image';
+	$username=$_SESSION['u_username'];
+	$uimg=strtoupper($username);
+    	
+    	echo '	<div class="pre">
+       			<img id="blah" src="uploads/'.@$uimg.'/'.$user_logo.'" alt="Selected Image Preview"/>
+    		</div>';
+	?>
 
 <div class="fileUpload btn btn-primary">
     <span>Choose Image</span>
     <input type="file" class="upload" name="file"  onchange="readURL(this);" />
-  </div>
+</div>
 
 <?php
   
@@ -233,14 +251,14 @@ include 'includes/alert.inc.php';
     </div>
     <div id="inner-input">
      <p class="message" style=color:red> *Enter Your Password To Save Changes.</p>
-    <input type="password" name="password" placeholder="Password.." ><br>
+    <input type="password" name="password" placeholder="Password.." required><br>
      </div> 
 
 
     <input style="background-color:#EF3B3A;color: white" type="submit" name="submit" value="Update">  
     <br> 
     <br>
-    <p class="message"><a id="a" href="index">Cancel</a></p>';
+    <p class="message"><a id="a" href="http://www.blogme.co">Cancel</a></p>';
 
 ?> 
   </form>
@@ -253,30 +271,7 @@ include 'includes/alert.inc.php';
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script  src="js/index.js"></script>
-
- <script>
-  document.getElementById("uploadBtn").onchange = function () {
-    document.getElementById("uploadFile").value = this.value;
-};
-</script>
-
-<script>
-  function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#blah')
-                    .attr('src', e.target.result);
-                    
-                    
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-</script>
+<script>function readURL(e){if(e.files&&e.files[0]){var a=new FileReader;a.onload=function(e){$("#blah").attr("src",e.target.result)},a.readAsDataURL(e.files[0])}}</script>
 
 
 </body>

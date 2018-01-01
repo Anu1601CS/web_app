@@ -1,6 +1,3 @@
-
-<!--  Created by Anurag (Anu1601CS) --> 
-
 <?php
 
 if(empty($username))
@@ -22,21 +19,21 @@ while ($row = @mysqli_fetch_array($result))
 	@$bi=$row['bio'];
 	
 }
-     
+
 ?>
 
 <!DOCTYPE HTML>
-<!--Github : Anu1601CS-->
 <html>
 	<head>
 		
 		<title>Blog | Home</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
+        	<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="css/overlay.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="js/main.js"></script>
+		<link rel="icon" type="image/png" href="css/image/blogger.png">
 		
 	</head>
 	
@@ -116,7 +113,7 @@ while ($row = @mysqli_fetch_array($result))
 							<section>  
 
 								<section id="search" class="alt">
-									<form method="get" action="index.php">
+									<form method="get" action="">
 										<input type="text" name="id"  placeholder="Search Post You " onkeyup="showResult(this.value)" />
 										<div id="livesearch"></div>
 									</form>
@@ -177,14 +174,14 @@ while ($row = @mysqli_fetch_array($result))
                                                 	echo '<ul style=float:left class="actions"><li><a target =_blank href="'.$row['youtube'].'" style=margin-right:10px; class="button">Youtube</a></li></ul>';
                                                 }
                                                
-                                                echo '<ul class="actions"><li><a href="index?id='.$username.'&&post='.$row['id'].'&&type=read_more" class="button" >Read More</a></li></ul>';
+                                                echo '<ul class="actions"><li><a href="?id='.$username.'&&post='.$row['id'].'&&type=read_more" class="button" >Read More</a></li></ul>';
                                                 echo "<p style=float:left;color:purple>Post No.".++$count."</p>";
                                                 echo "<p style=float:right;color:purple>".$row['tim']."</p>";
                                     			
                                     			if(isset($_SESSION['u_username']) && (@$_GET['id']==@$_SESSION['u_username']) || !isset($_GET['id']))
                                                 {
-                                                	echo '<a style=margin-left:10px;color:purple href="index?type=edit&&post='.$row['id'].'">Edit</a>
-                                                 		 <a style=margin-left:10px;color:purple href="index?type=delete&&post='.$row['id'].'&&no='.$count.'">Delete</a>';
+                                                	echo '	<a style=margin-left:10px;color:purple href="?type=edit&&post='.$row['id'].'">Edit</a>
+                                                 		<a style=margin-left:10px;color:purple href="?type=delete&&post='.$row['id'].'&&no='.$count.'">Delete</a>';
                                                 }
                                                 echo '</article>';
                                       		}
@@ -212,7 +209,7 @@ while ($row = @mysqli_fetch_array($result))
 
 							<!-- Search -->
 								<section id="search" class="alt">
-									<form method="get" action="index.php">
+									<form method="get" action="">
 										<input type="text" name="id"  placeholder="Search Another User.." />
 									</form>
 								</section>
@@ -241,18 +238,18 @@ while ($row = @mysqli_fetch_array($result))
 									</header>
 									
 									<ul>
-										<li><a href="index">Home</a></li>
+										<li><a href="/">Home</a></li>
 
                                       	<?php
 
                                         	if(isset($_SESSION['u_username']))
                                         	{
 										  		echo '
-										   		<li><a href="index.php?type=post">Post</a></li>
-										   		<li><a href="index.php?type=update">Update Profile</a></li>
-										    	<li id="mob" ><a class="log_btn" >Logout</a></li>';
-									    	}
-									    	else
+										   		<li><a href="?type=post">Post</a></li>
+										   		<li><a href="?type=update">Update Profile</a></li>
+										    		<li id="mob" ><a class="log_btn" >Logout</a></li>';
+						}
+						else
                                         	{ 
                                             	echo '
                                             	<li id="mob" ><a class="log_in_btn" >Login</a></li>
@@ -260,7 +257,7 @@ while ($row = @mysqli_fetch_array($result))
                                         	}
 										  
 					                	?> 
-					                	<li><a style="color:red" href="mailto:anuragvns1111@gmail.com">Send Feedback</a></li>
+					                	<li><a style="color:red" href="mailto:anurag@blogme.co">Send Feedback</a></li>
 					                </ul>
 								</nav>
 
@@ -316,9 +313,9 @@ while ($row = @mysqli_fetch_array($result))
 
     <script>  	
 	$(document).ready(function() {
-         var isshow = localStorage.getItem('<?php echo $username?>');
+         var isshow = localStorage.getItem('<?php echo $_SESSION['u_username']; ?>');
         	 if (isshow== null) {
-           	localStorage.setItem('<?php echo $username?>', 1);
+           	localStorage.setItem('<?php echo $_SESSION['u_username']; ?>', 1);
           	$('#popup').show();
                  }
          	});
@@ -333,7 +330,7 @@ while ($row = @mysqli_fetch_array($result))
          	}
          }
 		$(document).ready(function(){
-       	$(".al").click(function(){
+       		$(".al").click(function(){
 		window.open('update', '_blank');
         });
   	});
@@ -345,7 +342,7 @@ while ($row = @mysqli_fetch_array($result))
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-    	<script src="js/script.js"></script>
+    		<script src="js/script.js"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	</body>
 </html>

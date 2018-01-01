@@ -5,14 +5,14 @@ session_start();
 include_once 'includes/dbh.inc.php';
 
 @$commentnewcount=$_POST['commentnewcount'];
-//@$username=$_SESSION['u_username'];
+
 
 @$username=$_POST['user'];
 
 
 if(empty($username))
 {
-	header("Location: includes/error.inc.php?error sorry d sj b f kjsbkjsb");
+	header("Location: /");
 }
 
                               echo '<h4 style="color: red">Other Post</h4>';

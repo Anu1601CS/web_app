@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="icon" type="image/png" href="../css/image/blogger.png">
+</head>
 <style>
 form {
     
@@ -89,7 +92,7 @@ a:hover
 
 body
     {
-        background-image: url("../images/header.jpg");
+        background-color:#4a3d8d;
     }
 
 
@@ -112,7 +115,7 @@ body
 
 <h2>Oops..  #Error 404 Page not found</h2>
 
-<form action="../index">
+<form action="../">
 
   <div class="container">   
     <h2>The Page You Looking For Not Found.</h2>

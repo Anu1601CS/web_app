@@ -2,7 +2,7 @@
 
 if(!isset($_SESSION['u_username']))
 {
-  header("Location: includes/error.inc.php?error user ");
+  header("Location: /");
 }
 
 ?>
@@ -21,13 +21,11 @@ if(!isset($_SESSION['u_username']))
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/sign_style.css">
+  <link rel="icon" type="image/png" href="css/image/blogger.png">
 
 
 
 <style >
-
-body
-  {background-image: url("images/header.jpg");}
 
 #a{
     color: #EF3B3A;
@@ -154,15 +152,22 @@ input:checked + .slider:before {
 		
 	.pre img{
 	width: 100%;
+	}
 	
+	h1{
+		font-size:30px!important;
+	}
 	
-	}    
+	.form{
+		padding:10px;
+	}
+		    
 }
  </style>
 
 </head>
 
-<body>
+<body style="margin:0;background-color:#613175;">
   <div class="inner">
   
   <?php include 'includes/alert.inc.php'; ?>
@@ -174,8 +179,8 @@ input:checked + .slider:before {
 
   <div class="form" style="max-width: 800px!important">
     <div id="hom" class="clearfix">
-    <a class="left"  title="Home" href="index"><i class="fa fa-home"></i></a>
-    <a class="right" title="Help" href="index?id=Help"><i class="material-icons">help_outline</i></a>	
+    <a class="left"  title="Home" href="http://www.blogme.co"><i class="fa fa-home"></i></a>
+    <a class="right" title="Help" href="/?id=Help"><i class="material-icons">help_outline</i></a>	
   </div>
 
 
@@ -184,7 +189,7 @@ input:checked + .slider:before {
   <form class="forgot-form" action="includes/post.inc.php" method="POST" enctype="multipart/form-data">
     
       <div class="pre">
-    	 <img id="blah" src="#" />
+    	 <img id="blah" src="#" alt="Selected Image Preview"/>
 	  </div>
 
 
@@ -204,7 +209,8 @@ input:checked + .slider:before {
     <input style="background-color:#EF3B3A;color: white" type="submit" name="submit" value="Post">  
     <br> 
     <br>
-    <p class="message"><a id="a" href="index">Cancel</a></p>
+    <br>
+    <p class="message"><a id="a" href="http://www.blogme.co">Cancel</a></p>
  
  </form>
   	
@@ -216,12 +222,7 @@ input:checked + .slider:before {
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script  src="js/index.js"></script>
-<script>
-	document.getElementById("uploadBtn").onchange = function () {
-    document.getElementById("uploadFile").value = this.value;
-};
-</script>
+
 
 <script>
 	function readURL(input) {

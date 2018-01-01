@@ -11,12 +11,11 @@
 .alert {
     text-align: center;
     padding: 15px;
-    background:rgba(255, 0, 0, 0.4);
+    background:#ff3838;
     color: white;
     opacity: 1;
     transition: opacity 0.6s;
     margin-bottom: 15px;
-    width: 100%;
     border-radius: 5px;
     
 
@@ -27,17 +26,16 @@
 }
 
 .alert.success {background: rgba(111, 220, 96, 0.8);}
-.alert.info {background-color: #2196F3;}
-.alert.warning {background-color: red;}
+.alert.info {background-color: #0e0ee1;}
+.alert.warning {background-color: #ffcd29;}
 
 .closebtn {
-    margin-left: 50px;
     color: white;
     font-weight: bold;
     float: right;
     font-size: 30px;
     font-weight:300; 
-    line-height: 15px;
+    line-height: 13px;
     cursor: pointer;
     transition: 0.3s;
     z-index: 100;
@@ -46,6 +44,18 @@
 
 .closebtn:hover {
     color: red;
+}
+
+@media only screen and (max-width: 500px) {
+    
+    .closebtn{
+    	font-size:20px;
+    } 
+    
+    .box{
+	font-size:15px;
+  }
+
 }
 
 </style>
@@ -67,7 +77,7 @@ if(isset($_SESSION['error']) && !empty($_SESSION['error']))
           .$_SESSION['error'].   
        '</div></div>';
 
-       unset($_SESSION["error"]);
+      unset($_SESSION["error"]);
 }
 
 if(isset($_SESSION['success']) && !empty($_SESSION['success']))
@@ -78,9 +88,30 @@ if(isset($_SESSION['success']) && !empty($_SESSION['success']))
           .$_SESSION['success'].   
        '</div></div>';
 
-       unset($_SESSION["success"]);
+     	 unset($_SESSION["success"]);
 }
 
+if(isset($_SESSION['warning']) && !empty($_SESSION['warning']))
+{
+
+  echo '  <div class="box "><div class="alert warning">
+         <span class="closebtn">&times;</span>'  
+          .$_SESSION['warning'].   
+       '</div></div>';
+
+     	 unset($_SESSION["warning"]);
+}
+
+if(isset($_SESSION['info']) && !empty($_SESSION['info']))
+{
+
+  echo '  <div class="box "><div class="alert info">
+         <span class="closebtn">&times;</span>'  
+          .$_SESSION['info'].   
+       '</div></div>';
+
+     	 unset($_SESSION["info"]);
+}
 
 
 ?>

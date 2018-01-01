@@ -1,20 +1,17 @@
-
 <!DOCTYPE HTML>
-
-<!--
-
-   Back End - Anu1601CS
-   PHP-javascript 
-
--->
-
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 	<head>
-		<title>Blog</title>
+		<title>Blog-Me</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="Description" content="Blog-Me a free website to post your articles.">
+     	<meta name="Keywords" content="Blog-Me">
+     	<meta name="og:title" content="Blog-Me a blogging website.">
+     	<meta name="og:url" content="https://www.blogme.co">
+     	<meta name="theme-color" content="orange">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/png" href="css/image/blogger.png">
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
  
@@ -70,7 +67,7 @@
 									<div class="content">
 										<header>
 										 
-                                                 <h1>Hello , Welcome To Blog</h1>
+                                                 <h1>Hello , Welcome To Blog-Me</h1>
 											   
 
                                                
@@ -78,7 +75,9 @@
 
 										
 										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
+										<p>Blog-Me is a free website for publishing the articles to world. Blog-Me makes beautiful products to help people with creative ideas succeed. It was simple to use 
+										you can post , delete , edit ,like , share and many more things. Blog-Me have a very simple interface because of people get stuck in complex blogging website.
+										So , get started with Blog-me.</p>
 										
 										<ul class="actions">
 											<li><a href="#" class="button big">Learn More</a></li>
@@ -93,7 +92,7 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>About me!</h2>
+										<h2>About Blog-me!</h2>
 									</header>
 
 									<div class="features">
@@ -101,32 +100,32 @@
 										<article>
 											<span class="icon fa-diamond"></span>
 											<div class="content">
-												<h3>Portitor ullamcorper</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+												<h3>Easy to use </h3>
+												<p>We have a very simple user interface to post ,delete ,edit , share and many more.</p>
 											</div>
 										</article>
 									
 										<article>
 											<span class="icon fa-paper-plane"></span>
 											<div class="content">
-												<h3>Sapien veroeros</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+												<h3>Secure</h3>
+												<p>We made our web-app highly secure from hackers.</p>
 											</div>
 										</article>
 									
 										<article>
 											<span class="icon fa-rocket"></span>
 											<div class="content">
-												<h3>Quam lorem ipsum</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+												<h3>Fast</h3>
+												<p>Blog-Me is very fast to post your articles in very slow connection.</p>
 											</div>
 										</article>
 									
 										<article>
 											<span class="icon fa-signal"></span>
 											<div class="content">
-												<h3>Sed magna finibus</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+												<h3>Mobile friendly</h3>
+												<p>We have use Html5up.net to get a mobile friendly website so people not stuck in mobile use.Thanks , Html5up.net </p>
 											</div>
 								 	</article>
 
@@ -136,7 +135,7 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>My Blog</h2>
+										<h2>Blog-Sample-UI</h2>
 									</header>
 									<div class="posts">
                                     
@@ -204,7 +203,7 @@
 
 							<!-- Search -->
 								<section id="search" class="alt">
-									<form method="get" action="index?">
+									<form method="get" action="/?">
 										<input type="text" name="id" id="id" placeholder="Search" />
 									</form>
 								</section>
@@ -216,10 +215,13 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index">Home</a></li>
+										<li><a href="/">Home</a></li>
+										
 
-										            <li id="mob" ><a  href="login" class="log_in_btn" >Login</a></li>
+
+					            <li id="mob" ><a  href="login" class="log_in_btn" >Login</a></li>
                                                     <li id="mob" ><a  href="login" class="log_in_btn" >Sign up</a></li>
+                                                    <li><a style="color:red"; href="mailto:anurag@blogme.co">Send Feedback</a></li>
 
                                     
 					                	</ul>
@@ -235,12 +237,12 @@
 									
 									
 									<ul class="contact">
-										<li class="fa-envelope-o"><a href="#">anuragvns1111@gmail.com</a></li>
-										<li><a target=_blank href="#" class="icon fa-twitter"><span style=margin-left:10px; >Twitter</span></a></li>
-										<li><a target=_blank href="#" class="icon fa-facebook"><span style=margin-left:10px; >Facebook</span></a></li>
-   										<li><a target=_blank href="#" class="icon fa-instagram"><span style=margin-left:10px; >Instagram</span></a></li>
-   										<li><a target=_blank href="#" class="icon fa-dribbble"><span style=margin-left:10px; >Website</span></a></li>
-										<li><a target=_blank href="#" class="icon fa-linkedin-square"><span style=margin-left:10px; >Linkdin</span></a></li>
+										<li class="fa-envelope-o"><a href="#">anurag@blogme.co</a></li>
+										<li><a target=_blank href="https://twitter.com/Anu1601cs" class="icon fa-twitter"><span style=margin-left:10px; >Twitter</span></a></li>
+										<li><a target=_blank href="https://www.facebook.com/Anu1601cs" class="icon fa-facebook"><span style=margin-left:10px; >Facebook</span></a></li>
+   										<li><a target=_blank href="https://www.instagram.com/anu1601cs/" class="icon fa-instagram"><span style=margin-left:10px; >Instagram</span></a></li>
+   										<li><a target=_blank href="https://anu1601cs.github.io/my_web/index.html" class="icon fa-dribbble"><span style=margin-left:10px; >Website</span></a></li>
+										<li><a target=_blank href="https://www.linkedin.com/in/anurag-kumar-1942a7147/" class="icon fa-linkedin-square"><span style=margin-left:10px; >Linkdin</span></a></li>
 									</ul>
 							
 								</section>
@@ -263,11 +265,11 @@
 			<script src="assets/js/main.js"></script>
 			<script src="js/main.js"></script>
 			<script >
-				 $(document).ready(function(){
+	 $(document).ready(function(){
        
                $(".log_in_btn").click(function(){
 
-        	    window.location.href="login";
+        	    window.location.href="http://www.blogme.co/login";
                 });
 
                     

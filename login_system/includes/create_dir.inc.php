@@ -1,8 +1,6 @@
 <?php
 
-	session_start();
-
-	$current_dir="/opt/lampp/htdocs/anurag/login_system";
+	$current_dir="/home/mnboafbk0e68/public_html/";
 
 	echo $current_dir;
 
@@ -16,7 +14,9 @@
 		{      
 	
 			$image = file_get_contents('../css/image/user77.png');
-    		file_put_contents('/opt/lampp/htdocs/anurag/login_system/uploads/'.$user.'/image', $image);
+    		
+    			file_put_contents('/home/mnboafbk0e68/public_html/uploads/'.$user.'/image', $image);
+    		
 			@umask($current_dir);
 
 		}

@@ -1,6 +1,6 @@
 <?php session_start(); 
 if(isset($_SESSION['u_username']))
-{ header("Location: index"); } 
+{ header("Location: /"); } 
 ?>
 
 <!DOCTYPE html>
@@ -15,14 +15,47 @@ if(isset($_SESSION['u_username']))
       <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
       <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <link rel="icon" type="image/png" href="css/image/blogger.png">
       <link rel="stylesheet" href="css/sign_style.css">
       
  <style >
  		
     body{
- 		background-image: url("images/header.jpg");
- 	      }
+	background-image: url("images/header.jpg");
+ 	}
+ 
+ @media only screen and (max-width: 500px) {
+     
+    	h1{
+	font-size:30px!important;
+	}
+	
+	.form{
+		padding:10px;
+	}
+}
+
+.status-not-available{
+		
+color:red;
+font-size:10px;
+}
+		
+.status-available{
+		
+color:green;
+font-size:10px;
+		
+}
+
+#loader{
+ width:70px;
+ height:50px;
+ 
+}
+ 	
 </style>
+
 </head>
 
 <body>
@@ -32,22 +65,56 @@ if(isset($_SESSION['u_username']))
   <?php include 'includes/alert.inc.php'; ?>
 
   <div class="info">
-       <h1 style="text-align: center;font-size: 40px;color: white;padding: 40px 0;">Login</h1>
+       <h1 style="text-align: center;font-size: 40px;color: white;padding: 40px 0;">Login | Sign Up</h1>
   </div>
 
   <div class="form">
-      <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
+      <div class="thumbnail">
+      
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/>
+      
+      
+      </div>
+      
+       <img id="loader" style="display:none;" src="css/image/load.gif" /> 
      
       <!--Signup  -->
       <form class="register-form" action="includes/signup.inc.php" method="POST" >
-        
-      <input type="text" name="username" placeholder="Username" required=""><br>
+      
+      <div id="inner-input">
+      <p class="message">Username</p>
+      <span id="user-availability-status"></span> 
+      <input type="text" name="username" placeholder="Username" onBlur="checkAvailability()" id="_username" required=""><br>
+      </div>
+      
+      <div id="inner-input">
+      <p class="message">Name</p>
       <input type="text" name="name" placeholder="Name" required=""><br>
-      <input type="email" name="email" placeholder="Email" required=""><br>
+      </div>
+      
+      <div id="inner-input">
+      <p class="message">Email</p>
+      <span id="user-availability-status-email"></span>  
+      <input type="email" name="email" placeholder="Email" onBlur="checkAvailabilityemail()" id="email" required=""><br>
+      </div>
+      
+      <div id="inner-input">
+      <p class="message">Password</p>
       <input type="password" name="password"  placeholder="Password" required=""><br>
+      </div>
+      
+      <div id="inner-input">
+      <p class="message">Confirm Password</p>
       <input type="password" name="confirm_password"  placeholder="Confirm Password" required=""><br>
+      </div>
+      
+      <div id="inner-input">
+      <p class="message">Security PIN</p>
       <input type="password" name="security"  placeholder="Security Code" required=""><br>
+      </div>
+   
       <input style="background-color:#EF3B3A;color:white" type="submit" name="submit" value="Register | Sign up">     
+ 
       <br><br>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
       <p class="message">Forgot Password ? <a id="a" href="forgot">Forgot password</a></p>
@@ -56,18 +123,20 @@ if(isset($_SESSION['u_username']))
 
 
       <!--Login-->
-      <form class="login-form">
+      <form class="login-form" action="includes/login.inc.php" method="POST">
         
-      <input type="text" placeholder="username" name="username" id="username" required />
+      <input type="text" placeholder="username or email.." name="username" id="username" required />
       <input type="password" placeholder="password" name="password" id="password" required />
       <input style="background-color:#EF3B3A;color: white" class="log_in_sub_btn" type="submit" name="submit" value="login">   
+     
       <br><br>
       <p class="message">Not registered? <a href="#">Create an account</a></p>
       <p class="message">Forgot Password ? <a  id="a" href="forgot">Forgot Password</a></p>
       
       </form>
-      <br><br>
-      <p class="message"><a id="a" href="index">Cancel</a></p>
+      <br>
+      <p><a id="a" href="/">Cancel</a></p>
+      <br>
   </div>
 
 </div>
@@ -76,35 +145,38 @@ if(isset($_SESSION['u_username']))
   <script  src="js/index.js"></script> 
   <script  src="js/main.js"></script>
   
-  <script >
-    
-    $(document).ready(function(){
+  <script>
+  
+function checkAvailability() {
+	$("#loader").show();
+	jQuery.ajax({
+	url: "includes/checkuser.inc.php",
+	data:'username='+$("#_username").val(),
+	type: "POST",
+	success:function(data){
+	$("#user-availability-status").html(data);
+	$("#loader").hide();
+	},
+	error:function (){}
+	});
+	}
+	
+function checkAvailabilityemail() {
+	$("#loader").show();
+	jQuery.ajax({
+	url: "includes/checkuser.inc.php",
+	data:'email='+$("#email").val(),
+	type: "POST",
+	success:function(data){
+	$("#user-availability-status-email").html(data);
+	$("#loader").hide();
+	},
+	error:function (){}
+	});
+	}
 
-        $(".log_in_sub_btn").click(function(){
-            
-            var username=$("#username").val();
-            var password=$("#password").val();        
-
-          $.post("includes/login.inc.php",
-           {
-             username:username,
-             password:password 
-           },
-
-          function(data,status){
-
-                if(status=="success")
-                {
-                    /* window.location.href="index"; */
-                }
-                     
-              });
-                   
-            });
-        });
-
-  </script>
-
+</script>
+ 
 </body>
 
 

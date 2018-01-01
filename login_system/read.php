@@ -18,7 +18,7 @@
 
 	if(isset($_GET['id']))
 	{
-	  @$username=mysqli_real_escape_string($conn ,$_GET['id']);
+	  	@$username=mysqli_real_escape_string($conn ,$_GET['id']);
 	}
 
 	@$name=$_SESSION['u_name'];
@@ -30,11 +30,11 @@
 
 	if($result_check>=1)
 	{
-	  @$sql="SELECT * FROM login WHERE username='$username' ";
-      @$result=mysqli_query($conn,$sql);  
-      @$row1= @mysqli_fetch_array($result);
+	  	@$sql="SELECT * FROM login WHERE username='$username' ";
+     		@$result=mysqli_query($conn,$sql);  
+      		@$row1= @mysqli_fetch_array($result);
 	}
-    else
+    	else
 	{
 		header("Location: includes/error.inc.php?error user ".$username);
 	}
@@ -49,6 +49,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/readmain.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="icon" type="image/png" href="css/image/blogger.png">
 		
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -173,6 +174,18 @@
 											<li><a href="'.$row['youtube'].'" class="button">Youtube</a></li>
 										</ul>';
 						        }
+
+						        	echo '<ul class="stats" style="text-align:right;">
+
+										<a title="Share" >Share</a>&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href="#" title="Share with Facebook" class="fa fa-facebook" target="_blank"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href="#" title="Share with Twitter" class="fa fa-twitter" target="_blank"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href="#" title="Share with Linkden" class="fa fa-linkedin" target="_blank"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href="#" title="Share with Google+" class="fa fa-google-plus" target="_blank"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+									 </ul>';
+
+
                                 
                               	?>
                              		<!-- <ul class="stats">
@@ -198,19 +211,19 @@
 
                  <?php
 
-                  $flag1=0;
+                  		$flag1=0;
 
-				 @$sql="SELECT * FROM commits WHERE post='$post' ORDER BY id DESC LIMIT 3";
-                 @$result=mysqli_query($conn,$sql);
+				@$sql="SELECT * FROM commits WHERE post='$post' ORDER BY id DESC LIMIT 3";
+                 		@$result=mysqli_query($conn,$sql);
                                      
 					while ($row = @mysqli_fetch_array($result)) 
-                    {
+                    			{
 						++$flag1;     
-                         if($row['username']==$_SESSION['u_username'])
-                           {      
+                        		 if($row['username']==$_SESSION['u_username'])
+                           		{      
 								echo '<a href="index?p='.$row['id'].'&type=cd&&no='.$post.'&&us='.$username.'" style=float:right;font-size:30px;>x</a>';
-                           }
-                          echo '<h3 style="color:red" >User : '.$row['username'].'</h3>
+                          		 }
+                          		echo '<h3 style="color:red" >User : '.$row['username'].'</h3>
 								<p style =margin:0!important;><b>Comment</b> : '	.$row['texts'].'</p>
 								<p>'.$row['tim'].'</p>
 								<hr>';
@@ -290,7 +303,7 @@
 								
 								echo '<ul class="actions">
 									<li><a href="'.$row['facebook'].'" class="button">Learn More</a></li>
-									<li><a href="index" class="button">Home</a></li>
+									<li><a href="http://www.blogme.co" class="button">Home</a></li>
 								</ul>';
 								
 
