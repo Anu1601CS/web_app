@@ -29,20 +29,11 @@
 						<div class="inner">
 
 
-							<!-- <img id="logo" src="css/image/blog.png" alt="" /> -->
+							<!-- <img id="logo" src="css/image/blog.png" alt="" /-->
 							
-							
-                         
                                <button style=float:right;margin-top:10px; id="dex" class="log_in_btn"  name="submit">Sign Up</button>
                                 <button style=float:right;margin:10px 0 0 10px; id="dex" class="log_in_btn"  name="submit">Login</button>
-                             
-
-                                                                   
-                             
-                            
-
-                            
-
+                           
 							<!-- Header -->
 								<header id="header" >
 
